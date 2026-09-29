@@ -105,7 +105,8 @@ patterns still detect a synthetic leak. It passed inside the 292.
 publish (`git ls-files`), from `.check/pubscan.py` (scratch, not tracked):
 
 ```text
-files=104                 (104 tracked files at this scan, this file and the two workflow files included)
+files=105                 (105 tracked files at this scan, this file, the Phase 3 report and the two
+                           workflow files included; re-run after the final doc commit)
 blob_vs_worktree_drift=0  credential_shapes=0  account_name=0  withheld_paper_name=0
 binary_files=0            local_paths=61  ->  phase0 25, phase1 2, phase2 1, phase3 32, tests 1
 largest tracked file: tests/fixtures/rd_findings_gmmvi_0.1.0.json, 584,900 B
@@ -116,7 +117,7 @@ so the number moves every time the report is edited. The scan prints it; the inv
 
 Reading of each line:
 
-- **104 tracked files, no vendored corpus.** A clone is cheap; the paper sources a reviewer needs are
+- **105 tracked files, no vendored corpus.** A clone is cheap; the paper sources a reviewer needs are
   fetched from pinned digests rather than committed. The one third-party text file that *is* committed is
   the pilot transcript in §4c, vendored because frozen anchors quote it by line number, and it is committed
   under a digest pin rather than under an editing licence.

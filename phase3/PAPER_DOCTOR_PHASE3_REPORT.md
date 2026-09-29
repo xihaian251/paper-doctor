@@ -239,18 +239,21 @@ with plain `pip install`, checked with `pip check`, and run — both produced
 
 `release/RC_AUDIT.md`. Four gates green (`292 passed`; `ruff check .`; `ruff format --check .` → 32 files;
 `mypy src` → 10 files), reproduced in **two independent clean checkouts** of the same tree (§9 there), plus
-the acceptance digest from a fifth route. Pre-publication scan of exactly what git would publish: 104
-tracked files, `blob_vs_worktree_drift=0`, 0 credential shapes, 0 account-name occurrences, 0 mentions of
-the withheld title, 0 binary files. **P0 = 0, P1 = 0**; non-blocking register N1–N10. No global software
-quality score is computed anywhere, by tool or by this report.
+the acceptance digest from a fifth route. Pre-publication scan of exactly what git would publish: 105
+tracked files (re-run with this report in the tracked set), `blob_vs_worktree_drift=0`, 0 credential shapes,
+0 account-name occurrences, 0 mentions of the withheld title, 0 binary files. **P0 = 0, P1 = 0**;
+non-blocking register N1–N10. No global software quality score is computed anywhere, by tool or by this
+report.
 
 ## 21–23. Repository, publishing, and the release decision (§21–§23)
 
-`main` branch, two commits at the time of writing (`976bf0d` the boundary commit, `7bdf47f` the portability
-fix), `release/` and `.github/workflows/` staged. `.github/workflows/publish-pypi.yml` publishes on
-`release.published` with `permissions: {contents: read, id-token: write}` and a `pypi` environment — **no
-long-lived token exists or is stored**, per §22; the Pending Trusted Publisher must be created on PyPI
-before the public Release.
+`main` branch, three commits at the time of writing (`976bf0d` the boundary commit, `7bdf47f` the
+portability fix, and the docs commit that records this report), `release/` and `.github/workflows/`
+staged. `.github/workflows/publish-pypi.yml` publishes on `release.published` with
+`permissions: {contents: read, id-token: write}` and a `pypi` environment — **no long-lived token exists
+or is stored**, per §22; the Pending Trusted Publisher must be created on PyPI before the public Release.
+No tag exists yet: §21 makes the release commit immutable, so `v0.1.0` is created only once the decision
+below is settled.
 
 §23 authorises automatic release once its six conditions hold. Five hold: P0 = 0, P1 = 0, CI-equivalent
 gates green in a clean checkout, the four-layer TabM acceptance complete, fresh wheel and sdist clean.
