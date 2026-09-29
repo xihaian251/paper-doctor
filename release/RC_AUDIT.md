@@ -399,8 +399,21 @@ This machine runs Python 3.13, so P1-10 (§7) was unobservable here at any depth
 matrix being on 3.11 is what turned it from a latent support-floor claim into a failed step. It failed at
 the fetch, before a single test ran, which is why the four local gates stayed green right up to the push.
 The fix is in §7 and is pinned by `tests/test_acceptance_input_fetcher.py`. **CI is therefore part of the
-evidence for this release rather than a badge claimed in advance** — and the green that §11 requires is the
-green of the commit that carries the fix, not the green of the two 3.13 jobs above.
+evidence for this release rather than a badge claimed in advance.**
+
+**Run `36553848745`, commit `095c020`, 2026-09-29T10:09:57Z: green on all four jobs.**
+
+| Job | Fetch corpora | Ruff | Mypy | Test suite | Frozen digest |
+| --- | --- | --- | --- | --- | --- |
+| `gates (ubuntu-latest, 3.11)` | success | success | success | success | **success** |
+| `gates (windows-latest, 3.11)` | success | success | success | success | **success** |
+| `gates (ubuntu-latest, 3.13)` | success | success | success | success | **success** |
+| `gates (windows-latest, 3.13)` | success | success | success | success | **success** |
+
+This is the measurement the local machine cannot make, twice over: it runs on the support-floor interpreter,
+and the two ubuntu jobs assert the same `08836ccf…` from a checkout that never passed through Windows EOL
+handling. One workflow, four OS/Python combinations, one byte string — which is the cross-platform half of
+§24 obtained before the release rather than assumed by it.
 
 One limit survives this section: the checkout venv carried newer tools than CI's (`ruff 0.16.9` vs `0.16.3`,
 `mypy 2.3.1`, `pytest 9.1.1`). The format count is identical across both because the Markdown exclusion is in
@@ -456,9 +469,11 @@ published mention of the withheld submission, P0 = 0, P1 = 0 (ten P1s found and 
 tenth of them only because CI ran on the declared support floor).
 
 The first push to the public repository was **red** on both Python 3.11 jobs (§9). This record does not
-round that off: the release commit is the one that turns run `36549615962`'s successor green on 3.11 as well
-as 3.13, and the tag is not to be cut before that is observed. §27 lists CI failure as a stop condition, and
-it was hit and honoured.
+round that off: run `36549615962` on `d954e22` failed, P1-10 was fixed, and run `36553848745` on the fix
+commit `095c020` is green on all four jobs including the frozen-digest assertion on both operating systems.
+§27 lists CI failure as a stop condition; it was hit, honoured, and cleared. `v0.1.0` is cut only at or after
+`095c020`, the first commit whose four-job matrix is green, and its exact SHA is recorded in
+`release/RELEASE_FREEZE.md`.
 
 The release was held at the RC boundary — committed locally, untagged, unpushed, unpublished — and the choice
 was put to the owner, because the next two actions (a public repository and a permanent name on PyPI) cannot

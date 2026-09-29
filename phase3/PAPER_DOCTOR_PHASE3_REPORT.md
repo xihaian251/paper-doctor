@@ -256,8 +256,11 @@ score is computed anywhere, by tool or by this report.
 
 ## 21–23. Repository, publishing, and the release decision (§21–§23)
 
-`main` branch: the boundary commit `976bf0d`, the portability fix `7bdf47f`, and the docs commits that
-record the RC audit measurements and this report. `release/` and `.github/workflows/` are tracked.
+`main` branch, in order: the boundary commit `976bf0d`, the portability fix `7bdf47f`, the
+waiver-and-reverification commit `d954e22`, the P1-10 fix `095c020`, and the documentation commits that
+record the RC measurements and this report. The commit that carries the tag is named by SHA in
+`release/RELEASE_FREEZE.md`, not counted here. `release/` and
+`.github/workflows/` are tracked.
 `.github/workflows/publish-pypi.yml` publishes on `release.published` with
 `permissions: {contents: read, id-token: write}` and a `pypi` environment — **no long-lived token exists
 or is stored**, per §22; the Pending Trusted Publisher must be created on PyPI before the public Release.
@@ -270,11 +273,13 @@ frozen-digest assertion, and failed both 3.11 jobs at the corpus-fetch step:
 `fetch-acceptance-inputs: error: argument names: invalid choice: []`. That was P1-10, invisible on this
 machine's Python 3.13 at any depth of local testing. §27 names CI failure as a stop condition; it was hit,
 diagnosed, fixed in `scripts/fetch_acceptance_inputs.py` without touching the scientific design, and pinned
-by `tests/test_acceptance_input_fetcher.py`. The tag is cut only on a commit whose four-job matrix is green,
-3.11 included.
+by `tests/test_acceptance_input_fetcher.py`. The re-run (commit `095c020`, run `36553848745`) is green on all
+four jobs — both 3.11 combinations included, and the `Frozen TabM acceptance digest` step passing on the two
+ubuntu runners is the cross-platform byte-identity evidence this Windows machine cannot produce for itself.
+The tag is cut only at or after that commit.
 
-§23 authorises automatic release once its six conditions hold. Five hold: P0 = 0, P1 = 0, CI-equivalent
-gates green in a clean checkout, the four-layer TabM acceptance complete, fresh wheel and sdist clean.
+§23 authorises automatic release once its six conditions hold. Five hold: P0 = 0, P1 = 0, CI green on the
+pushed commit's four-job matrix, the four-layer TabM acceptance complete, fresh wheel and sdist clean.
 **One does not: human onboarding complete.** §27's stop list does not include "no human available", and §15
 permits `UNKNOWN`, so this is a disclosed deviation rather than a fabricated closure — but it is also the
 first irreversible external write, so the choice between *nominate a tester* and *waive §15 for 0.1.0* was
