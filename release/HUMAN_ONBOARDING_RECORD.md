@@ -34,21 +34,26 @@ stages build artifacts). Contents at 2026-09-29, from `KIT_MANIFEST.txt`:
 
 | path | sha256 | why it is in the kit |
 | --- | --- | --- |
-| `README.md` | `689b7a19f3614f66a97f00f5b8d427a8243dce2e64cf665e305a8cf4d7e6a076` | the only documentation the tester is given |
+| `README.md` | `4abbca3ba9377753f385836bf4301bb7af354ea28c88d9a9bbe8606a3b774928` | the only documentation the tester is given |
 | `TASK_FOR_TESTER.md` | `d46d765aa46144d8a26b5fdb601f8713dfc1c3bcced0e884707b619a324b3c88` | four neutral instructions; names no prerequisite and no answer |
 | `RECORDING_SHEET.md` | `47294aeeb067ff47a6dbf749100978d7a3ff04a842fe3bac3576dfc82d858627` | the observation template; `UNKNOWN` explicitly allowed |
 | `phase3/tabm/paper-doctor.yml` | `7e809014f0fa5019622fcec5280cec2f1d4f0e243f7cd3b156b7ebae3e009377` | the prepared acceptance workspace, byte-identical to the frozen one |
 | `phase3/tabm/findings.json` | `c56b62623b39ed9a4c311f8bcc6be6de457c1a0f8a4d34d3da99a4b71c7d2774` | the workspace's declared Result Doctor input |
-| `scripts/fetch_acceptance_inputs.py` | `25344877d3d8786cb7480f84143355d2e2ec1eb3b8e1890c645f8a6382a52da3` | so the workspace's paper root can be materialised; the tester is not told to run it |
-| `dist/paper_doctor-0.1.0-py3-none-any.whl` | `192e3e17d7e405738632a5b222ca4610a35e0c55aae5a995fb91eccdab9a1887` | install route that needs no PyPI |
-| `dist/paper_doctor-0.1.0.tar.gz` | `bfd3a87f7c7b20f73277bfb3bbd7223c208b3c9e2cfa208e45829d9cbcd0e30a` | same, from source |
+| `scripts/fetch_acceptance_inputs.py` | `bd4af30a5d672a8ad31ccf7c1e3069db6ed3553df3a58ee54a67419ca850cdc4` | so the workspace's paper root can be materialised; the tester is not told to run it |
+| `dist/paper_doctor-0.1.0-py3-none-any.whl` | `6e051f33318518c701318cf49d5c2055449d06ad4c035a4fa490ba339264deb0` | install route that needs no PyPI |
+| `dist/paper_doctor-0.1.0.tar.gz` | `3432437a7867f347a2c07fa8f386ba369ee56869f86623906c329c7f09acac9a` | same, from source |
 
-Both staged artifacts were rebuilt at 16:42 on 2026-09-29, after the RTDL anchors were made
-self-contained and the README's sdist numbers re-measured against the new artifact, and the kit was
-regenerated from them (`305,805 bytes`, purity clean). Two earlier generations are therefore stale:
-`5c36af8a…` / `d249621a…` and `b03d7276…` / `71539fa9…`. Neither appears in the table above, so nobody can
-verify against a superseded artifact. Recording the superseded digests at all is deliberate — a tester who
-downloaded an earlier kit can now tell that their copy is not this one.
+Both staged artifacts were rebuilt at 17:39 on 2026-09-29, after the no-name form of the fetch script was
+fixed for Python 3.11 (RC audit P1-10) and the README's sdist numbers re-measured against the new artifact,
+and the kit was regenerated from them at 17:41 (`309,142 bytes`, purity clean: `sha256sum -c
+KIT_MANIFEST.txt` → 8/8 OK). Three earlier generations are therefore stale:
+`5c36af8a…` / `d249621a…`, `b03d7276…` / `71539fa9…`, and `192e3e17…` / `bfd3a87f…`. None of them appears in
+the table above, so nobody can verify against a superseded artifact. Recording the superseded digests at all
+is deliberate — a tester who downloaded an earlier kit can now tell that their copy is not this one.
+
+The P1-10 fix is inside this kit in a way that matters for a tester: the fetch script's documented
+no-argument form ("fetch all three") is what a reader who is not told which corpus to name will run, and on
+3.11 it died with `error: argument names: invalid choice: []` before this generation existed.
 
 Deliberately absent, enforced by the builder's purity check (which refuses and exits `2`): the project's
 own `pd_audit.txt`, `pd_findings.json`, `end_to_end_chain.json`, every phase report/brief/preflight, and
@@ -58,20 +63,24 @@ Kit layout is load-bearing rather than cosmetic: the workspace declares
 `root: ../acceptance-inputs/tabm-arxiv/src`, and the fetch script resolves its target from its own
 location, so the fetch lands exactly where the declaration points. The manifest is never edited.
 
-**Kit integrity check performed (an agent, not the human test).** Re-run on the current kit generation in
-the minutes before 16:57 on 2026-09-29: a fresh virtualenv, `pip install dist/paper_doctor-0.1.0-py3-none-any.whl`
-from inside the kit, the kit's own `scripts/fetch_acceptance_inputs.py` run from the kit root (it reported
-`DOWNLOADED gmmvi / rtdl / tabm` and placed the TabM source exactly where the workspace manifest declares
-`root`), then `paper-doctor audit phase3/tabm --json dryrun2.json` → exit 0 and
-`08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0`, 17,511 bytes - the frozen acceptance
-digest. An earlier generation of this check ran against a kit whose corpus directory was already populated
-and therefore reported `SKIPPED ... already carries the frozen main.tex`; both outcomes are correct behaviour
-and the second one proves the location coincides. This shows the kit is self-sufficient. It does **not** show
-a human can use it.
+**Kit integrity check performed (an agent, not the human test).** Re-run on *this* kit generation at 17:57
+on 2026-09-29: the kit copied to a directory outside the repository (`F:\MLResearch\kitdry2` — no `.git`, no
+project source anywhere in it), `sha256sum -c KIT_MANIFEST.txt` → 8/8 OK, a fresh virtualenv,
+`pip install dist/paper_doctor-0.1.0-py3-none-any.whl` from inside the kit, the kit's own
+`scripts/fetch_acceptance_inputs.py tabm` run from the kit root (it reported `DOWNLOADED tabm:
+F:\MLResearch\kitdry2\phase3\acceptance-inputs\tabm-arxiv\src` and placed the TabM source exactly where the
+workspace manifest declares `root: ../acceptance-inputs/tabm-arxiv/src`), then
+`paper-doctor audit phase3/tabm --json out.json` → exit 0, tally `PASS: 10 FAIL: 2 INCONCLUSIVE: 5
+NOT_APPLICABLE: 14 NOT_RUN: 1`, and `08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0`,
+17,511 bytes - the frozen acceptance digest, out of a tree that never contained the source. An earlier
+generation of this check ran the no-argument form and reported `DOWNLOADED gmmvi / rtdl / tabm`; another ran
+against a kit whose corpus directory was already populated and therefore reported `SKIPPED ... already
+carries the frozen main.tex`. All three outcomes are correct behaviour, and the last one proves the location
+coincides. This shows the kit is self-sufficient. It does **not** show a human can use it.
 
-The scratch products of that check (`phase0/sources/`, `phase3/acceptance-inputs/`, `dryrun2.json`) were
-removed again; the kit as handed over is the eight files of `KIT_MANIFEST.txt`, and the builder's purity
-check is what guarantees nothing else was staged into it.
+The scratch copy was then deleted whole, so nothing outside the repository is left depending on it; the kit as
+handed over is the eight files of `KIT_MANIFEST.txt`, and the builder's purity check is what guarantees
+nothing else was staged into it.
 
 ## 4. Observed facts
 

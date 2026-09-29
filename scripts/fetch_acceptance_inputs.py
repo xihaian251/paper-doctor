@@ -158,19 +158,44 @@ def fetch(corpus: Corpus, *, keep_tarball: bool) -> str:
         shutil.rmtree(staging, ignore_errors=True)
 
 
-def main(argv: list[str] | None = None) -> int:
+def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="fetch-acceptance-inputs",
         description="Fetch and verify the pinned paper corpora the acceptance tests read.",
     )
-    parser.add_argument("names", nargs="*", choices=sorted(CORPORA), help="corpora to fetch (default: all)")
+    # `choices=` is deliberately absent from this nargs="*" argument. On CPython < 3.12 argparse
+    # validates the empty list produced by a zero-argument invocation against `choices` and rejects
+    # it, so the documented no-name form -- "fetch all three", and what CI runs -- died with
+    # `error: argument names: invalid choice: []` on 3.11 while passing on 3.13. The support floor is
+    # declared as >=3.11, so the membership check happens after parsing instead, where the message
+    # can name the offending word rather than an empty list.
+    parser.add_argument("names", nargs="*", help="corpora to fetch (default: all)")
     parser.add_argument("--list", action="store_true", help="print the pins and their state, then exit")
     parser.add_argument(
         "--keep-tarball",
         action="store_true",
         help="also store the verified e-print tarball next to the corpus, so re-extraction needs no network",
     )
-    args = parser.parse_args(argv)
+    return parser
+
+
+def _selected(names: list[str], *, valid: list[str]) -> list[str]:
+    """The corpora to act on: every one when no name was given, else exactly those named."""
+    unknown = [name for name in names if name not in valid]
+    if unknown:
+        # Exit 2, the same refusal code the rest of this script and `paper-doctor` itself use for a
+        # request that cannot be carried out; a bare `SystemExit(str)` would have downgraded it to 1.
+        print(
+            f"fetch-acceptance-inputs: error: invalid corpus name(s): {', '.join(unknown)} "
+            f"(choose from {', '.join(valid)})",
+            file=sys.stderr,
+        )
+        raise SystemExit(2)
+    return names or list(valid)
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = _build_parser().parse_args(argv)
 
     if args.list:
         for corpus in CORPORA.values():
@@ -179,7 +204,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     try:
-        for name in args.names or sorted(CORPORA):
+        for name in _selected(list(args.names), valid=sorted(CORPORA)):
             print(fetch(CORPORA[name], keep_tarball=args.keep_tarball))
     except Blocked as blocked:
         print(f"PAPER DOCTOR FETCH: BLOCKED -- {blocked}", file=sys.stderr)

@@ -15,20 +15,21 @@ push/publish boundary, which is the first irreversible external write.
 
 | Gate | Command | Measured result |
 | --- | --- | --- |
-| Tests | `python -m pytest -q` | **292 passed** in 13.07 s, 0 failed, 0 skipped, 0 errors |
+| Tests | `python -m pytest -q` | **298 passed** in 17.17 s, 0 failed, 0 skipped, 0 errors |
 | Lint | `python -m ruff check .` | All checks passed! |
-| Format | `python -m ruff format --check .` | **32 files already formatted**, 0 to reformat |
+| Format | `python -m ruff format --check .` | **33 files already formatted**, 0 to reformat |
 | Types | `python -m mypy src` | Success: no issues found in **10 source files** |
 
-The format gate is quoted over `.` and gives the same 32-file count a scoped command gave earlier,
-because Markdown is now excluded from the formatter (§7, defect P1-9). The identical four gates run
-against a clean checkout of the same tree in §9, and CI re-runs them on push.
+The format gate is quoted over `.` and gives the same 33-file count a scoped command gave earlier,
+because Markdown is now excluded from the formatter (§7, defect P1-9); the 33rd file is the fetch-script
+regression suite added with P1-10. The identical four gates run against a clean checkout of the same tree
+in §9, and CI re-runs them on push.
 
 Scope note, stated because it is a real limit and not a detail: mypy runs over `src/` only. `tests/`,
 `scripts/` and `examples/` are linted and formatted but not type-checked, and this was not upgraded into
 a release-blocking item mid-freeze.
 
-The 292 includes every frozen anchor required by the phase brief's §7 (a different numbering from this
+The 298 includes every frozen anchor required by the phase brief's §7 (a different numbering from this
 file's sections) — GMMVI `C1` PD006 FAIL, `C5` PD002 INCONCLUSIVE, `C6`
 PD005 FAIL; RTDL `D1` PD003 INCONCLUSIVE, `D5` clause-1 FAIL with clause-2 INCONCLUSIVE, `D6` PD004 FAIL,
 `D7` PD001/PD006 PASS with PD002 INCONCLUSIVE, `D8` INCONCLUSIVE, `D11` PD007 FAIL; the Phase 2 Table 4
@@ -41,41 +42,55 @@ Built with `python -m build` after the final README edit, from a clean `rm -rf b
 
 | Artifact | Size | SHA-256 |
 | --- | --- | --- |
-| `dist/paper_doctor-0.1.0-py3-none-any.whl` | 67,768 B | `192e3e17d7e405738632a5b222ca4610a35e0c55aae5a995fb91eccdab9a1887` |
-| `dist/paper_doctor-0.1.0.tar.gz` | 181,916 B | `bfd3a87f7c7b20f73277bfb3bbd7223c208b3c9e2cfa208e45829d9cbcd0e30a` |
+| `dist/paper_doctor-0.1.0-py3-none-any.whl` | 67,802 B | `6e051f33318518c701318cf49d5c2055449d06ad4c035a4fa490ba339264deb0` |
+| `dist/paper_doctor-0.1.0.tar.gz` | 183,797 B | `3432437a7867f347a2c07fa8f386ba369ee56869f86623906c329c7f09acac9a` |
 
-Three earlier generations are superseded: `5c36af8a…` / `d249621a…`, then `b03d7276…` / `71539fa9…`. Each
-was superseded for a reason worth stating, because the reason is that the artifact embeds documents: the
-first by a README paragraph, the second by the README's re-measured sdist numbers plus the `pyproject.toml`
-formatter exclusion. Nothing in `src/` moved in any of the three rebuilds. Anyone verifying against a
-superseded digest is verifying a stale file; §24 anticipates this by requiring the *downloaded* PyPI hashes
-to be recorded rather than assumed equal to any local build.
+`twine check` on both: PASSED.
 
-**Re-verification after the release-document commits.** Three further commits landed after the build above,
-all inside `release/` and `phase3/`. Those directories are not in `MANIFEST.in`, so they cannot enter an
-artifact — but "cannot" is a claim about a config file, so it was checked against bytes instead: the tree was
-rebuilt into a scratch directory and both archives were compared to the staged pair member by member
-(newline-normalised, the comparison §24's cross-platform case requires). Wheel 16 members and sdist 50
-members, with 0 added, 0 removed and 0 differing. The rebuilt archives hash differently
-(`6ea4df95…` / `769828db…`, and the sdist is 33 bytes larger) for the only reason archive hashes ever differ
-between two builds of one content set: `build` stamps tar and zip entries with mtimes, so the container is
-not byte-reproducible even when its members are. The digests in the table remain the staged identity; the
-published identity is whatever §24 downloads.
+Four earlier generations are superseded, and each supersession is a real change to shipped bytes rather
+than a re-stamp:
+
+| Generation (wheel / sdist) | Superseded by |
+| --- | --- |
+| `5c36af8a…` / `d249621a…` | a README paragraph |
+| `b03d7276…` / `71539fa9…` | the README's re-measured sdist numbers plus the `pyproject.toml` formatter exclusion |
+| `192e3e17…` / `bfd3a87f…` | the release-document commits (see below — content-identical, container-only change) |
+| `2fb375a6…` / `3c20fc8b…` | the README's test-count paragraph, which is embedded in `METADATA`, so this one moved the wheel too |
+
+Nothing in `src/` moved in any of the four rebuilds. Anyone verifying against a superseded digest is
+verifying a stale file; §24 anticipates this by requiring the *downloaded* PyPI hashes to be recorded
+rather than assumed equal to any local build.
+
+**Each rebuild was compared member by member, not by archive hash.** `build` stamps tar and zip entries
+with file mtimes, so two builds of one content set hash differently while their members are identical; the
+comparison that means something is per-member with newline normalisation, which is also the comparison the
+cross-platform case in §24 needs. Measured:
+
+- The two release-document commits (`release/`, `phase3/` only, not in `MANIFEST.in`): wheel 16 members and
+  sdist 50 members, 0 added, 0 removed, 0 differing. That is the proof those directories are not package
+  content, checked against bytes rather than against a config file.
+- The P1-10 fix plus the README count edit: **wheel members unchanged at 16, none differing** (the wheel
+  carries only `paper_doctor/` and `dist-info`; it moved solely because `METADATA` embeds the README);
+  **sdist 50 → 51 members**, added `tests/test_acceptance_input_fetcher.py`, differing exactly
+  `scripts/fetch_acceptance_inputs.py` and setuptools' own `src/paper_doctor.egg-info/SOURCES.txt`.
+  A three-item blast radius for a two-file change, listed in full rather than summarised.
 
 Contents, measured from the archives:
 
 - Wheel: 16 members. `paper_doctor/` 10 modules + `dist-info` with `licenses/LICENSE`, `METADATA`,
   `WHEEL`, `entry_points.txt`, `top_level.txt`, `RECORD`. `entry_points.txt` is exactly
   `paper-doctor = paper_doctor.cli:main`. No `examples/`, no `tests/`, no `phase*/`.
-- Sdist: 50 files — `src/`, `tests/` (including all four `tests/fixtures/` files, the vendored pilot
+- Sdist: 51 files — `src/`, `tests/` (including all four `tests/fixtures/` files, the vendored pilot
   transcript among them), `examples/quickstart/`, `scripts/`, `README.md`, `LICENSE`, `MANIFEST.in`,
   `pyproject.toml`, `setup.cfg`, and setuptools' own `src/paper_doctor.egg-info/`. No `phase*/` entry: the
   phase reports and the TabM workspace are repository evidence, not package content.
 - `METADATA`: `Metadata-Version: 2.4`, `Name: paper-doctor`, `Version: 0.1.0`,
   `Summary: Deterministic claim-to-evidence audits of reported results in an ML paper`,
   `License-Expression: Apache-2.0`, `License-File: LICENSE`, `Requires-Python: >=3.11`, `Provides-Extra: dev`,
-  `Requires-Dist: PyYAML>=6`, long description 23,260 bytes (the README, current: it contains the corrected
-  `199 passed` line and no longer the superseded `196 passed` one, checked by string search of the wheel).
+  `Requires-Dist: PyYAML>=6`, long description 23,362 bytes, which equals `README.md` (22,935 B) byte for
+  byte after newline normalisation — checked by comparison, not by eyeball. Current: it carries the
+  `205 passed, 23 failed, 70 errors` sdist-suite line and its `199 passed` and `196 passed` predecessors are
+  both gone, verified by string search of the wheel.
 - Version has one source: `paper_doctor.__version__`, which `pyproject.toml` reads through
   `dynamic = ["version"]` / `version = {attr = ...}`. `paper-doctor --version` from a fresh wheel install
   printed `paper-doctor 0.1.0`.
@@ -97,11 +112,30 @@ Two new virtualenvs under `.check/` (git-ignored scratch), created with `python 
 | `paper-doctor audit phase3/tabm` | exit 0, tally `PASS: 10 FAIL: 2 INCONCLUSIVE: 5 NOT_APPLICABLE: 14 NOT_RUN: 1` over 32 findings | same |
 | `paper-doctor audit phase3/tabm --json out.json` | `08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0` | byte-identical, same digest |
 
+**A third route, with no project files at all.** The table above runs the installed package against this
+repository's `phase3/tabm` workspace, so it still leans on the checkout for its inputs. The stronger form of
+§19 is to install from an artifact and audit a workspace that came from nothing but the artifact. The
+onboarding kit is exactly that (`release/onboarding-kit/`: wheel, sdist, `phase3/tabm/paper-doctor.yml`,
+`phase3/tabm/findings.json`, `README.md`, the fetch script, and no `src/`). Copied to a directory
+**outside the repository** (`F:\MLResearch\kitdry2`, no `.git`, no project source anywhere in it), `sha256sum
+-c KIT_MANIFEST.txt` → 8/8 OK, then in a third fresh venv installing only `dist/*.whl`:
+
+```text
+python scripts/fetch_acceptance_inputs.py tabm
+  DOWNLOADED tabm: F:\MLResearch\kitdry2\phase3\acceptance-inputs\tabm-arxiv\src   (rc 0)
+paper-doctor audit phase3/tabm --json out.json
+  rc 0, tally PASS: 10 FAIL: 2 INCONCLUSIVE: 5 NOT_APPLICABLE: 14 NOT_RUN: 1
+  08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0  (17,511 bytes)
+```
+
+Same bytes out of a tree that never contained the source. This is also the route a reviewer can repeat
+without cloning the repository.
+
 `08836ccf…` is the digest the TabM acceptance asserts, and it is the same digest produced from the source
-checkout, from the wheel, from the sdist, by both onboarding measurement runs, and by a clean checkout of
-the tree (§9). Five routes, one byte string. The artifact rebuilds in §2 moved the *archive* hashes and
-did not move this one, which is the distinction that matters: the scientific output is stable across the
-documentation churn.
+checkout, from the wheel, from the sdist, by both onboarding measurement runs, by the onboarding kit's
+self-contained dry run, and by a clean checkout of the tree (§9). Six independent routes, one byte string.
+The artifact rebuilds in §2 moved the *archive* hashes and did not move this one, which is the distinction
+that matters: the scientific output is stable across the documentation churn.
 
 ## 4. Credential and privacy scan
 
@@ -110,16 +144,16 @@ Two layers, because they answer different questions.
 **4a. The committed gate** — `tests/test_phase3_firewalls.py` scans the *shipped* surface (`README.md`,
 `CHANGELOG.md`, `LICENSE`, `pyproject.toml`, `MANIFEST.in`, and everything under `src/`, `tests/`,
 `scripts/`, `examples/`) for local filesystem shapes and credential shapes, and asserts that its own
-patterns still detect a synthetic leak. It passed inside the 292.
+patterns still detect a synthetic leak. It passed inside the 298.
 
 **4b. The pre-publication scan of the whole tracked surface**, run against exactly what `git` would
 publish (`git ls-files`), from `.check/pubscan.py` (scratch, not tracked):
 
 ```text
-files=105                 (105 tracked files at this scan, this file, the Phase 3 report and the two
-                           workflow files included; re-run after the final doc commit)
+files=106                 (106 tracked files at this scan: this file, the Phase 3 report, the two workflow
+                           files, and tests/test_acceptance_input_fetcher.py, the P1-10 regression suite)
 blob_vs_worktree_drift=0  credential_shapes=0  account_name=0  withheld_paper_name=0
-binary_files=0            local_paths=61  ->  phase0 25, phase1 2, phase2 1, phase3 32, tests 1
+binary_files=0            local_paths=65  ->  phase0 25, phase1 2, phase2 1, phase3 32, release 4, tests 1
 largest tracked file: tests/fixtures/rd_findings_gmmvi_0.1.0.json, 584,900 B
 ```
 
@@ -128,7 +162,7 @@ so the number moves every time the report is edited. The scan prints it; the inv
 
 Reading of each line:
 
-- **105 tracked files, no vendored corpus.** A clone is cheap; the paper sources a reviewer needs are
+- **106 tracked files, no vendored corpus.** A clone is cheap; the paper sources a reviewer needs are
   fetched from pinned digests rather than committed. The one third-party text file that *is* committed is
   the pilot transcript in §4c, vendored because frozen anchors quote it by line number, and it is committed
   under a digest pin rather than under an editing licence.
@@ -142,13 +176,14 @@ Reading of each line:
   assignments, and personal email addresses. (This paragraph first spelled one of those patterns out in
   full and was rewritten after the scan flagged its own file; the scanner detecting the report is the
   scanner working.)
-- **0 occurrences of the machine account name.** The 61 path-shaped lines split as 60 drive-rooted workspace
-  paths of the form `<drive>:/<project>/…` inside the phase design and evidence documents, plus one line of
-  somebody else's documentation in the vendored transcript of §4c. None carries a username. None appears in
-  `src/`, `scripts/`, `examples/` or `README.md`; the single hit under `tests/` is exactly the file the
-  shipped-surface gate in 4a skips by digest, which is the reason that skip is digest-conditional rather than
-  a path whitelist. The 60 are provenance a reviewer needs (which RD snapshot, which captured run, which
-  dataset tree). Accepted as a P2, listed as N7 in §8.
+- **0 occurrences of the machine account name.** The 65 path-shaped lines split as 64 drive-rooted workspace
+  paths of the form `<drive>:/<project>/…` — 60 of them inside the phase design and evidence documents, 4 of
+  them added to `release/` by the §3/§9 re-measurements, which name the scratch directories the verification
+  actually ran in — plus one line of somebody else's documentation in the vendored transcript of §4c. None
+  carries a username. None appears in `src/`, `scripts/`, `examples/` or `README.md`; the single hit under
+  `tests/` is exactly the file the shipped-surface gate in 4a skips by digest, which is the reason that skip
+  is digest-conditional rather than a path whitelist. The 60 in the phase documents are provenance a reviewer
+  needs (which RD snapshot, which captured run, which dataset tree). Accepted as a P2, listed as N7 in §8.
 - **0 binary files.**
 - **The withheld paper's title appears nowhere in the published tree** — see §5.
 
@@ -229,7 +264,8 @@ Checked against the text, not against intention:
 
 ## 7. Blocking register
 
-**P0 = 0. P1 = 0.**
+**P0 = 0. P1 = 0** — at the moment of the release decision, after the ten P1 defects below were found and
+fixed. The count is a statement about the boundary, not about the process: ten items were open at some point.
 
 Seven P1 usability defects were found by the two measured onboarding runs and all seven were fixed inside
 Phase 3; the before/after numbers, the fix for each, and the test that pins each fix are in
@@ -237,23 +273,28 @@ Phase 3; the before/after numbers, the fix for each, and the test that pins each
 time from install to the first successful TabM audit went from ~5 minutes (run 1, with a traceback) to
 **65 s** (run 2, no traceback), and the guessed steps from 8 to 2.
 
-Two further P1s were found after the onboarding runs, by mechanisms onboarding cannot see — one by running
-the suite somewhere that is not this workspace, one by checking a digest:
+Three further P1s were found after the onboarding runs, by mechanisms onboarding cannot see — one by running
+the suite somewhere that is not this workspace, one by checking a digest, one by running CI on the lowest
+Python the project claims to support:
 
 | # | Defect | How it was caught | Fix | Pinned by |
 | --- | --- | --- | --- | --- |
 | P1-8 | `tests/test_acceptance_rtdl.py` resolved the paper corpus **and** the pilot transcript against `REPO.parent`, i.e. a sibling checkout outside the repository. In a clean checkout 17 frozen RTDL anchors errored (`FileNotFoundError: read-only corpus fixture missing: …\phase0\sources\2106.11959.tex\main.tex`). Locally green, permanently red for every other user and for CI. | four gates run against a clean checkout (§9) | paths made repository-relative; the transcript vendored as a byte-pinned fixture; the corpus left to the fetch script, which was run in the checkout | `test_every_input_this_test_reads_is_inside_the_repository` (containment + existence) and `test_the_pilot_transcript_is_the_bytes_the_anchors_were_read_from` |
 | P1-9 | The project's own formatter rewrites Python fenced blocks inside Markdown. `ruff format .` silently changed a vendored third-party fixture from `50f7994f…` (13,162 B) to `799726d9…` (13,149 B) between two commands: single quotes became double quotes and a wrapped comprehension was joined. Same mechanism can edit any quoted transcript or evidence report in this repository. | the digest pin test failed, and the privacy gate reported the fixture's own upstream example path because the skip is digest-conditional (§4c) | `**/*.md` added to `[tool.ruff] extend-exclude` with the reason recorded in `pyproject.toml`; verified by re-running `ruff format .` and re-hashing the fixture plus three other evidence documents | `test_the_pilot_transcript_is_the_bytes_the_anchors_were_read_from`; the firewalls' digest-conditional skip |
 
-Both were fixed before the first public commit rather than after it, and neither touched Paper Doctor's
+| P1-10 | `python scripts/fetch_acceptance_inputs.py` with **no corpus name** — the documented default form, and the exact command CI runs — died on Python 3.11 with `error: argument names: invalid choice: []` and exit 2. On 3.12+ the same command works. CPython below 3.12 validates the empty list that `nargs="*"` produces against the argument's `choices`, so the no-argument form was rejected by membership-testing nothing. Declared support floor is `>=3.11`, so every advertised installation path was broken on the floor version. | the first CI push: both `3.11` jobs failed at the corpus-fetch step with every later step skipped, both `3.13` jobs passed including the digest assertion (§11, run `36549615962`). Not detectable locally on this machine's 3.13 interpreter | `choices=` removed from the positional; the membership check moved after parsing into `_selected()`, where the message names the offending word instead of an empty list; refusal now exits 2 like the rest of the tool | `tests/test_acceptance_input_fetcher.py` (6 tests), incl. a subprocess `--list` run that asserts the no-argument form executes on the interpreter under test |
+
+All ten were fixed before the first public commit rather than after it, and none touched Paper Doctor's
 scientific design: no rule, status, code, schema key or asserted anchor status changed. P1-9 in particular
-was **not** fixed by loosening the privacy gate.
+was **not** fixed by loosening the privacy gate, and P1-10 was **not** fixed by raising the support floor to
+3.12 — the fix makes the declared floor true rather than making the claim smaller.
 
 One correction belongs here rather than in §8: the earlier text of this file quoted the format gate as
 `ruff format --check src tests scripts examples` because `.` was reporting a drifting file count. That
 count was not scratch directories — it was Markdown files being counted and, in one case, rewritten. With
-Markdown excluded the repo-wide command is the honest one, and it now reports the same 32 files locally and
-in a clean checkout.
+Markdown excluded the repo-wide command is the honest one. It reported 32 files at the RC boundary; the
+P1-10 fix added a thirteenth test file and the count became 33, which §1 re-measures locally and §9
+re-measures in a clean checkout.
 
 ## 8. Non-blocking register (recorded, deliberately not fixed)
 
@@ -264,8 +305,8 @@ in a clean checkout.
 | N3 | Its own `P_*` code for a missing paper root | P2 | The set is closed at twelve and asserted closed; the current message already names the field, the tried path and two remedies. |
 | N4 | `validate` / `init` subcommands | P2 | New CLI surface in the release window; exit 2 already separates contract failure from findings. |
 | N5 | Audited-manifest-digest header in the JSON | P2 | Output schema frozen. Prompted by a real observation (see `phase3/ONBOARDING_MEASUREMENT.md` §4) and recorded as a real gap. |
-| N6 | Test suite inside an unpacked sdist: 199 passed, 23 failed, 70 errors because the corpora and the `phase*/` workspaces are not vendored (measured again on the final artifact; the superseded numbers were 196/22/70 — the three extra passes are the vendored transcript and its two pinning tests) | P2 | Documented in the README's testing section with the measured numbers. It is *not* fixed by making those tests skip: a silently missing acceptance input is precisely what a release gate must not permit. |
-| N7 | 60 drive-rooted workspace paths in the phase design/evidence documents | P2 | Scrubbing them would cost provenance specificity and is the kind of P2 sweep the phase brief forbids; none carries a username or a credential. |
+| N6 | Test suite inside an unpacked sdist: **205 passed, 23 failed, 70 errors** because the corpora and the `phase*/` workspaces are not vendored (re-measured on the artifact that will be published: current sdist unpacked into a fresh directory, run by a venv that installed only that sdist with `[dev]`; the superseded numbers were 196/22/70, then 199/23/70 — the three extra passes in between are the vendored transcript and its two pinning tests, the six after that are P1-10's) | P2 | Documented in the README's testing section with the measured numbers. It is *not* fixed by making those tests skip: a silently missing acceptance input is precisely what a release gate must not permit. |
+| N7 | 64 drive-rooted workspace paths in the phase design/evidence documents and in §3/§9 of this file | P2 | Scrubbing them would cost provenance specificity and is the kind of P2 sweep the phase brief forbids; none carries a username or a credential. |
 | N8 | `python -m paper_doctor.cli` exits 0 printing nothing (the module has no `__main__` guard) | P2 | The documented entry point is the `paper-doctor` console script; `python -m paper_doctor` fails loudly. No measured user hit this, so it was not allowed to reopen `src/` after the artifact scan. |
 | N9 | `NOT_APPLICABLE` does not distinguish "correctly absent" from "you forgot to declare it" | P3 | Each reason line already says which relation was absent; a machine-readable split is a schema change. |
 | N10 | mypy scoped to `src/` | P3 | Widening it mid-freeze would be a new gate, not a pass on an existing one. |
@@ -294,11 +335,31 @@ audit    paper-doctor audit phase3/tabm --json -> exit 0
          08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0  (17,511 bytes)
 ```
 
+**Re-run after the P1-10 fix, on the tree this section ends up describing.** The fetch script changed and a
+thirteenth test file was added, so the whole procedure was repeated against a clean tree materialised the
+same way (`git checkout-index` of the staged index; the fetched corpora carried over, nothing else did), with
+the same venv. Every number moved except the two that must not:
+
+```text
+tests    298 passed in 15.36 s, 0 failed, 0 errors
+lint     All checks passed!
+format   33 files already formatted
+types    Success: no issues found in 10 source files
+audit    paper-doctor audit phase3/tabm --json -> exit 0
+         08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0  (17,511 bytes)
+```
+
+The six extra passes are the six tests that pin P1-10; the one extra format file is the same test module.
+The audit digest and its byte length are unchanged, which is the required result: a release-blocking
+usability fix in a fetch script must not move the scientific output.
+
 Two further clone measurements are worth stating because they are the ones a reviewer can repeat by mistake
 or on purpose:
 
-- **Clone before the fetch:** 204 passed, 18 failed, 70 errors. Nothing skips. The suite refuses to be green
-  without its inputs, which is the behaviour N6 and the README both document.
+- **Clone before the fetch:** 204 passed, 18 failed, 70 errors at the RC boundary; **210 passed, 18 failed,
+  70 errors** after the P1-10 fix, measured on the clean tree above. Nothing skips in either case. The suite
+  refuses to be green without its inputs, which is the behaviour N6 and the README both document. The delta
+  is exactly the six new P1-10 tests (204 + 6 = 210); the failure and error counts did not move.
 - **Digest survival across a real clone.** `tests/fixtures/rtdl_pilot_README.md` came out at 13,162 bytes /
   `50f7994f…` (it is a CRLF file, and `.gitattributes` `* -text` is what kept it byte-identical),
   `rd_findings_rtdl_0.1.0.json` at 13,395 / `2ad02c8f…`, and `phase3/tabm/paper-doctor.yml` at
@@ -315,19 +376,37 @@ beside those two trees; neither path exists inside a clone. The 271 + 17 lands o
 workspace reported, which is the point: the anchors were genuinely passing locally, and would have been red
 for every reviewer and for CI.
 
-Two honest limits on this section:
+Two honest limits on this section are folded into the CI account below.
 
-- The checkout venv carried newer tools than the workspace (`ruff 0.16.9` vs `0.16.3`, `mypy 2.3.1`,
-  `pytest 9.1.1`). The format count is identical because the Markdown exclusion is in `pyproject.toml`, not
-  because a particular ruff version happens to leave the fixture alone.
-- `fetch_acceptance_inputs.py` needs the network; the clone test was therefore run with it. Paper Doctor
-  itself made no network calls during the audit, which is what the tool-side firewall asserts.
+**The GitHub Actions run, observed.** `.github/workflows/gates.yml` encodes exactly the commands above across
+ubuntu/windows × Python 3.11/3.13 and additionally fails if the audit JSON's sha256 is not `08836ccf…`. The
+first push (commit `d954e22`, run `36549615962`, 2026-09-29T09:30:29Z) came back **red**, and it was red for a
+reason no local measurement could have produced:
 
-**SEARCHED / NOT OBSERVED: the GitHub Actions run.** `.github/workflows/gates.yml` encodes exactly the
-commands above across ubuntu/windows × Python 3.11/3.13 and additionally fails if the audit JSON's sha256
-is not `08836ccf…`. No Actions run has been observed, because the repository has not been pushed yet at
-the time of writing (§11). The clean-checkout measurement here is local evidence that the workflow should
-be green; it is not a green CI badge, and it is not recorded as one.
+| Job | Result | Where |
+| --- | --- | --- |
+| `gates (ubuntu-latest, 3.13)` | success | every step, through the frozen-digest assertion |
+| `gates (windows-latest, 3.13)` | success | every step, through the frozen-digest assertion |
+| `gates (ubuntu-latest, 3.11)` | **failure** | step "Fetch and verify the pinned paper corpora"; Ruff/Mypy/Test/digest skipped |
+| `gates (windows-latest, 3.11)` | **failure** | same step, same four skips |
+
+```text
+fetch-acceptance-inputs: error: argument names: invalid choice: [] (choose from 'gmmvi', 'rtdl', 'tabm')
+##[error]Process completed with exit code 2.
+```
+
+This machine runs Python 3.13, so P1-10 (§7) was unobservable here at any depth of local testing; the
+matrix being on 3.11 is what turned it from a latent support-floor claim into a failed step. It failed at
+the fetch, before a single test ran, which is why the four local gates stayed green right up to the push.
+The fix is in §7 and is pinned by `tests/test_acceptance_input_fetcher.py`. **CI is therefore part of the
+evidence for this release rather than a badge claimed in advance** — and the green that §11 requires is the
+green of the commit that carries the fix, not the green of the two 3.13 jobs above.
+
+One limit survives this section: the checkout venv carried newer tools than CI's (`ruff 0.16.9` vs `0.16.3`,
+`mypy 2.3.1`, `pytest 9.1.1`). The format count is identical across both because the Markdown exclusion is in
+`pyproject.toml`, not because a particular ruff version happens to leave the fixture alone. And
+`fetch_acceptance_inputs.py` needs the network, so the clone test was run with it; Paper Doctor itself made
+no network calls during the audit, which is what the tool-side firewall asserts.
 
 ## 10. Gate deviations — stated plainly
 
@@ -335,7 +414,7 @@ be green; it is not a green CI badge, and it is not recorded as one.
 environment.** The requirement is met in every part except the part that requires a person:
 
 - The kit exists, is reproducible, contains no answer and no expected output, and is integrity-verified:
-  `release/onboarding-kit/` with `KIT_MANIFEST.txt`, 305,805 bytes, purity check clean, built from the
+  `release/onboarding-kit/` with `KIT_MANIFEST.txt`, 309,142 bytes, purity check clean, built from the
   artifacts in §2 above.
 - Two fresh-agent measurements were run and recorded (`release/onboarding/RUN1_AGENT_LOG.md`,
   `RUN2_AGENT_LOG.md`) and they produced the fixes in §7. Those are **agent** runs. They demonstrate the
@@ -371,11 +450,17 @@ Two further deviations, smaller:
 What was green before the one unmet condition was raised:
 
 Everything the machine can check is green and everything the freeze allows to be pinned is pinned:
-292 tests, four gates reproduced in a clean checkout of the tree, two artifacts, two fresh installs, one
-byte-identical acceptance digest across five routes, zero credential shapes, zero blob/worktree drift, zero
-published mention of the withheld submission, P0 = 0, P1 = 0 (nine P1s found and fixed inside Phase 3).
+298 tests, four gates reproduced in a clean checkout of the tree, two artifacts, two fresh installs, one
+byte-identical acceptance digest across six routes, zero credential shapes, zero blob/worktree drift, zero
+published mention of the withheld submission, P0 = 0, P1 = 0 (ten P1s found and fixed inside Phase 3, the
+tenth of them only because CI ran on the declared support floor).
 
-The release was held at that boundary — committed locally, untagged, unpushed, unpublished — and the choice
+The first push to the public repository was **red** on both Python 3.11 jobs (§9). This record does not
+round that off: the release commit is the one that turns run `36549615962`'s successor green on 3.11 as well
+as 3.13, and the tag is not to be cut before that is observed. §27 lists CI failure as a stop condition, and
+it was hit and honoured.
+
+The release was held at the RC boundary — committed locally, untagged, unpushed, unpublished — and the choice
 was put to the owner, because the next two actions (a public repository and a permanent name on PyPI) cannot
 be undone by us alone and §23's sixth condition was not satisfied. **The owner waived §15 and directed the
 release to proceed on 2026-09-29.** With that authority granted, the remaining §21–§25 steps are executed in

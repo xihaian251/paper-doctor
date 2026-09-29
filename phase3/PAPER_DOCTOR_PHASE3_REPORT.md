@@ -93,7 +93,8 @@ selection uses **Phase 2's generic workflow only**:
 
 ## 7. Frozen anchors: unchanged (§7)
 
-All of them, asserted in the suite that is green at 292: GMMVI `C1` PD006 FAIL, `C5` PD002 INCONCLUSIVE,
+All of them, asserted in the suite that is green at 298 (292 at the RC boundary; the six added after it pin
+the support-floor defect P1-10): GMMVI `C1` PD006 FAIL, `C5` PD002 INCONCLUSIVE,
 `C6` PD005 FAIL; RTDL `D1` PD003 INCONCLUSIVE, `D5` clause-1 FAIL with clause-2 INCONCLUSIVE, `D6` PD004
 FAIL, `D7` PD001/PD006 PASS with PD002 INCONCLUSIVE, `D8` INCONCLUSIVE, `D11` PD007 FAIL; the Phase 2 Table 4
 and Table 8 block oracles; `MULTI_TABLE_PAPER`; the closed-at-twelve `P_*` code set.
@@ -198,15 +199,19 @@ is the mechanical form of that decision.
 Two fresh-agent walkthroughs of the release kit are recorded in `release/onboarding/RUN1_AGENT_LOG.md` and
 `RUN2_AGENT_LOG.md`, with the analysis in `phase3/ONBOARDING_MEASUREMENT.md`. Seven P1 usability defects were
 found and fixed; time from install to first successful TabM audit went from ~5 minutes (with a traceback) to
-**65 s**, guessed steps from 8 to 2. Two more P1s (P1-8 clone portability, P1-9 the formatter rewriting
-evidence) were found by mechanisms onboarding cannot see and are recorded in `release/RC_AUDIT.md` §7.
+**65 s**, guessed steps from 8 to 2. Three more P1s (P1-8 clone portability, P1-9 the formatter rewriting
+evidence, P1-10 the fetch script rejecting its documented no-name form on the declared support floor Python
+3.11) were found by mechanisms onboarding cannot see — P1-10 only by CI — and are recorded in
+`release/RC_AUDIT.md` §7.
 
 **§15 — one real human first-use test — is NOT OBSERVED.** `release/HUMAN_ONBOARDING_RECORD.md` lists all
 thirteen §15 quantities as `UNKNOWN` and names the procedure that would fill them. Nothing substitutes for
-it: the agent runs prove the kit is walkable by an agent, and the kit's own integrity dry-run (twice, most
-recently against the current 305,805-byte generation at 16:5x) proves it is self-sufficient. Neither proves
-a person can use it. This is the single unmet §23 precondition and it is why the release pauses at the
-push/publish boundary for the user's decision, stated in `release/RC_AUDIT.md` §10.
+it: the agent runs prove the kit is walkable by an agent, and the kit's own integrity dry-run (most recently
+against the current 309,142-byte generation at 17:57 on 2026-09-29, in a directory outside this repository
+that holds no project source) proves it is self-sufficient — install the kit wheel, run the kit's fetch
+script, `paper-doctor audit phase3/tabm` → `08836ccf…`, 17,511 bytes. Neither proves a person can use it.
+This is the single unmet §23 precondition and it is why the release paused at the push/publish boundary for
+the user's decision, stated in `release/RC_AUDIT.md` §10.
 
 ## 16–17. CLI and README (§16, §17)
 
@@ -226,24 +231,28 @@ old one.
 
 ## 18–19. License and artifacts (§18, §19)
 
-Apache-2.0 after the dependency check (only runtime dependency PyYAML, MIT). Both artifacts built from the
-final tree: wheel 67,768 B `192e3e17d7e405738632a5b222ca4610a35e0c55aae5a995fb91eccdab9a1887`; sdist
-181,916 B `bfd3a87f7c7b20f73277bfb3bbd7223c208b3c9e2cfa208e45829d9cbcd0e30a`. Two earlier generations are
-superseded and named as such in `release/RC_AUDIT.md` §2.
+Apache-2.0 after the dependency check (only runtime dependency PyYAML, MIT). Both artifacts rebuilt from the
+tree after the P1-10 fix: wheel 67,802 B `6e051f33318518c701318cf49d5c2055449d06ad4c035a4fa490ba339264deb0`;
+sdist 183,797 B `3432437a7867f347a2c07fa8f386ba369ee56869f86623906c329c7f09acac9a`. Four earlier generations
+are superseded and each supersession is itemised member-by-member in `release/RC_AUDIT.md` §2 — including
+the disclosure that the P1-10 generation adds one sdist member and differs in two.
 
 "No editable-install-only success is sufficient": each artifact was installed into its own fresh virtualenv
 with plain `pip install`, checked with `pip check`, and run — both produced
-`08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0` on `phase3/tabm`.
+`08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0` on `phase3/tabm`. A third installed-package
+route needs no checkout at all: the wheel out of the onboarding kit, audited in a directory outside the
+repository (`release/RC_AUDIT.md` §3).
 
 ## 20. RC audit (§20)
 
-`release/RC_AUDIT.md`. Four gates green (`292 passed`; `ruff check .`; `ruff format --check .` → 32 files;
+`release/RC_AUDIT.md`. Four gates green (`298 passed`; `ruff check .`; `ruff format --check .` → 33 files;
 `mypy src` → 10 files), reproduced in **two independent clean checkouts** of the same tree (§9 there), plus
-the acceptance digest from a fifth route. Pre-publication scan of exactly what git would publish: 105
+the acceptance digest from three further routes (wheel, sdist, kit-only). Pre-publication scan of exactly
+what git would publish: 106
 tracked files (re-run with this report in the tracked set), `blob_vs_worktree_drift=0`, 0 credential shapes,
-0 account-name occurrences, 0 mentions of the withheld title, 0 binary files. **P0 = 0, P1 = 0**;
-non-blocking register N1–N10. No global software quality score is computed anywhere, by tool or by this
-report.
+0 account-name occurrences, 0 mentions of the withheld title, 0 binary files. **P0 = 0, P1 = 0** — with ten
+P1s found and fixed before the tag, not zero found; non-blocking register N1–N10. No global software quality
+score is computed anywhere, by tool or by this report.
 
 ## 21–23. Repository, publishing, and the release decision (§21–§23)
 
@@ -254,6 +263,15 @@ record the RC audit measurements and this report. `release/` and `.github/workfl
 or is stored**, per §22; the Pending Trusted Publisher must be created on PyPI before the public Release.
 No tag exists yet: §21 makes the release commit immutable, so `v0.1.0` is created only once the decision
 below is settled.
+
+**CI was run and came back red, and that is part of this record.** The first push (commit `d954e22`, run
+`36549615962`) passed `gates (ubuntu-latest, 3.13)` and `gates (windows-latest, 3.13)` through the
+frozen-digest assertion, and failed both 3.11 jobs at the corpus-fetch step:
+`fetch-acceptance-inputs: error: argument names: invalid choice: []`. That was P1-10, invisible on this
+machine's Python 3.13 at any depth of local testing. §27 names CI failure as a stop condition; it was hit,
+diagnosed, fixed in `scripts/fetch_acceptance_inputs.py` without touching the scientific design, and pinned
+by `tests/test_acceptance_input_fetcher.py`. The tag is cut only on a commit whose four-job matrix is green,
+3.11 included.
 
 §23 authorises automatic release once its six conditions hold. Five hold: P0 = 0, P1 = 0, CI-equivalent
 gates green in a clean checkout, the four-layer TabM acceptance complete, fresh wheel and sdist clean.

@@ -197,10 +197,12 @@ than a warning about the file having changed. That is D6, and it is a real limit
 Not claimed on the strength of the edits alone:
 
 - Four gates green after every documentation and CLI change: **288 passed** through the onboarding window
-  (292 at the release boundary, the four extra being the clean-checkout and vendoring firewalls of
-  `release/RC_AUDIT.md` §9), `ruff check` clean, `ruff format --check` clean, `mypy src` clean. The format
-  gate's file count is *not* stable across this session — it read 42 files here and 32 at the release
-  boundary — because the command was counting Markdown until Markdown was excluded (P1-9).
+  (292 at the RC boundary, the four extra being the clean-checkout and vendoring firewalls of
+  `release/RC_AUDIT.md` §9; **298** at the release commit, the six beyond that pinning P1-10), `ruff check`
+  clean, `ruff format --check` clean, `mypy src` clean. The format
+  gate's file count is *not* stable across this session — it read 42 files here and 32 at the RC boundary,
+  33 at the release commit — because the command was counting Markdown until Markdown was excluded (P1-9),
+  and the last increment is the thirteenth test file.
 - Every P1 fix above names the test that pins it; each was also mutation-checked by breaking the
   condition and watching that test die, then restoring the file byte-for-byte.
 - The privacy gate added in this block (`tests/test_phase3_firewalls.py`, §20) was mutation-checked
@@ -213,6 +215,14 @@ Not claimed on the strength of the edits alone:
   actionable, quickstart transcript reproduced, rules and fields found in the README. P1-6, P1-7 and
   P2-8 were fixed after run 2 and are **not** re-measured by a third run; they are documentation-only
   additions whose content is pinned by `tests/test_readme_example.py`.
+- A P1 that onboarding could not find: the kit's own fetch script rejected its documented no-name form on
+  Python 3.11 (`error: argument names: invalid choice: []`), which is CI-reported and tracked as P1-10 in
+  `release/RC_AUDIT.md` §7. Both runs used 3.13 and both saw a working script. A tester on the support floor
+  would have stalled at the corpus step with a message that names an empty list, so the kit was rebuilt from
+  the fixed script; the digests in `release/HUMAN_ONBOARDING_RECORD.md` §3 are that generation.
+- The kit was re-verified end to end after the rebuild, outside the repository and with no project source in
+  the directory: manifest 8/8 OK → install kit wheel → kit fetch script → `paper-doctor audit phase3/tabm` →
+  `08836ccf…`, 17,511 bytes. Self-sufficiency re-proved; human usability still not measured.
 
 ## 6. §15, the real human test
 
