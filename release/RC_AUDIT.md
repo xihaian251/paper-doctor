@@ -264,16 +264,17 @@ Everything above §9 was measured inside the workspace where the code was writte
 place to test portability: a workspace contains sibling projects, cached corpora and scratch directories
 that a reviewer's clone will not. This section runs the same gates outside it.
 
-**Procedure.** The staged tree was materialised into an empty directory with
-`git checkout-index -a -f --prefix=.check/clone-tree/`, so the directory contains exactly the tracked
-paths and nothing else — no `.git`, no `dist/`, no `.check/`, no corpus, no `phase0/sources/`, no
-`phase3/acceptance-inputs/`. A fresh virtualenv from the system interpreter, then
-`pip install -e ".[dev]"`, then `python scripts/fetch_acceptance_inputs.py`, then the four gates, then the
-console script:
+**Procedure, and then the same thing done twice.** First as a content test: the staged tree was
+materialised into an empty directory with `git checkout-index -a -f --prefix=.check/clone-tree/`, so that
+directory contained exactly the tracked paths and nothing else — no `.git`, no `dist/`, no `.check/`, no
+corpus, no `phase0/sources/`, no `phase3/acceptance-inputs/`. Then, after that tree was committed, as a
+real clone: `git clone --no-local file:///…` of commit `7bdf47f`, which is 104 files. Both got a fresh
+virtualenv from the system interpreter, `pip install -e ".[dev]"`, `python scripts/fetch_acceptance_inputs.py`,
+the four gates, and the console script. Both produced the same numbers:
 
 ```text
 fetch    DOWNLOADED gmmvi / rtdl / tabm            (three pinned digests verified, no cache reuse)
-tests    292 passed in 14.83 s, 0 failed, 0 errors
+tests    292 passed in 13.22 s, 0 failed, 0 errors
 lint     All checks passed!
 format   32 files already formatted
 types    Success: no issues found in 10 source files
@@ -281,8 +282,20 @@ audit    paper-doctor audit phase3/tabm --json -> exit 0
          08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0  (17,511 bytes)
 ```
 
-The same procedure run against the tree **before** the P1-8 fix, with the corpora present, gave
-**271 passed, 17 errors**, every error in `tests/test_acceptance_rtdl.py` and every one naming a path under
+Two further clone measurements are worth stating because they are the ones a reviewer can repeat by mistake
+or on purpose:
+
+- **Clone before the fetch:** 204 passed, 18 failed, 70 errors. Nothing skips. The suite refuses to be green
+  without its inputs, which is the behaviour N6 and the README both document.
+- **Digest survival across a real clone.** `tests/fixtures/rtdl_pilot_README.md` came out at 13,162 bytes /
+  `50f7994f…` (it is a CRLF file, and `.gitattributes` `* -text` is what kept it byte-identical),
+  `rd_findings_rtdl_0.1.0.json` at 13,395 / `2ad02c8f…`, and `phase3/tabm/paper-doctor.yml` at
+  7,391 / `7e809014…`. Every pin named in the published documents is the byte string a clone actually
+  yields.
+
+The same procedure run against the previous commit's tree (`976bf0d`, extracted with `git archive` into an
+empty directory, corpora fetched) gave **271 passed, 17 errors**, every error in
+`tests/test_acceptance_rtdl.py` and every one naming a path under
 `.check\paper-doctor\phase0\sources\…`. The pre-fix constants resolved the corpus against `REPO.parent`
 (`paper-doctor/phase0/sources/…`) and read the pilot transcript straight out of the sibling
 `result-doctor/phase4/…` directory. Both worked here, because this repository sits in a workspace directory
