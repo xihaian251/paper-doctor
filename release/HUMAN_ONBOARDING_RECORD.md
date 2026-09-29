@@ -1,6 +1,9 @@
 # §15 Human onboarding record — Paper Doctor 0.1.0
 
 Status: **NOT OBSERVED — blocked on a person, not on the tool.** Recorded 2026-09-29 16:0x.
+Updated 2026-09-29 after §7: the owner waived this gate and released anyway. **The status is unchanged by
+that decision — still zero human observations** — and this file stays the authority for what was and was
+not measured.
 
 ## 1. What §15 requires, verbatim from the brief
 
@@ -112,3 +115,21 @@ from the agent runs was promoted into a human observation.
 is **not met and cannot be met by me**. How the release proceeds under that deviation is stated in
 `release/RC_AUDIT.md`, §"Gate deviations", and raised for the user's decision rather than resolved
 silently here.
+
+## 7. The decision, as given
+
+The decision was put to the project owner on 2026-09-29 with three options: supply an external tester and
+hold the release; publish GitHub only and hold PyPI; or waive §15 and publish 0.1.0 now. The answer was
+**waive §15 and release now**.
+
+What that decision does and does not establish:
+
+- It is an **owner's risk acceptance**, which is a real thing a project owner is entitled to grant. It is
+  not an observation, and it does not convert any `UNKNOWN` in §4 into a fact.
+- §15's evidence state after the release is exactly what it was before it: **zero human first-use
+  observations**. The release commit, the tag, the GitHub Release notes and PyPI metadata must not, and
+  do not, claim a human test.
+- The exclusion in §2 still applies to the person who made this decision: they authored the Phase 0–3
+  briefs, so they cannot later serve as §15's tester for 0.1.0 either. §15 remains open for 0.1.x.
+- Practical consequence for anyone who runs the kit: if a real first-use failure appears after the
+  release, it is a normal bug report against 0.1.0, not a violated gate.

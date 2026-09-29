@@ -51,6 +51,17 @@ formatter exclusion. Nothing in `src/` moved in any of the three rebuilds. Anyon
 superseded digest is verifying a stale file; §24 anticipates this by requiring the *downloaded* PyPI hashes
 to be recorded rather than assumed equal to any local build.
 
+**Re-verification after the release-document commits.** Three further commits landed after the build above,
+all inside `release/` and `phase3/`. Those directories are not in `MANIFEST.in`, so they cannot enter an
+artifact — but "cannot" is a claim about a config file, so it was checked against bytes instead: the tree was
+rebuilt into a scratch directory and both archives were compared to the staged pair member by member
+(newline-normalised, the comparison §24's cross-platform case requires). Wheel 16 members and sdist 50
+members, with 0 added, 0 removed and 0 differing. The rebuilt archives hash differently
+(`6ea4df95…` / `769828db…`, and the sdist is 33 bytes larger) for the only reason archive hashes ever differ
+between two builds of one content set: `build` stamps tar and zip entries with mtimes, so the container is
+not byte-reproducible even when its members are. The digests in the table remain the staged identity; the
+published identity is whatever §24 downloads.
+
 Contents, measured from the archives:
 
 - Wheel: 16 members. `paper_doctor/` 10 modules + `dist-info` with `licenses/LICENSE`, `METADATA`,
@@ -335,8 +346,15 @@ environment.** The requirement is met in every part except the part that require
   names the procedure that would fill them.
 
 Per §23 this is a release condition ("human onboarding complete"), and per §20 a gate that is not met is
-either P0/P1 or a disclosed deviation. It is disclosed, and it is the reason the release halts here for a
-decision that belongs to the user: nominate a human tester, or waive §15 for 0.1.0.
+either P0/P1 or a disclosed deviation. It is disclosed, and it was raised for a decision that belongs to the
+user: nominate a human tester, or waive §15 for 0.1.0.
+
+**Decision, 2026-09-29: the owner waived §15 and directed the release to proceed.** That is recorded in full
+in `release/HUMAN_ONBOARDING_RECORD.md` §7. It changes the release's *authority*, not its *evidence*: the
+thirteen §15 quantities remain `UNKNOWN`, the two agent runs remain agent runs, and nothing in the tag, the
+GitHub Release notes, the PyPI metadata, this file or `release/RELEASE_FREEZE.md` may state or imply that a
+human first-use test was performed. §15 stays open for the 0.1.x line, and the person who granted the waiver
+cannot close it (they authored the Phase 0–3 briefs).
 
 Two further deviations, smaller:
 
@@ -350,11 +368,17 @@ Two further deviations, smaller:
 
 ## 11. Release decision
 
+What was green before the one unmet condition was raised:
+
 Everything the machine can check is green and everything the freeze allows to be pinned is pinned:
 292 tests, four gates reproduced in a clean checkout of the tree, two artifacts, two fresh installs, one
 byte-identical acceptance digest across five routes, zero credential shapes, zero blob/worktree drift, zero
 published mention of the withheld submission, P0 = 0, P1 = 0 (nine P1s found and fixed inside Phase 3).
 
-The single unmet condition is a human. Therefore: commit and tag locally, prepare the repository and the
-publishing workflow — and stop before the push and before the PyPI publish, where §23's precondition is
-not satisfied and where the action cannot be undone by us alone.
+The release was held at that boundary — committed locally, untagged, unpushed, unpublished — and the choice
+was put to the owner, because the next two actions (a public repository and a permanent name on PyPI) cannot
+be undone by us alone and §23's sixth condition was not satisfied. **The owner waived §15 and directed the
+release to proceed on 2026-09-29.** With that authority granted, the remaining §21–§25 steps are executed in
+order and their outcomes, including every digest that only PyPI can produce, are recorded in
+`release/RELEASE_FREEZE.md`. The §15 evidence state is unchanged by the waiver and is restated there as
+NOT OBSERVED.

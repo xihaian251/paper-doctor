@@ -259,8 +259,13 @@ below is settled.
 gates green in a clean checkout, the four-layer TabM acceptance complete, fresh wheel and sdist clean.
 **One does not: human onboarding complete.** §27's stop list does not include "no human available", and §15
 permits `UNKNOWN`, so this is a disclosed deviation rather than a fabricated closure — but it is also the
-first irreversible external write, and the choice between *nominate a tester* and *waive §15 for 0.1.0*
-belongs to the user. The release therefore halts here.
+first irreversible external write, so the choice between *nominate a tester* and *waive §15 for 0.1.0* was
+put to the owner rather than taken here.
+
+**Decision, 2026-09-29: waive §15, release 0.1.0 now.** The waiver transfers authority, not evidence. §15's
+record still reads NOT OBSERVED with all thirteen quantities `UNKNOWN`, the release documents do not claim a
+human test anywhere, and §15 remains open for the 0.1.x line. See `release/HUMAN_ONBOARDING_RECORD.md` §7
+and `release/RC_AUDIT.md` §10–§11.
 
 ## 24–25. Executed after this report
 
