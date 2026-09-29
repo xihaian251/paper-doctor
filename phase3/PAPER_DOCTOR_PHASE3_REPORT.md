@@ -264,8 +264,9 @@ record the RC measurements and this report. The commit that carries the tag is n
 `.github/workflows/publish-pypi.yml` publishes on `release.published` with
 `permissions: {contents: read, id-token: write}` and a `pypi` environment — **no long-lived token exists
 or is stored**, per §22; the Pending Trusted Publisher must be created on PyPI before the public Release.
-No tag exists yet: §21 makes the release commit immutable, so `v0.1.0` is created only once the decision
-below is settled.
+No tag exists yet: §21 makes the release commit immutable once tagged, and §22 requires the PyPI Pending
+Trusted Publisher to exist before the public Release, so the tag waits on that one account-side action. The
+commit it will name is the tip of `main`, whose four-job matrix is green.
 
 **CI was run and came back red, and that is part of this record.** The first push (commit `d954e22`, run
 `36549615962`) passed `gates (ubuntu-latest, 3.13)` and `gates (windows-latest, 3.13)` through the
