@@ -47,6 +47,11 @@ Built with `python -m build` after the final README edit, from a clean `rm -rf b
 
 `twine check` on both: PASSED.
 
+**These two hashes are the staging identity, not the published identity.** The files actually on PyPI are
+wheel `10a5fc2c…` (67,719 B) and sdist `29b759f8…` (182,137 B), hashed from the bytes downloaded in
+§24. `release/RELEASE_FREEZE.md` §2–3 records both and shows member-by-member that the CI build and this
+local build carry the same shipped content.
+
 Four earlier generations are superseded, and each supersession is a real change to shipped bytes rather
 than a re-stamp:
 

@@ -267,6 +267,8 @@ or is stored**, per §22; the Pending Trusted Publisher must be created on PyPI 
 No tag exists yet: §21 makes the release commit immutable once tagged, and §22 requires the PyPI Pending
 Trusted Publisher to exist before the public Release, so the tag waits on that one account-side action. The
 commit it will name is the tip of `main`, whose four-job matrix is green.
+*(Superseded on 2026-09-29 by §24–25 below: the pending publisher was created, and `v0.1.0` was cut at
+`2a02698…`.)*
 
 **CI was run and came back red, and that is part of this record.** The first push (commit `d954e22`, run
 `36549615962`) passed `gates (ubuntu-latest, 3.13)` and `gates (windows-latest, 3.13)` through the
@@ -291,13 +293,34 @@ record still reads NOT OBSERVED with all thirteen quantities `UNKNOWN`, the rele
 human test anywhere, and §15 remains open for the 0.1.x line. See `release/HUMAN_ONBOARDING_RECORD.md` §7
 and `release/RC_AUDIT.md` §10–§11.
 
-## 24–25. Executed after this report
+## 24–25. Executed (2026-09-29, after this section was first written as a plan)
 
-`pip install paper-doctor==0.1.0` in a new venv, `pip check`, the frozen TabM acceptance run, and the
-**actual downloaded** PyPI wheel/sdist SHA256 (not assumed equal to any local build) will be recorded in
-`release/RELEASE_FREEZE.md`, together with the release commit, tag, tag peel, GitHub Release and the human
-onboarding status as it stands. `v0.1.0` is never moved. §26's `ML_RESEARCH_FINAL_STATE.md` follows the
-release, and §25's one docs-only post-release commit is that document plus this report's release section.
+The order was §22 before §21, exactly as the brief requires: the PyPI **Pending Trusted Publisher**
+(`paper-doctor` ← `xihaian251/paper-doctor`, workflow `publish-pypi.yml`, environment `pypi`) was
+created first; then the annotated tag `v0.1.0` was cut at `2a02698637f35bd3fec28d98a8b6e272b8e1fc9a`
+(tag object `cd49fcdd…`, peel `2a02698…`, verified with `git rev-parse v0.1.0^{}` and
+`git ls-remote origin 'refs/tags/v*'`); then the GitHub Release (id `399044218`,
+`target_commitish` pinned to that full SHA, 0 assets); then the OIDC publish run `36556801154`, event
+`release`, all seven steps green, no secret anywhere in the path.
+
+`pip install paper-doctor==0.1.0` in a new venv (`--no-cache-dir`, by version, no editable install):
+`pip check` rc 0, `--version` → `paper-doctor 0.1.0`, `--help` rc 0, and the frozen TabM acceptance
+workspace reproduced **the same 17,511 bytes and the same digest `08836ccf…`** — the seventh route.
+Exit-code contract re-checked from the PyPI install: no path → 2, unreadable manifest path → 2 with
+`P_UNRESOLVED_REF`, scientific FAIL → 0.
+
+The **actual downloaded** PyPI files are the published identity: wheel 67,719 B
+`10a5fc2cfe28155b6647edb85fd0e74422e814efc7ac1685a436b06226928461`, sdist 182,137 B
+`29b759f815d60dc896901eeec3fa3e125faa2caa1e184d4908dbb4d292a11d2e` (downloaded bytes hashed, equal to
+the JSON API digests). They are **not** equal to the local staged archive hashes `6e051f33…`/`3432437a…`,
+which is why §24 forbids the assumption. Member-by-member: sdist 51/51 file members identical after
+newline normalisation; wheel 16/16 names with every module byte-identical, only METADATA (CRLF locally,
+LF in the CI build; normalised bodies both equal the 22,935 B README) and its RECORD hash entry
+differing. Full record: `release/RELEASE_FREEZE.md`.
+
+`v0.1.0` is never moved. This commit — `release/RELEASE_FREEZE.md`, `release/ML_RESEARCH_FINAL_STATE.md`
+and this section — is §25's one docs-only post-release commit; it touches documentation on `main` and
+leaves the tagged commit untouched.
 
 ## 26–29. Scope statements
 
