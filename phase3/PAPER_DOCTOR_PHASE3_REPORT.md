@@ -247,9 +247,9 @@ report.
 
 ## 21–23. Repository, publishing, and the release decision (§21–§23)
 
-`main` branch, three commits at the time of writing (`976bf0d` the boundary commit, `7bdf47f` the
-portability fix, and the docs commit that records this report), `release/` and `.github/workflows/`
-staged. `.github/workflows/publish-pypi.yml` publishes on `release.published` with
+`main` branch: the boundary commit `976bf0d`, the portability fix `7bdf47f`, and the docs commits that
+record the RC audit measurements and this report. `release/` and `.github/workflows/` are tracked.
+`.github/workflows/publish-pypi.yml` publishes on `release.published` with
 `permissions: {contents: read, id-token: write}` and a `pypi` environment — **no long-lived token exists
 or is stored**, per §22; the Pending Trusted Publisher must be created on PyPI before the public Release.
 No tag exists yet: §21 makes the release commit immutable, so `v0.1.0` is created only once the decision
