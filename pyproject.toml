@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "paper-doctor"
+dynamic = ["version"]
+description = "Deterministic claim-to-evidence audits of reported results in an ML paper"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+dependencies = ["PyYAML>=6"]
+
+[project.scripts]
+paper-doctor = "paper_doctor.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff", "mypy"]
+
+[tool.setuptools.dynamic]
+version = {attr = "paper_doctor.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+# The Phase 0 corpus checkouts and work artifacts under `phase0/` are evidence, not
+# source: they are read verbatim by the acceptance tests and must keep their line numbers.
+extend-exclude = ["tests/generic_fixtures", "phase0"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+# `(str, Enum)` is deliberate: canonical serialization goes through `.value` explicitly,
+# and StrEnum would change what `str(status)` prints in a finding.
+ignore = ["UP042"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["src/paper_doctor"]
+ignore_missing_imports = true

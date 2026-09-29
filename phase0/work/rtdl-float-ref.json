@@ -1,0 +1,998 @@
+{
+ "chunk_order": [
+  {
+   "file": "main.tex",
+   "start_line": 1,
+   "chars": 20927
+  },
+  {
+   "file": "data/table_datasets.tex",
+   "start_line": 1,
+   "chars": 535
+  },
+  {
+   "file": "main.tex",
+   "start_line": 302,
+   "chars": 3678
+  },
+  {
+   "file": "data/table_neural_networks.tex",
+   "start_line": 1,
+   "chars": 1721
+  },
+  {
+   "file": "main.tex",
+   "start_line": 348,
+   "chars": 2077
+  },
+  {
+   "file": "data/table_node.tex",
+   "start_line": 1,
+   "chars": 775
+  },
+  {
+   "file": "main.tex",
+   "start_line": 379,
+   "chars": 1043
+  },
+  {
+   "file": "data/table_nn_gbdt.tex",
+   "start_line": 1,
+   "chars": 1502
+  },
+  {
+   "file": "main.tex",
+   "start_line": 398,
+   "chars": 3716
+  },
+  {
+   "file": "data/image_gbdt_vs_nn.tex",
+   "start_line": 1,
+   "chars": 32761
+  },
+  {
+   "file": "main.tex",
+   "start_line": 446,
+   "chars": 2800
+  },
+  {
+   "file": "data/table_ablation.tex",
+   "start_line": 1,
+   "chars": 633
+  },
+  {
+   "file": "main.tex",
+   "start_line": 473,
+   "chars": 2081
+  },
+  {
+   "file": "data/table_feature_importance.tex",
+   "start_line": 1,
+   "chars": 401
+  },
+  {
+   "file": "main.tex",
+   "start_line": 492,
+   "chars": 1581
+  },
+  {
+   "file": "data/table_datasets_verbose.tex",
+   "start_line": 1,
+   "chars": 1100
+  },
+  {
+   "file": "main.tex",
+   "start_line": 534,
+   "chars": 1701
+  },
+  {
+   "file": "data/table_single_models_with_std.tex",
+   "start_line": 1,
+   "chars": 10158
+  },
+  {
+   "file": "main.tex",
+   "start_line": 557,
+   "chars": 250
+  },
+  {
+   "file": "data/table_ensembles_with_std.tex",
+   "start_line": 1,
+   "chars": 10024
+  },
+  {
+   "file": "main.tex",
+   "start_line": 564,
+   "chars": 3466
+  },
+  {
+   "file": "data/table_tuning_time_budget.tex",
+   "start_line": 1,
+   "chars": 2687
+  },
+  {
+   "file": "main.tex",
+   "start_line": 622,
+   "chars": 22085
+  },
+  {
+   "file": "data/table_ablation_with_std.tex",
+   "start_line": 1,
+   "chars": 1833
+  },
+  {
+   "file": "main.tex",
+   "start_line": 1105,
+   "chars": 2954
+  }
+ ],
+ "max_float_nesting": 1,
+ "tables": [
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 1,
+   "file": "main.tex",
+   "line": 296,
+   "labels": [
+    "tab:datasets"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 2,
+   "file": "main.tex",
+   "line": 335,
+   "labels": [
+    "tab:neural-networks"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 3,
+   "file": "main.tex",
+   "line": 367,
+   "labels": [
+    "tab:node"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 4,
+   "file": "main.tex",
+   "line": 390,
+   "labels": [
+    "tab:nn-gbdt"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 5,
+   "file": "main.tex",
+   "line": 467,
+   "labels": [
+    "tab:ablation"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 6,
+   "file": "main.tex",
+   "line": 486,
+   "labels": [
+    "tab:feature-importances"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 7,
+   "file": "main.tex",
+   "line": 528,
+   "labels": [
+    "tab:S-datasets"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 8,
+   "file": "main.tex",
+   "line": 571,
+   "labels": [
+    "tab:S-training-times"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 9,
+   "file": "main.tex",
+   "line": 615,
+   "labels": [
+    "tab:S-tuning-time-budget"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 10,
+   "file": "main.tex",
+   "line": 666,
+   "labels": [
+    "tab:S-default-config"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 11,
+   "file": "main.tex",
+   "line": 699,
+   "labels": [
+    "tab:S-transformer-space"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 12,
+   "file": "main.tex",
+   "line": 743,
+   "labels": [
+    "tab:S-resnet-space"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 13,
+   "file": "main.tex",
+   "line": 777,
+   "labels": [
+    "tab:S-mlp-space"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 14,
+   "file": "main.tex",
+   "line": 811,
+   "labels": [
+    "tab:S-xgboost-space"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 15,
+   "file": "main.tex",
+   "line": 849,
+   "labels": [
+    "tab:S-catboost-space"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 16,
+   "file": "main.tex",
+   "line": 879,
+   "labels": [
+    "tab:S-snn-space"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 17,
+   "file": "main.tex",
+   "line": 924,
+   "labels": [
+    "tab:S-tabnet-space"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 18,
+   "file": "main.tex",
+   "line": 956,
+   "labels": [
+    "tab:S-grownet-space"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 19,
+   "file": "main.tex",
+   "line": 990,
+   "labels": [
+    "tab:S-dcn2-space"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 20,
+   "file": "main.tex",
+   "line": 1023,
+   "labels": [
+    "tab:S-autoint-space"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 21,
+   "file": "main.tex",
+   "line": 1097,
+   "labels": [
+    "tab:S-ablation"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 22,
+   "file": "main.tex",
+   "line": 1113,
+   "labels": [
+    "tab:S-additional-datasets"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 23,
+   "file": "main.tex",
+   "line": 1130,
+   "labels": [
+    "tab:S-additional-results"
+   ],
+   "caption_present": true
+  }
+ ],
+ "figures": [
+  {
+   "env": "figure",
+   "kind": "figure",
+   "number": 1,
+   "file": "main.tex",
+   "line": 222,
+   "labels": [
+    "fig:arch"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "figure",
+   "kind": "figure",
+   "number": 2,
+   "file": "main.tex",
+   "line": 229,
+   "labels": [
+    "fig:blocks"
+   ],
+   "caption_present": true
+  }
+ ],
+ "ref_sites": [
+  {
+   "macro": "\\autoref",
+   "target": "eq:mlp",
+   "file": "main.tex",
+   "line": 181,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "s,\\ C\\}$ and regression $\\Y = \\R$. \\vfill \\subsection{MLP} We formalize the ``MLP'' architecture in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "eq:resnet",
+   "file": "main.tex",
+   "line": 198,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "tep{resnet-nlp}, we give it a second try and construct a simple variation of ResNet as described in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "fig:arch",
+   "file": "main.tex",
+   "line": 217,
+   "resolved": {
+    "kind": "figure",
+    "number": 1,
+    "file": "main.tex",
+    "line": 222
+   },
+   "preceding": "--- a simple adaptation of the Transformer architecture \\citep{transformer} for the tabular domain. "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "sec:ablation",
+   "file": "main.tex",
+   "line": 220,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "feature} level of \\textit{one} object. We compare \\architecture\\ to conceptually similar AutoInt in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "fig:blocks",
+   "file": "main.tex",
+   "line": 236,
+   "resolved": {
+    "kind": "figure",
+    "number": 2,
+    "file": "main.tex",
+    "line": 229
+   },
+   "preceding": "ransformer layer.} \\label{fig:blocks} \\end{figure} \\textbf{\\tokenizer.} The \\tokenizer\\ module (see "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "fig:blocks",
+   "file": "main.tex",
+   "line": 252,
+   "resolved": {
+    "kind": "figure",
+    "number": 2,
+    "file": "main.tex",
+    "line": 229
+   },
+   "preceding": "ad T_i = F_i(T_{i - 1}). $$ We use the PreNorm variant for easier optimization \\citep{prenorm}, see "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:datasets",
+   "file": "main.tex",
+   "line": 294,
+   "resolved": {
+    "kind": "table",
+    "number": 1,
+    "file": "main.tex",
+    "line": 296
+   },
+   "preceding": "anking problems (Microsoft, Yahoo) as regression problems. The dataset properties are summarized in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:neural-networks",
+   "file": "main.tex",
+   "line": 351,
+   "resolved": {
+    "kind": "table",
+    "number": 2,
+    "file": "main.tex",
+    "line": 335
+   },
+   "preceding": "5$ & $\\mathbf{0.970}$ & $0.756$ & $0.746$ & $1.8$ $(1.2)$ \\\\ \\bottomrule \\end{tabular}} \\end{table} "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:node",
+   "file": "main.tex",
+   "line": 363,
+   "resolved": {
+    "kind": "table",
+    "number": 3,
+    "file": "main.tex",
+    "line": 367
+   },
+   "preceding": "itecture\\ and has an ensemble-like structure. We illustrate that by comparing \\textit{ensembles} in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:neural-networks",
+   "file": "main.tex",
+   "line": 370,
+   "resolved": {
+    "kind": "table",
+    "number": 2,
+    "file": "main.tex",
+    "line": 335
+   },
+   "preceding": "tabcolsep{2.2pt} \\centering \\caption{Results for ensembles of DL models with the highest ranks (see "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:nn-gbdt",
+   "file": "main.tex",
+   "line": 388,
+   "resolved": {
+    "kind": "table",
+    "number": 4,
+    "file": "main.tex",
+    "line": 390
+   },
+   "preceding": "ep architectures will benefit more from ensembling \\citep{ensembles-loss}. We report the results in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:node",
+   "file": "main.tex",
+   "line": 395,
+   "resolved": {
+    "kind": "table",
+    "number": 3,
+    "file": "main.tex",
+    "line": 367
+   },
+   "preceding": "raged over three ensembles is reported. See supplementary for standard deviations. Notation follows "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:nn-gbdt",
+   "file": "main.tex",
+   "line": 404,
+   "resolved": {
+    "kind": "table",
+    "number": 4,
+    "file": "main.tex",
+    "line": 390
+   },
+   "preceding": "onfiguration with all hyperparameters set to some specific values that we provide in supplementary. "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:nn-gbdt",
+   "file": "main.tex",
+   "line": 409,
+   "resolved": {
+    "kind": "table",
+    "number": 4,
+    "file": "main.tex",
+    "line": 390
+   },
+   "preceding": " are properly tuned, GBDTs start dominating on some datasets (California Housing, Adult, Yahoo; see "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:nn-gbdt",
+   "file": "main.tex",
+   "line": 423,
+   "resolved": {
+    "kind": "table",
+    "number": 4,
+    "file": "main.tex",
+    "line": 390
+   },
+   "preceding": " \\end{itemize} \\subsection{An intriguing property of \\architecture} \\label{sec:intriguing-property} "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "sec:synthetic",
+   "file": "main.tex",
+   "line": 427,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ture\\ is a more ``universal'' model for tabular data problems. We develop this intuition further in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "sec:intriguing-property",
+   "file": "main.tex",
+   "line": 435,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "rstanding the difference in behavior between \\architecture\\ and ResNet, which was first observed in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "fig:synthetic",
+   "file": "main.tex",
+   "line": 452,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "for details). The resulting targets are standardized before training. The results are visualized in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "sec:intriguing-property",
+   "file": "main.tex",
+   "line": 454,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ally, the fact that these functions are based on decision trees correlates with the observations in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:nn-gbdt",
+   "file": "main.tex",
+   "line": 454,
+   "resolved": {
+    "kind": "table",
+    "number": 4,
+    "file": "main.tex",
+    "line": 390
+   },
+   "preceding": "sion trees correlates with the observations in \\autoref{sec:intriguing-property} and the results in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "sec:implementation-details",
+   "file": "main.tex",
+   "line": 465,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "mance. We tune and evaluate \\architecture\\ without feature biases following the same protocol as in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:neural-networks",
+   "file": "main.tex",
+   "line": 465,
+   "resolved": {
+    "kind": "table",
+    "number": 2,
+    "file": "main.tex",
+    "line": 335
+   },
+   "preceding": "g the same protocol as in \\autoref{sec:implementation-details} and reuse the remaining numbers from "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:ablation",
+   "file": "main.tex",
+   "line": 465,
+   "resolved": {
+    "kind": "table",
+    "number": 5,
+    "file": "main.tex",
+    "line": 467
+   },
+   "preceding": "ining numbers from \\autoref{tab:neural-networks}. The results averaged over 15 runs are reported in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:neural-networks",
+   "file": "main.tex",
+   "line": 468,
+   "resolved": {
+    "kind": "table",
+    "number": 2,
+    "file": "main.tex",
+    "line": 335
+   },
+   "preceding": "o attention-based alternatives: AutoInt and \\architecture\\ without feature biases. Notation follows "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:feature-importances",
+   "file": "main.tex",
+   "line": 484,
+   "resolved": {
+    "kind": "table",
+    "number": 6,
+    "file": "main.tex",
+    "line": 486
+   },
+   "preceding": " metric, namely, rank correlation. We run all the methods on the train set and summarize results in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:S-single-models",
+   "file": "main.tex",
+   "line": 549,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "text and in the tables in this section, we use the one-sided \\citet{wilcoxon} test with $p = 0.01$. "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:S-ensembles",
+   "file": "main.tex",
+   "line": 549,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "tion, we use the one-sided \\citet{wilcoxon} test with $p = 0.01$. \\autoref{tab:S-single-models} and "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:S-single-models",
+   "file": "main.tex",
+   "line": 561,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "d{tabular} \\bigskip \\caption{Results for ensembles with standard deviations. Color notation follows "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:node",
+   "file": "main.tex",
+   "line": 561,
+   "resolved": {
+    "kind": "table",
+    "number": 3,
+    "file": "main.tex",
+    "line": 367
+   },
+   "preceding": "d deviations. Color notation follows \\autoref{tab:S-single-models}, \"top\" results are defined as in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:S-training-times",
+   "file": "main.tex",
+   "line": 589,
+   "resolved": {
+    "kind": "table",
+    "number": 8,
+    "file": "main.tex",
+    "line": 571
+   },
+   "preceding": " \\end{tabular} \\end{table} For most experiments, training times can be found in the source code. In "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:S-tuning-time-budget",
+   "file": "main.tex",
+   "line": 607,
+   "resolved": {
+    "kind": "table",
+    "number": 9,
+    "file": "main.tex",
+    "line": 615
+   },
+   "preceding": "nd the number of Optuna iterations averaged over the five random seeds. The results are reported in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:S-default-config",
+   "file": "main.tex",
+   "line": 662,
+   "resolved": {
+    "kind": "table",
+    "number": 10,
+    "file": "main.tex",
+    "line": 666
+   },
+   "preceding": "``\\architecture'' in the main text) should be omitted. \\subsubsection{The default configuration(s)} "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "sec:S-architecture",
+   "file": "main.tex",
+   "line": 728,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "rs. \\subsection{Models} In this section, we describe the implementation details for all models. See "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "alg:S-random-tree-construction",
+   "file": "main.tex",
+   "line": 1053,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "andomly constructed decision trees. The construction of one random decision tree is demonstrated in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:S-ablation",
+   "file": "main.tex",
+   "line": 1095,
+   "resolved": {
+    "kind": "table",
+    "number": 21,
+    "file": "main.tex",
+    "line": 1097
+   },
+   "preceding": "sion tree.} \\label{alg:S-random-tree-construction} } \\end{algorithm} \\subsubsection{Ablation study} "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:S-additional-datasets",
+   "file": "main.tex",
+   "line": 1111,
+   "resolved": {
+    "kind": "table",
+    "number": 22,
+    "file": "main.tex",
+    "line": 1113
+   },
+   "preceding": "te{\\url{http://www.kdd.org/kdd-cup/view/kdd-cup-2012-track-2}}. The dataset properties are given in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:S-additional-results",
+   "file": "main.tex",
+   "line": 1111,
+   "resolved": {
+    "kind": "table",
+    "number": 23,
+    "file": "main.tex",
+    "line": 1130
+   },
+   "preceding": "dataset properties are given in \\autoref{tab:S-additional-datasets} and the results are reported in "
+  }
+ ],
+ "unresolved_refs": [
+  {
+   "macro": "\\autoref",
+   "target": "eq:mlp",
+   "file": "main.tex",
+   "line": 181,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "s,\\ C\\}$ and regression $\\Y = \\R$. \\vfill \\subsection{MLP} We formalize the ``MLP'' architecture in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "eq:resnet",
+   "file": "main.tex",
+   "line": 198,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "tep{resnet-nlp}, we give it a second try and construct a simple variation of ResNet as described in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "sec:ablation",
+   "file": "main.tex",
+   "line": 220,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "feature} level of \\textit{one} object. We compare \\architecture\\ to conceptually similar AutoInt in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "sec:synthetic",
+   "file": "main.tex",
+   "line": 427,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ture\\ is a more ``universal'' model for tabular data problems. We develop this intuition further in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "sec:intriguing-property",
+   "file": "main.tex",
+   "line": 435,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "rstanding the difference in behavior between \\architecture\\ and ResNet, which was first observed in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "fig:synthetic",
+   "file": "main.tex",
+   "line": 452,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "for details). The resulting targets are standardized before training. The results are visualized in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "sec:intriguing-property",
+   "file": "main.tex",
+   "line": 454,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ally, the fact that these functions are based on decision trees correlates with the observations in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "sec:implementation-details",
+   "file": "main.tex",
+   "line": 465,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "mance. We tune and evaluate \\architecture\\ without feature biases following the same protocol as in "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:S-single-models",
+   "file": "main.tex",
+   "line": 549,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "text and in the tables in this section, we use the one-sided \\citet{wilcoxon} test with $p = 0.01$. "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:S-ensembles",
+   "file": "main.tex",
+   "line": 549,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "tion, we use the one-sided \\citet{wilcoxon} test with $p = 0.01$. \\autoref{tab:S-single-models} and "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "tab:S-single-models",
+   "file": "main.tex",
+   "line": 561,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "d{tabular} \\bigskip \\caption{Results for ensembles with standard deviations. Color notation follows "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "sec:S-architecture",
+   "file": "main.tex",
+   "line": 728,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "rs. \\subsection{Models} In this section, we describe the implementation details for all models. See "
+  },
+  {
+   "macro": "\\autoref",
+   "target": "alg:S-random-tree-construction",
+   "file": "main.tex",
+   "line": 1053,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "andomly constructed decision trees. The construction of one random decision tree is demonstrated in "
+  }
+ ],
+ "never_referenced_labels": [
+  "tab:S-autoint-space",
+  "tab:S-catboost-space",
+  "tab:S-datasets",
+  "tab:S-dcn2-space",
+  "tab:S-grownet-space",
+  "tab:S-mlp-space",
+  "tab:S-resnet-space",
+  "tab:S-snn-space",
+  "tab:S-tabnet-space",
+  "tab:S-transformer-space",
+  "tab:S-xgboost-space"
+ ]
+}

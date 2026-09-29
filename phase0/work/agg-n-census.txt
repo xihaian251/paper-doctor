@@ -1,0 +1,13 @@
+aggregations 46
+spread_form.n histogram {10: 37, 30: 2, 4: 4, 5: 1, 7: 1, 8: 1}
+member-count histogram {10: 44, 30: 2}
+aggregations whose spread_form.n != 10: 9
+   agg:PlanarRobot/sepyfux/-elbo
+   agg:PlanarRobot/sepyrux/-elbo
+   agg:PlanarRobot/zamtrux/-elbo
+   agg:TALOS/sepyfux/-elbo
+   agg:TALOS/sepyrux/-elbo
+   agg:TALOS/sepyfux/entropy
+   agg:TALOS/sepyrux/entropy
+   agg:STM300/samyrux/-elbo
+   agg:STM300/samyrux/num_detected_modes

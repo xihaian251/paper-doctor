@@ -1,0 +1,6 @@
+# Byte-exact storage. This repository pins evidence by SHA-256 (the manifest's `_registry` block, the
+# acceptance digests asserted in `tests/`, `release/onboarding-kit/KIT_MANIFEST.txt`), so a checked-out
+# file has to be the same bytes the digest was taken over. Without this line git's EOL conversion
+# rewrites LF to CRLF on Windows checkouts, which makes the stored blob differ from the working tree
+# while `git status` still reports clean.
+* -text

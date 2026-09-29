@@ -1,0 +1,17 @@
+TOTAL 538
+STATUS {'INCONCLUSIVE': 293, 'PASS': 165, 'NOT_APPLICABLE': 69, 'FAIL': 11}
+RULES {'RD001': 59, 'RD002': 46, 'RD003': 157, 'RD004': 100, 'RD005': 59, 'RD006': 59, 'RD007': 5, 'RD008': 53}
+N_FAIL 11
+FAIL RD003 selection:sel:hyperopt/BC/samyrox_bc
+FAIL RD003 selection:sel:hyperopt/BC/zamtrux_bc
+FAIL RD003 selection:sel:hyperopt/GMM100/sepyrux_gmm100
+FAIL RD003 selection:sel:hyperopt/Planar4/samyrox_planar_4
+FAIL RD005 BreastCancer/sepyrux/-elbo/Table 8
+FAIL RD005 STM300/sepyfux/-elbo/Table 5
+FAIL RD008 artifact:extracted/evaluations/results/BC_EVAL/samtron_bc
+FAIL RD008 artifact:extracted/evaluations/results/BC_EVAL/sepyfux_bc
+FAIL RD008 artifact:extracted/evaluations/results/BC_EVAL/sepyrux_bc
+FAIL RD008 artifact:repo/evaluations/iBayesLR_results
+FAIL RD008 quantity:STM300/sepyfux/-elbo
+RD002 {'INCONCLUSIVE': 46}
+RD008 {'FAIL': 5, 'PASS': 9, 'INCONCLUSIVE': 39}

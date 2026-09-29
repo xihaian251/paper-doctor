@@ -1,0 +1,2311 @@
+{
+ "chunk_order": [
+  {
+   "file": "arxiv.tex",
+   "start_line": 1,
+   "chars": 66
+  },
+  {
+   "file": "math_commands.tex",
+   "start_line": 1,
+   "chars": 10738
+  },
+  {
+   "file": "arxiv.tex",
+   "start_line": 10,
+   "chars": 135887
+  }
+ ],
+ "max_float_nesting": 1,
+ "tables": [
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 1,
+   "file": "arxiv.tex",
+   "line": 374,
+   "labels": [
+    "table:algorithmicChoices"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 2,
+   "file": "arxiv.tex",
+   "line": 400,
+   "labels": [
+    "tab:exp1"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 3,
+   "file": "arxiv.tex",
+   "line": 430,
+   "labels": [
+    "tab:exp1_eval"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 4,
+   "file": "arxiv.tex",
+   "line": 446,
+   "labels": [
+    "tab:exp2"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 5,
+   "file": "arxiv.tex",
+   "line": 565,
+   "labels": [
+    "tab:exp3"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 6,
+   "file": "arxiv.tex",
+   "line": 873,
+   "labels": [
+    "tab:vips_comparisons"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 7,
+   "file": "arxiv.tex",
+   "line": 927,
+   "labels": [
+    "tab:hyperparameters"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 8,
+   "file": "arxiv.tex",
+   "line": 1014,
+   "labels": [
+    "tab:exp3_full"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "table",
+   "kind": "table",
+   "number": 9,
+   "file": "arxiv.tex",
+   "line": 1276,
+   "labels": [
+    "tab:exp3_accuracy"
+   ],
+   "caption_present": true
+  }
+ ],
+ "figures": [
+  {
+   "env": "figure",
+   "kind": "figure",
+   "number": 1,
+   "file": "arxiv.tex",
+   "line": 899,
+   "labels": [
+    "fig:stm20_marginals"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "figure",
+   "kind": "figure",
+   "number": 2,
+   "file": "arxiv.tex",
+   "line": 907,
+   "labels": [
+    "fig:MatComparisons_stm20",
+    "fig:MatComparisons_stm300"
+   ],
+   "caption_present": true
+  },
+  {
+   "env": "figure",
+   "kind": "figure",
+   "number": 3,
+   "file": "arxiv.tex",
+   "line": 1382,
+   "labels": [
+    "fig:learningCurves"
+   ],
+   "caption_present": true
+  }
+ ],
+ "ref_sites": [
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 21,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "\\em (c)}} \\newcommand{\\captiond}{{\\em (d)}} \\newcommand{\\newterm}[1]{{\\bf #1}} \\def\\figref#1{figure~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 23,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "}{{\\em (d)}} \\newcommand{\\newterm}[1]{{\\bf #1}} \\def\\figref#1{figure~\\ref{#1}} \\def\\Figref#1{Figure~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 24,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "{{\\bf #1}} \\def\\figref#1{figure~\\ref{#1}} \\def\\Figref#1{Figure~\\ref{#1}} \\def\\twofigref#1#2{figures "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 24,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ef\\figref#1{figure~\\ref{#1}} \\def\\Figref#1{Figure~\\ref{#1}} \\def\\twofigref#1#2{figures \\ref{#1} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 25,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "{Figure~\\ref{#1}} \\def\\twofigref#1#2{figures \\ref{#1} and \\ref{#2}} \\def\\quadfigref#1#2#3#4{figures "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 25,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ef{#1}} \\def\\twofigref#1#2{figures \\ref{#1} and \\ref{#2}} \\def\\quadfigref#1#2#3#4{figures \\ref{#1}, "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#3",
+   "file": "math_commands.tex",
+   "line": 25,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ef\\twofigref#1#2{figures \\ref{#1} and \\ref{#2}} \\def\\quadfigref#1#2#3#4{figures \\ref{#1}, \\ref{#2}, "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#4",
+   "file": "math_commands.tex",
+   "line": 25,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "1#2{figures \\ref{#1} and \\ref{#2}} \\def\\quadfigref#1#2#3#4{figures \\ref{#1}, \\ref{#2}, \\ref{#3} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 27,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "}} \\def\\quadfigref#1#2#3#4{figures \\ref{#1}, \\ref{#2}, \\ref{#3} and \\ref{#4}} \\def\\secref#1{section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 29,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "es \\ref{#1}, \\ref{#2}, \\ref{#3} and \\ref{#4}} \\def\\secref#1{section~\\ref{#1}} \\def\\Secref#1{Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 31,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "f{#4}} \\def\\secref#1{section~\\ref{#1}} \\def\\Secref#1{Section~\\ref{#1}} \\def\\twosecrefs#1#2{sections "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 31,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ecref#1{section~\\ref{#1}} \\def\\Secref#1{Section~\\ref{#1}} \\def\\twosecrefs#1#2{sections \\ref{#1} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 33,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "1{Section~\\ref{#1}} \\def\\twosecrefs#1#2{sections \\ref{#1} and \\ref{#2}} \\def\\secrefs#1#2#3{sections "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 33,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "\\ref{#1}} \\def\\twosecrefs#1#2{sections \\ref{#1} and \\ref{#2}} \\def\\secrefs#1#2#3{sections \\ref{#1}, "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#3",
+   "file": "math_commands.tex",
+   "line": 33,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "f\\twosecrefs#1#2{sections \\ref{#1} and \\ref{#2}} \\def\\secrefs#1#2#3{sections \\ref{#1}, \\ref{#2} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 35,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "1} and \\ref{#2}} \\def\\secrefs#1#2#3{sections \\ref{#1}, \\ref{#2} and \\ref{#3}} \\def\\eqref#1{equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 37,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "2#3{sections \\ref{#1}, \\ref{#2} and \\ref{#3}} \\def\\eqref#1{equation~\\ref{#1}} \\def\\Eqref#1{Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 39,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "#2} and \\ref{#3}} \\def\\eqref#1{equation~\\ref{#1}} \\def\\Eqref#1{Equation~\\ref{#1}} \\def\\plaineqref#1{"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 41,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "uation~\\ref{#1}} \\def\\Eqref#1{Equation~\\ref{#1}} \\def\\plaineqref#1{\\ref{#1}} \\def\\chapref#1{chapter~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 43,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ation~\\ref{#1}} \\def\\plaineqref#1{\\ref{#1}} \\def\\chapref#1{chapter~\\ref{#1}} \\def\\Chapref#1{Chapter~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 45,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "1}} \\def\\chapref#1{chapter~\\ref{#1}} \\def\\Chapref#1{Chapter~\\ref{#1}} \\def\\rangechapref#1#2{chapters"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 45,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "hapref#1{chapter~\\ref{#1}} \\def\\Chapref#1{Chapter~\\ref{#1}} \\def\\rangechapref#1#2{chapters\\ref{#1}--"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 47,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "apref#1{Chapter~\\ref{#1}} \\def\\rangechapref#1#2{chapters\\ref{#1}--\\ref{#2}} \\def\\algref#1{algorithm~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 49,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "gechapref#1#2{chapters\\ref{#1}--\\ref{#2}} \\def\\algref#1{algorithm~\\ref{#1}} \\def\\Algref#1{Algorithm~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 50,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "} \\def\\algref#1{algorithm~\\ref{#1}} \\def\\Algref#1{Algorithm~\\ref{#1}} \\def\\twoalgref#1#2{algorithms "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 50,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "#1{algorithm~\\ref{#1}} \\def\\Algref#1{Algorithm~\\ref{#1}} \\def\\twoalgref#1#2{algorithms \\ref{#1} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 51,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "orithm~\\ref{#1}} \\def\\twoalgref#1#2{algorithms \\ref{#1} and \\ref{#2}} \\def\\Twoalgref#1#2{Algorithms "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 51,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "1}} \\def\\twoalgref#1#2{algorithms \\ref{#1} and \\ref{#2}} \\def\\Twoalgref#1#2{Algorithms \\ref{#1} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 53,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "hms \\ref{#1} and \\ref{#2}} \\def\\Twoalgref#1#2{Algorithms \\ref{#1} and \\ref{#2}} \\def\\partref#1{part~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 55,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "f\\Twoalgref#1#2{Algorithms \\ref{#1} and \\ref{#2}} \\def\\partref#1{part~\\ref{#1}} \\def\\Partref#1{Part~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 56,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "and \\ref{#2}} \\def\\partref#1{part~\\ref{#1}} \\def\\Partref#1{Part~\\ref{#1}} \\def\\twopartref#1#2{parts "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 56,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " \\def\\partref#1{part~\\ref{#1}} \\def\\Partref#1{Part~\\ref{#1}} \\def\\twopartref#1#2{parts \\ref{#1} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 141,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "hbf{x}$ denotes the entropy of the GMM. Hence, this work studies the problem of maximizing Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 145,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "nce matrices is still tractable. Arguably the two most effective algorithms for maximizing Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 145,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "dependent updates. Namely, iBayes-GMM~\\citep{Lin2019, Lin2020} uses the original GMM objective (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:derived_updates",
+   "file": "arxiv.tex",
+   "line": 150,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "icular, we will present the following contributions. \\begin{itemize}[leftmargin=*] \\item In Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:iBayes_decomposition",
+   "file": "arxiv.tex",
+   "line": 150,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "sec:derived_updates}, we will review and compare the derived update equations of IBayesGMM (Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:vips_decomposition",
+   "file": "arxiv.tex",
+   "line": 150,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "he derived update equations of IBayesGMM (Section~\\ref{sec:iBayes_decomposition}) and VIPS (Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:unifcation",
+   "file": "arxiv.tex",
+   "line": 150,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ion}) without considerations of implementation details and design choices. We will prove in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:generalizedFramework",
+   "file": "arxiv.tex",
+   "line": 151,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "rated lines of research, we improve our theoretical understanding of GMM-based VI. \\item In Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:derived_updates",
+   "file": "arxiv.tex",
+   "line": 151,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "neral framework for learning a GMM approximation based on the update equations discussed in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:Experiments",
+   "file": "arxiv.tex",
+   "line": 152,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "on, which can prevent component with low weight from receiving meaningful updates. \\item In Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 168,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ection{Two Derivations for the Same Updates} \\label{sec:derived_updates} Maximizing the ELBO in Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 168,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ation-maximization procedure. In contrast, \\citet{Lin2019} investigated the natural gradient of Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:iBayes_decomposition",
+   "file": "arxiv.tex",
+   "line": 169,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " discussion to Gaussian mixture models. We will briefly review the different derivations in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:vips_decomposition",
+   "file": "arxiv.tex",
+   "line": 169,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "els. We will briefly review the different derivations in Section~\\ref{sec:iBayes_decomposition} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:unifcation",
+   "file": "arxiv.tex",
+   "line": 169,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "position} and \\ref{sec:vips_decomposition} before presenting our main theoretical result in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:generalizedFramework",
+   "file": "arxiv.tex",
+   "line": 169,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "we will discuss the different options---which may significantly affect the performance---in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 173,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ependently Computing the Natural Gradient} \\label{sec:iBayes_decomposition} The ELBO objective (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:background",
+   "file": "arxiv.tex",
+   "line": 173,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " given by the vanilla gradient with respect to the expectation parameters (please refer to Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 181,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ngle step updates). For understanding how VIPS~\\citep{Arenz2018} decomposed the ELBO objective (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 181,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "imization in the first place. In particular, note that the first term of the ELBO given in Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 185,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ymbol{\\theta}}(o|\\mathbf{x})} \\Big) d\\mathbf{x}, \\end{equation*} which is the only term in Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 201,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ugh the NG is computed with respect to different objective functions, namely the original ELBO (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:vipsLB",
+   "file": "arxiv.tex",
+   "line": 201,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "erent objective functions, namely the original ELBO (Eq.~\\ref{eq:GMMELBO}) and the lower bound (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "theorem",
+   "file": "arxiv.tex",
+   "line": 201,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "iginal ELBO (Eq.~\\ref{eq:GMMELBO}) and the lower bound (Eq.~\\ref{eq:vipsLB}), we clarify in Theorem~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:vipsLB",
+   "file": "arxiv.tex",
+   "line": 205,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "\\mathbf{x})$), the natural gradient (denoted by $\\tilde{\\nabla}$) of the lower bound objective (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 205,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "$) of the lower bound objective (Eq.~\\ref{eq:vipsLB}) matches the natural gradient of the ELBO (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:proof_theorem",
+   "file": "arxiv.tex",
+   "line": 210,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "symbol{\\theta}) \\Big|_{\\boldsymbol{\\theta}=\\boldsymbol{\\theta}^{(i)}}. $ \\begin{proof} See Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "alg:highlevel_pseudocode",
+   "file": "arxiv.tex",
+   "line": 217,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "gn choices that distinguish them. Hence, we can unify both methods in a common framework (Algorithm~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 265,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "+ \\beta_o \\mathbf{r}. \\end{aligned} \\end{equation} The least squares targets based on the ELBO (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:vipsLB",
+   "file": "arxiv.tex",
+   "line": 265,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "g q_{\\boldsymbol{\\theta}}(\\mathbf{x})$, and the least squares targets based on the lower bound (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:Opper",
+   "file": "arxiv.tex",
+   "line": 289,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "uation} Hence, using Monte-Carlo to estimate the gradients with respect to mean and covariance (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:ng_update",
+   "file": "arxiv.tex",
+   "line": 289,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " and covariance (Eq.~\\ref{eq:Opper}), we can obtain unbiased estimates of the natural gradient (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:Opper",
+   "file": "arxiv.tex",
+   "line": 309,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ion} Similar to VIPS, iBayes-GMM uses importance sampling to perform the Monte-Carlo estimates (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:Stein",
+   "file": "arxiv.tex",
+   "line": 309,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "es-GMM uses importance sampling to perform the Monte-Carlo estimates (Eq.~\\ref{eq:Opper} right, Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:more_ng_update",
+   "file": "arxiv.tex",
+   "line": 317,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " options in the related literature. \\citet{Lin2019} directly apply the natural gradient update (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:iblr_update",
+   "file": "arxiv.tex",
+   "line": 327,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "u}_{\\textrm{o,old}} + \\beta_o \\mathbf{r} \\right). \\end{aligned} \\end{equation} The iBLR update (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:more_ng_update",
+   "file": "arxiv.tex",
+   "line": 327,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "{aligned} \\end{equation} The iBLR update (Eq.~\\ref{eq:iblr_update}) differs from the NG update (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:more_ng_update",
+   "file": "arxiv.tex",
+   "line": 329,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "a}_{\\textrm{o,old}}^{-1}$. \\textbf{VIPS} updates the components using natural gradient descent (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:more_ng_update",
+   "file": "arxiv.tex",
+   "line": 332,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "xtwidth}{\\emph{ Our implementation supports three options: (1) directly applying the NG update (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:notes_on_implementation",
+   "file": "arxiv.tex",
+   "line": 332,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ad we implemented a simple bisection method so solve this convex optimization problem, see Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:app:weightUpdates",
+   "file": "arxiv.tex",
+   "line": 341,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "x})}\\right]$. The NG update is presented differently by~\\citet{Lin2020}, but we clarify in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:ngbasedupdaer",
+   "file": "arxiv.tex",
+   "line": 345,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "_{\\textrm{old}} (o) \\right) \\le \\epsilon$, analogously to the component update described in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:comparison_of_implementations",
+   "file": "arxiv.tex",
+   "line": 393,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ementation of VIPS~\\citep{Arenz2020} when using the respective design choices. As shown in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:notes_on_implementation",
+   "file": "arxiv.tex",
+   "line": 393,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "imilar or better approximations. Additional details on the implementation are described in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "table:algorithmicChoices",
+   "file": "arxiv.tex",
+   "line": 393,
+   "resolved": {
+    "kind": "table",
+    "number": 1,
+    "file": "arxiv.tex",
+    "line": 374
+   },
+   "preceding": " Appendix~\\ref{app:notes_on_implementation}. An overview of the available options is shown in Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:hyperparameters",
+   "file": "arxiv.tex",
+   "line": 393,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ble~\\ref{table:algorithmicChoices}. Available hyperparameters for each option are shown in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "table:algorithmicChoices",
+   "file": "arxiv.tex",
+   "line": 393,
+   "resolved": {
+    "kind": "table",
+    "number": 1,
+    "file": "arxiv.tex",
+    "line": 374
+   },
+   "preceding": "t 3^3 = 432$ different combinations of options. We assign a unique letter to each option (see Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:app:experiments",
+   "file": "arxiv.tex",
+   "line": 422,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "rior distribution is still amenable to GMMs with full covariance matrices. Please refer to Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:exp1",
+   "file": "arxiv.tex",
+   "line": 424,
+   "resolved": {
+    "kind": "table",
+    "number": 2,
+    "file": "arxiv.tex",
+    "line": 400
+   },
+   "preceding": "cores for two days per experiment. The results of the hyperparameter search are summarized in Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:exp1",
+   "file": "arxiv.tex",
+   "line": 426,
+   "resolved": {
+    "kind": "table",
+    "number": 2,
+    "file": "arxiv.tex",
+    "line": 400
+   },
+   "preceding": "ethod requires significantly more samples, resulting in very slow optimization. The values in Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:exp1_eval",
+   "file": "arxiv.tex",
+   "line": 426,
+   "resolved": {
+    "kind": "table",
+    "number": 3,
+    "file": "arxiv.tex",
+    "line": 430
+   },
+   "preceding": "ver ten seeds. The mean of the final performance and its $99.7\\%$ standard error are shown in Table "
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:exp1_eval",
+   "file": "arxiv.tex",
+   "line": 426,
+   "resolved": {
+    "kind": "table",
+    "number": 3,
+    "file": "arxiv.tex",
+    "line": 430
+   },
+   "preceding": "iably achieve a performance that is only slightly worse than the optimistic value provided in Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:exp2",
+   "file": "arxiv.tex",
+   "line": 444,
+   "resolved": {
+    "kind": "table",
+    "number": 4,
+    "file": "arxiv.tex",
+    "line": 446
+   },
+   "preceding": "st problem. Optimistic estimates of the best performance for each design choices are shown in Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:exp3",
+   "file": "arxiv.tex",
+   "line": 475,
+   "resolved": {
+    "kind": "table",
+    "number": 5,
+    "file": "arxiv.tex",
+    "line": 565
+   },
+   "preceding": " (e.g. using Bayesian optimization) would unfairly benefit options with more hyperparameters. Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:full_results",
+   "file": "arxiv.tex",
+   "line": 475,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "date~\\citep{Lin2020} in our experiments. Full results of our main experiments are shown in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:tips",
+   "file": "arxiv.tex",
+   "line": 630,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ng the respective design choices. Typical trade-offs for the practitioner are discussed in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:app:limitations",
+   "file": "arxiv.tex",
+   "line": 630,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " limitations of this study and the potential for negative societal impact are discussed in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:ethics",
+   "file": "arxiv.tex",
+   "line": 630,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " the potential for negative societal impact are discussed in Appendix~\\ref{sec:app:limitations} and~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:related_work",
+   "file": "arxiv.tex",
+   "line": 655,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "p{Arenz2020} to the natural gradient based methods described in this work. Please refer to Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:exp3_full",
+   "file": "arxiv.tex",
+   "line": 657,
+   "resolved": {
+    "kind": "table",
+    "number": 8,
+    "file": "arxiv.tex",
+    "line": 1014
+   },
+   "preceding": "esults. While we also report a secondary metric for each test problem in our main experiment (Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:learning_curves",
+   "file": "arxiv.tex",
+   "line": 657,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "Similarly, one should be careful when comparing the learning curves (which can be found in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:NgEstimation",
+   "file": "arxiv.tex",
+   "line": 720,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "can be computed without explicitly computing the Fisher information matrix, as mentioned in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "theorem",
+   "file": "arxiv.tex",
+   "line": 753,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "\\theta})) \\end{equation*} as shown by \\citet[][c.f. Theorem 1]{Khan2018}. \\section{Proof of Theorem~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "theorem",
+   "file": "arxiv.tex",
+   "line": 769,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "a}^{(i)})$, because the auxiliary distributions are equal to the current model. For proving Theorem~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:categorical_ef",
+   "file": "arxiv.tex",
+   "line": 815,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "et{Lin2020} formulate the weight update in the natural parameter space $\\boldsymbol{\\eta}$ (see Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:new_weights_lin",
+   "file": "arxiv.tex",
+   "line": 867,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "w}} \\hat{R}(o) \\right)\\Big], \\end{align*} we can see that it exactly matches the update in Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:vips_comparisons",
+   "file": "arxiv.tex",
+   "line": 871,
+   "resolved": {
+    "kind": "table",
+    "number": 6,
+    "file": "arxiv.tex",
+    "line": 873
+   },
+   "preceding": "}. The design choices of VIPS correspond to the codename {\\sc Zamtrux} in our implementation. Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:exp3",
+   "file": "arxiv.tex",
+   "line": 871,
+   "resolved": {
+    "kind": "table",
+    "number": 5,
+    "file": "arxiv.tex",
+    "line": 565
+   },
+   "preceding": "_comparisons} compares the final (negated) ELBO that we achieved in our main experiments (cf. Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "fig:stm20_marginals",
+   "file": "arxiv.tex",
+   "line": 895,
+   "resolved": {
+    "kind": "figure",
+    "number": 1,
+    "file": "arxiv.tex",
+    "line": 899
+   },
+   "preceding": " use the respective algorithms starting from the original initialization of \\citet{Lin2020}. Figure~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "fig:MatComparisons_stm20",
+   "file": "arxiv.tex",
+   "line": 897,
+   "resolved": {
+    "kind": "figure",
+    "number": 2,
+    "file": "arxiv.tex",
+    "line": 907
+   },
+   "preceding": "ters of~\\citet{Lin2020} and compare the learning curves with our {\\sc Sepyfux} evaluation in Figure~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:Opper",
+   "file": "arxiv.tex",
+   "line": 897,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "d by~\\citet{Lin2020} in the first-order setting, but only when using Hessian information (using Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "fig:MatComparisons_stm300",
+   "file": "arxiv.tex",
+   "line": 897,
+   "resolved": {
+    "kind": "figure",
+    "number": 2,
+    "file": "arxiv.tex",
+    "line": 907
+   },
+   "preceding": " both implementations using our hyperparameters. The respective learning curves are shown in Figure~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:hyperparameters",
+   "file": "arxiv.tex",
+   "line": 924,
+   "resolved": {
+    "kind": "table",
+    "number": 7,
+    "file": "arxiv.tex",
+    "line": 927
+   },
+   "preceding": "parameters} \\label{app:hyperparameters} We list the hyperparameters for each design choice in Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:notes_on_implementation",
+   "file": "arxiv.tex",
+   "line": 924,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "hyperparameters for each design choice in Table~\\ref{tab:hyperparameters}. Please refer to Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:more_ng_update",
+   "file": "arxiv.tex",
+   "line": 979,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "\\emph{DirectNgBasedComponentUpdater} directly applies the natural gradient update given by Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:iblr_update",
+   "file": "arxiv.tex",
+   "line": 979,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "dComponentUpdaterIblr} updates the components according to the improved Bayesian learning rule (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:ngbasedupdaer",
+   "file": "arxiv.tex",
+   "line": 979,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " updated distributions that respect the desired bound on the KL divergence, as discussed in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:ng_weight_update",
+   "file": "arxiv.tex",
+   "line": 983,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ight update. The \\emph{DirectWeightUpdater} directly updates the categorical distribution using Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:exp3_full",
+   "file": "arxiv.tex",
+   "line": 997,
+   "resolved": {
+    "kind": "table",
+    "number": 8,
+    "file": "arxiv.tex",
+    "line": 1014
+   },
+   "preceding": "he approximations perform on the downstream task), we report the training set ELBOs. However, Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:exp3_full",
+   "file": "arxiv.tex",
+   "line": 1011,
+   "resolved": {
+    "kind": "table",
+    "number": 8,
+    "file": "arxiv.tex",
+    "line": 1014
+   },
+   "preceding": "_results} The complete table for Experiment 3, showing all tested candidates, can be found in Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "tab:exp3_full",
+   "file": "arxiv.tex",
+   "line": 1374,
+   "resolved": {
+    "kind": "table",
+    "number": 8,
+    "file": "arxiv.tex",
+    "line": 1014
+   },
+   "preceding": "riments use the same hyperparameters and seeds that were used for the experiments reported in Table~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "fig:learningCurves",
+   "file": "arxiv.tex",
+   "line": 1380,
+   "resolved": {
+    "kind": "figure",
+    "number": 3,
+    "file": "arxiv.tex",
+    "line": 1382
+   },
+   "preceding": ":learning_curves} The learning curves (ELBO over time) for our main experiments are shown in Figure~"
+  }
+ ],
+ "unresolved_refs": [
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 21,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "\\em (c)}} \\newcommand{\\captiond}{{\\em (d)}} \\newcommand{\\newterm}[1]{{\\bf #1}} \\def\\figref#1{figure~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 23,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "}{{\\em (d)}} \\newcommand{\\newterm}[1]{{\\bf #1}} \\def\\figref#1{figure~\\ref{#1}} \\def\\Figref#1{Figure~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 24,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "{{\\bf #1}} \\def\\figref#1{figure~\\ref{#1}} \\def\\Figref#1{Figure~\\ref{#1}} \\def\\twofigref#1#2{figures "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 24,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ef\\figref#1{figure~\\ref{#1}} \\def\\Figref#1{Figure~\\ref{#1}} \\def\\twofigref#1#2{figures \\ref{#1} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 25,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "{Figure~\\ref{#1}} \\def\\twofigref#1#2{figures \\ref{#1} and \\ref{#2}} \\def\\quadfigref#1#2#3#4{figures "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 25,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ef{#1}} \\def\\twofigref#1#2{figures \\ref{#1} and \\ref{#2}} \\def\\quadfigref#1#2#3#4{figures \\ref{#1}, "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#3",
+   "file": "math_commands.tex",
+   "line": 25,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ef\\twofigref#1#2{figures \\ref{#1} and \\ref{#2}} \\def\\quadfigref#1#2#3#4{figures \\ref{#1}, \\ref{#2}, "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#4",
+   "file": "math_commands.tex",
+   "line": 25,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "1#2{figures \\ref{#1} and \\ref{#2}} \\def\\quadfigref#1#2#3#4{figures \\ref{#1}, \\ref{#2}, \\ref{#3} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 27,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "}} \\def\\quadfigref#1#2#3#4{figures \\ref{#1}, \\ref{#2}, \\ref{#3} and \\ref{#4}} \\def\\secref#1{section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 29,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "es \\ref{#1}, \\ref{#2}, \\ref{#3} and \\ref{#4}} \\def\\secref#1{section~\\ref{#1}} \\def\\Secref#1{Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 31,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "f{#4}} \\def\\secref#1{section~\\ref{#1}} \\def\\Secref#1{Section~\\ref{#1}} \\def\\twosecrefs#1#2{sections "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 31,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ecref#1{section~\\ref{#1}} \\def\\Secref#1{Section~\\ref{#1}} \\def\\twosecrefs#1#2{sections \\ref{#1} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 33,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "1{Section~\\ref{#1}} \\def\\twosecrefs#1#2{sections \\ref{#1} and \\ref{#2}} \\def\\secrefs#1#2#3{sections "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 33,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "\\ref{#1}} \\def\\twosecrefs#1#2{sections \\ref{#1} and \\ref{#2}} \\def\\secrefs#1#2#3{sections \\ref{#1}, "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#3",
+   "file": "math_commands.tex",
+   "line": 33,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "f\\twosecrefs#1#2{sections \\ref{#1} and \\ref{#2}} \\def\\secrefs#1#2#3{sections \\ref{#1}, \\ref{#2} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 35,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "1} and \\ref{#2}} \\def\\secrefs#1#2#3{sections \\ref{#1}, \\ref{#2} and \\ref{#3}} \\def\\eqref#1{equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 37,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "2#3{sections \\ref{#1}, \\ref{#2} and \\ref{#3}} \\def\\eqref#1{equation~\\ref{#1}} \\def\\Eqref#1{Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 39,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "#2} and \\ref{#3}} \\def\\eqref#1{equation~\\ref{#1}} \\def\\Eqref#1{Equation~\\ref{#1}} \\def\\plaineqref#1{"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 41,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "uation~\\ref{#1}} \\def\\Eqref#1{Equation~\\ref{#1}} \\def\\plaineqref#1{\\ref{#1}} \\def\\chapref#1{chapter~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 43,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ation~\\ref{#1}} \\def\\plaineqref#1{\\ref{#1}} \\def\\chapref#1{chapter~\\ref{#1}} \\def\\Chapref#1{Chapter~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 45,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "1}} \\def\\chapref#1{chapter~\\ref{#1}} \\def\\Chapref#1{Chapter~\\ref{#1}} \\def\\rangechapref#1#2{chapters"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 45,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "hapref#1{chapter~\\ref{#1}} \\def\\Chapref#1{Chapter~\\ref{#1}} \\def\\rangechapref#1#2{chapters\\ref{#1}--"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 47,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "apref#1{Chapter~\\ref{#1}} \\def\\rangechapref#1#2{chapters\\ref{#1}--\\ref{#2}} \\def\\algref#1{algorithm~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 49,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "gechapref#1#2{chapters\\ref{#1}--\\ref{#2}} \\def\\algref#1{algorithm~\\ref{#1}} \\def\\Algref#1{Algorithm~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 50,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "} \\def\\algref#1{algorithm~\\ref{#1}} \\def\\Algref#1{Algorithm~\\ref{#1}} \\def\\twoalgref#1#2{algorithms "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 50,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "#1{algorithm~\\ref{#1}} \\def\\Algref#1{Algorithm~\\ref{#1}} \\def\\twoalgref#1#2{algorithms \\ref{#1} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 51,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "orithm~\\ref{#1}} \\def\\twoalgref#1#2{algorithms \\ref{#1} and \\ref{#2}} \\def\\Twoalgref#1#2{Algorithms "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 51,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "1}} \\def\\twoalgref#1#2{algorithms \\ref{#1} and \\ref{#2}} \\def\\Twoalgref#1#2{Algorithms \\ref{#1} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 53,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "hms \\ref{#1} and \\ref{#2}} \\def\\Twoalgref#1#2{Algorithms \\ref{#1} and \\ref{#2}} \\def\\partref#1{part~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 55,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "f\\Twoalgref#1#2{Algorithms \\ref{#1} and \\ref{#2}} \\def\\partref#1{part~\\ref{#1}} \\def\\Partref#1{Part~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "#1",
+   "file": "math_commands.tex",
+   "line": 56,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "and \\ref{#2}} \\def\\partref#1{part~\\ref{#1}} \\def\\Partref#1{Part~\\ref{#1}} \\def\\twopartref#1#2{parts "
+  },
+  {
+   "macro": "\\ref",
+   "target": "#2",
+   "file": "math_commands.tex",
+   "line": 56,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " \\def\\partref#1{part~\\ref{#1}} \\def\\Partref#1{Part~\\ref{#1}} \\def\\twopartref#1#2{parts \\ref{#1} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 141,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "hbf{x}$ denotes the entropy of the GMM. Hence, this work studies the problem of maximizing Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 145,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "nce matrices is still tractable. Arguably the two most effective algorithms for maximizing Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 145,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "dependent updates. Namely, iBayes-GMM~\\citep{Lin2019, Lin2020} uses the original GMM objective (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:derived_updates",
+   "file": "arxiv.tex",
+   "line": 150,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "icular, we will present the following contributions. \\begin{itemize}[leftmargin=*] \\item In Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:iBayes_decomposition",
+   "file": "arxiv.tex",
+   "line": 150,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "sec:derived_updates}, we will review and compare the derived update equations of IBayesGMM (Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:vips_decomposition",
+   "file": "arxiv.tex",
+   "line": 150,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "he derived update equations of IBayesGMM (Section~\\ref{sec:iBayes_decomposition}) and VIPS (Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:unifcation",
+   "file": "arxiv.tex",
+   "line": 150,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ion}) without considerations of implementation details and design choices. We will prove in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:generalizedFramework",
+   "file": "arxiv.tex",
+   "line": 151,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "rated lines of research, we improve our theoretical understanding of GMM-based VI. \\item In Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:derived_updates",
+   "file": "arxiv.tex",
+   "line": 151,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "neral framework for learning a GMM approximation based on the update equations discussed in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:Experiments",
+   "file": "arxiv.tex",
+   "line": 152,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "on, which can prevent component with low weight from receiving meaningful updates. \\item In Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 168,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ection{Two Derivations for the Same Updates} \\label{sec:derived_updates} Maximizing the ELBO in Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 168,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ation-maximization procedure. In contrast, \\citet{Lin2019} investigated the natural gradient of Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:iBayes_decomposition",
+   "file": "arxiv.tex",
+   "line": 169,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " discussion to Gaussian mixture models. We will briefly review the different derivations in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:vips_decomposition",
+   "file": "arxiv.tex",
+   "line": 169,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "els. We will briefly review the different derivations in Section~\\ref{sec:iBayes_decomposition} and "
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:unifcation",
+   "file": "arxiv.tex",
+   "line": 169,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "position} and \\ref{sec:vips_decomposition} before presenting our main theoretical result in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:generalizedFramework",
+   "file": "arxiv.tex",
+   "line": 169,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "we will discuss the different options---which may significantly affect the performance---in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 173,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ependently Computing the Natural Gradient} \\label{sec:iBayes_decomposition} The ELBO objective (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:background",
+   "file": "arxiv.tex",
+   "line": 173,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " given by the vanilla gradient with respect to the expectation parameters (please refer to Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 181,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ngle step updates). For understanding how VIPS~\\citep{Arenz2018} decomposed the ELBO objective (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 181,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "imization in the first place. In particular, note that the first term of the ELBO given in Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 185,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ymbol{\\theta}}(o|\\mathbf{x})} \\Big) d\\mathbf{x}, \\end{equation*} which is the only term in Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 201,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ugh the NG is computed with respect to different objective functions, namely the original ELBO (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:vipsLB",
+   "file": "arxiv.tex",
+   "line": 201,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "erent objective functions, namely the original ELBO (Eq.~\\ref{eq:GMMELBO}) and the lower bound (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "theorem",
+   "file": "arxiv.tex",
+   "line": 201,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "iginal ELBO (Eq.~\\ref{eq:GMMELBO}) and the lower bound (Eq.~\\ref{eq:vipsLB}), we clarify in Theorem~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:vipsLB",
+   "file": "arxiv.tex",
+   "line": 205,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "\\mathbf{x})$), the natural gradient (denoted by $\\tilde{\\nabla}$) of the lower bound objective (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 205,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "$) of the lower bound objective (Eq.~\\ref{eq:vipsLB}) matches the natural gradient of the ELBO (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:proof_theorem",
+   "file": "arxiv.tex",
+   "line": 210,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "symbol{\\theta}) \\Big|_{\\boldsymbol{\\theta}=\\boldsymbol{\\theta}^{(i)}}. $ \\begin{proof} See Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "alg:highlevel_pseudocode",
+   "file": "arxiv.tex",
+   "line": 217,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "gn choices that distinguish them. Hence, we can unify both methods in a common framework (Algorithm~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:GMMELBO",
+   "file": "arxiv.tex",
+   "line": 265,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "+ \\beta_o \\mathbf{r}. \\end{aligned} \\end{equation} The least squares targets based on the ELBO (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:vipsLB",
+   "file": "arxiv.tex",
+   "line": 265,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "g q_{\\boldsymbol{\\theta}}(\\mathbf{x})$, and the least squares targets based on the lower bound (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:Opper",
+   "file": "arxiv.tex",
+   "line": 289,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "uation} Hence, using Monte-Carlo to estimate the gradients with respect to mean and covariance (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:ng_update",
+   "file": "arxiv.tex",
+   "line": 289,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " and covariance (Eq.~\\ref{eq:Opper}), we can obtain unbiased estimates of the natural gradient (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:Opper",
+   "file": "arxiv.tex",
+   "line": 309,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ion} Similar to VIPS, iBayes-GMM uses importance sampling to perform the Monte-Carlo estimates (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:Stein",
+   "file": "arxiv.tex",
+   "line": 309,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "es-GMM uses importance sampling to perform the Monte-Carlo estimates (Eq.~\\ref{eq:Opper} right, Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:more_ng_update",
+   "file": "arxiv.tex",
+   "line": 317,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " options in the related literature. \\citet{Lin2019} directly apply the natural gradient update (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:iblr_update",
+   "file": "arxiv.tex",
+   "line": 327,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "u}_{\\textrm{o,old}} + \\beta_o \\mathbf{r} \\right). \\end{aligned} \\end{equation} The iBLR update (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:more_ng_update",
+   "file": "arxiv.tex",
+   "line": 327,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "{aligned} \\end{equation} The iBLR update (Eq.~\\ref{eq:iblr_update}) differs from the NG update (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:more_ng_update",
+   "file": "arxiv.tex",
+   "line": 329,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "a}_{\\textrm{o,old}}^{-1}$. \\textbf{VIPS} updates the components using natural gradient descent (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:more_ng_update",
+   "file": "arxiv.tex",
+   "line": 332,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "xtwidth}{\\emph{ Our implementation supports three options: (1) directly applying the NG update (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:notes_on_implementation",
+   "file": "arxiv.tex",
+   "line": 332,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ad we implemented a simple bisection method so solve this convex optimization problem, see Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:app:weightUpdates",
+   "file": "arxiv.tex",
+   "line": 341,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "x})}\\right]$. The NG update is presented differently by~\\citet{Lin2020}, but we clarify in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:ngbasedupdaer",
+   "file": "arxiv.tex",
+   "line": 345,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "_{\\textrm{old}} (o) \\right) \\le \\epsilon$, analogously to the component update described in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:comparison_of_implementations",
+   "file": "arxiv.tex",
+   "line": 393,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ementation of VIPS~\\citep{Arenz2020} when using the respective design choices. As shown in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:notes_on_implementation",
+   "file": "arxiv.tex",
+   "line": 393,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "imilar or better approximations. Additional details on the implementation are described in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:hyperparameters",
+   "file": "arxiv.tex",
+   "line": 393,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ble~\\ref{table:algorithmicChoices}. Available hyperparameters for each option are shown in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:app:experiments",
+   "file": "arxiv.tex",
+   "line": 422,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "rior distribution is still amenable to GMMs with full covariance matrices. Please refer to Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:full_results",
+   "file": "arxiv.tex",
+   "line": 475,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "date~\\citep{Lin2020} in our experiments. Full results of our main experiments are shown in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:tips",
+   "file": "arxiv.tex",
+   "line": 630,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ng the respective design choices. Typical trade-offs for the practitioner are discussed in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:app:limitations",
+   "file": "arxiv.tex",
+   "line": 630,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " limitations of this study and the potential for negative societal impact are discussed in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:ethics",
+   "file": "arxiv.tex",
+   "line": 630,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " the potential for negative societal impact are discussed in Appendix~\\ref{sec:app:limitations} and~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:related_work",
+   "file": "arxiv.tex",
+   "line": 655,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "p{Arenz2020} to the natural gradient based methods described in this work. Please refer to Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:learning_curves",
+   "file": "arxiv.tex",
+   "line": 657,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "Similarly, one should be careful when comparing the learning curves (which can be found in Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:NgEstimation",
+   "file": "arxiv.tex",
+   "line": 720,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "can be computed without explicitly computing the Fisher information matrix, as mentioned in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "theorem",
+   "file": "arxiv.tex",
+   "line": 753,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "\\theta})) \\end{equation*} as shown by \\citet[][c.f. Theorem 1]{Khan2018}. \\section{Proof of Theorem~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "theorem",
+   "file": "arxiv.tex",
+   "line": 769,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "a}^{(i)})$, because the auxiliary distributions are equal to the current model. For proving Theorem~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:categorical_ef",
+   "file": "arxiv.tex",
+   "line": 815,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "et{Lin2020} formulate the weight update in the natural parameter space $\\boldsymbol{\\eta}$ (see Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:new_weights_lin",
+   "file": "arxiv.tex",
+   "line": 867,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "w}} \\hat{R}(o) \\right)\\Big], \\end{align*} we can see that it exactly matches the update in Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:Opper",
+   "file": "arxiv.tex",
+   "line": 897,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "d by~\\citet{Lin2020} in the first-order setting, but only when using Hessian information (using Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "app:notes_on_implementation",
+   "file": "arxiv.tex",
+   "line": 924,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "hyperparameters for each design choice in Table~\\ref{tab:hyperparameters}. Please refer to Appendix~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:more_ng_update",
+   "file": "arxiv.tex",
+   "line": 979,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "\\emph{DirectNgBasedComponentUpdater} directly applies the natural gradient update given by Equation~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:iblr_update",
+   "file": "arxiv.tex",
+   "line": 979,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "dComponentUpdaterIblr} updates the components according to the improved Bayesian learning rule (Eq.~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "sec:ngbasedupdaer",
+   "file": "arxiv.tex",
+   "line": 979,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": " updated distributions that respect the desired bound on the KL divergence, as discussed in Section~"
+  },
+  {
+   "macro": "\\ref",
+   "target": "eq:ng_weight_update",
+   "file": "arxiv.tex",
+   "line": 983,
+   "resolved": {
+    "kind": "UNRESOLVED"
+   },
+   "preceding": "ight update. The \\emph{DirectWeightUpdater} directly updates the categorical distribution using Eq.~"
+  }
+ ],
+ "never_referenced_labels": [
+  "tab:exp3_accuracy"
+ ]
+}

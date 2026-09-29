@@ -1,0 +1,190 @@
+schema_version: 1
+_registry:
+  paper:
+    path: main.tex
+    root: ../acceptance-inputs/tabm-arxiv/src
+    sha256: 15663553d04fcbb8b3341df5c0d269c7703d4ba279be557fcd77ea4765ab0a62
+    size: 88033
+  rd_findings:
+    path: findings.json
+    sha256: c56b62623b39ed9a4c311f8bcc6be6de457c1a0f8a4d34d3da99a4b71c7d2774
+    size: 12392
+    rd_version: 0.1.0
+_claims:
+  - claim_id: C1
+    text: '$10$ datasets from other sources. Their properties are provided in \autoref{A:tab:default-datasets}.'
+    locator:
+      path: main.tex
+      line: 878
+      text: '$10$ datasets from other sources. Their properties are provided in \autoref{A:tab:default-datasets}.'
+    form: SCOPE
+    links: [L1]
+  - claim_id: C2
+    text: '$8$ datasets from the TabReD benchmark \citep{rubachev2024tabred}. Their properties are provided in \autoref{A:tab:tabred-datasets}.'
+    locator:
+      path: main.tex
+      line: 884
+      text: '$8$ datasets from the TabReD benchmark \citep{rubachev2024tabred}. Their properties are provided in \autoref{A:tab:tabred-datasets}.'
+    form: SCOPE
+    links: [L2]
+  - claim_id: C3
+    text: '$28$ datasets from \cite{grinsztajn2022why}.'
+    locator:
+      path: main.tex
+      line: 874
+      text: '$28$ datasets from \cite{grinsztajn2022why}.'
+    form: SCOPE
+    links: []
+  - claim_id: C4
+    text: '\autoref{fig:d-k-ablation} shows the mean percentage improvements (see \autoref{A:sec:impl-metrics}) over MLP across $17$ datasets: all datasets except for Covertype from \autoref{A:tab:default-datasets}, and all datasets from TabReD \citep{rubachev2024tabred}.'
+    locator:
+      path: main.tex
+      line: 1046
+      text: '\autoref{fig:d-k-ablation} shows the mean percentage improvements (see \autoref{A:sec:impl-metrics}) over MLP across $17$ datasets: all datasets except for Covertype from \autoref{A:tab:default-datasets}, and all datasets from TabReD \citep{rubachev2024tabred}.'
+    form: SCOPE
+    links: [L3]
+  - claim_id: C5
+    text: 'The main properties of our benchmark are summarized in \autoref{tab:datasets}, and more details are provided in \autoref{A:sec:datasets}.'
+    locator:
+      path: main.tex
+      line: 180
+      text: 'The main properties of our benchmark are summarized in \autoref{tab:datasets}, and more details are provided in \autoref{A:sec:datasets}.'
+    form: REFERENCE_ATTRIBUTION
+    links: [L4]
+  # Chain 1, layer 1: the paper's own printed Adult split size, taken from the appendix table bytes.
+  # The link basis is AUDITOR_DECLARED because the claim IS the table cell, so no sentence in the
+  # paper names the float; the anchor's declared quantity is what makes the two sides comparable.
+  - claim_id: C6
+    text: '$26\,048$'
+    locator:
+      path: tables/app-rtdl-datasets.tex
+      line: 8
+      text: '$26\,048$'
+    form: NUMERIC_ATTRIBUTION
+    links: [L5, L7]
+  - claim_id: C7
+    text: 'By default, the mean test score and its standard deviation are obtained by training a given model with tuned hyperparameters from scratch on a given dataset under 15 different random seeds.'
+    locator:
+      path: main.tex
+      line: 981
+      text: 'By default, the mean test score and its standard deviation are obtained by training a given model with tuned hyperparameters from scratch on a given dataset under 15 different random seeds.'
+    form: SCOPE
+    quantifier: numeric
+    scope:
+      declared_universe: 'the random-seed runs a default mean is taken over'
+      stated_count: 15
+      unit: aggregation
+      universe_status: PARTIAL
+      locator:
+        path: main.tex
+        line: 981
+        text: 'By default, the mean test score and its standard deviation are obtained by training a given model with tuned hyperparameters from scratch on a given dataset under 15 different random seeds.'
+    links: [L6]
+  # Negative control: the paper's own bytes for Adult's test size, declared against the WRONG column.
+  # The text is real, so the manifest layer cannot reject it; only the cell comparison can say that
+  # the attribution is false. This is what a PD003 FAIL is for.
+  - claim_id: C8
+    text: '$16\,281$'
+    locator:
+      path: tables/app-rtdl-datasets.tex
+      line: 8
+      text: '$16\,281$'
+    form: NUMERIC_ATTRIBUTION
+    links: [L10, L11]
+  # Chain 3: the transposed/merged-label table. The column name is exactly recoverable now, but the
+  # row label is carried by a vertical merge onto two source rows, so the address has two readings
+  # and PD must refuse rather than pick one.
+  - claim_id: C9
+    text: '$0.1601$'
+    locator:
+      path: main.tex
+      line: 528
+      text: '$0.1601$'
+    form: NUMERIC_ATTRIBUTION
+    links: [L12, L13]
+_floats:
+  - float_id: tab-datasets
+    label: 'tab:datasets'
+    quantity_declaration: benchmark properties
+  - float_id: default-datasets
+    label: 'A:tab:default-datasets'
+    quantity_declaration: 'number of datasets, # Train, # Validation, # Test, # Num, # Bin, # Cat, Task type, Batch size'
+    precision_declaration: 'round: 0'
+  - float_id: tabred-datasets
+    label: 'A:tab:tabred-datasets'
+    quantity_declaration: number of datasets
+  - float_id: tab-large
+    label: 'tab:large'
+    quantity_declaration: 'MAE on the two large datasets'
+_links:
+  - link_id: L1
+    claim: C1
+    target_kind: FLOAT
+    target_ref: default-datasets
+    link_basis: AUTHOR_REF_IN_SENTENCE
+  - link_id: L2
+    claim: C2
+    target_kind: FLOAT
+    target_ref: tabred-datasets
+    link_basis: AUTHOR_REF_IN_SENTENCE
+  - link_id: L3
+    claim: C4
+    target_kind: FLOAT
+    target_ref: default-datasets
+    link_basis: AUTHOR_REF_IN_SENTENCE
+  - link_id: L4
+    claim: C5
+    target_kind: FLOAT
+    target_ref: tab-datasets
+    link_basis: AUTHOR_REF_IN_SENTENCE
+  - link_id: L5
+    claim: C6
+    target_kind: FLOAT
+    target_ref: default-datasets
+    link_basis: AUDITOR_DECLARED
+    quantity_identity: 'number of datasets, # Train, # Validation, # Test, # Num, # Bin, # Cat, Task type, Batch size'
+  - link_id: L6
+    claim: C7
+    target_kind: RD_TARGET
+    target_ref: [RD002, 'aggregation:agg:adult-seed-mean']
+    link_basis: AUDITOR_DECLARED
+    quantity_identity: 'the mean test score over random seeds'
+  - link_id: L7
+    claim: C6
+    target_kind: PROSE
+    target_ref:
+      path: tables/app-rtdl-datasets.tex
+      column: '# Train'
+      row: Adult
+    link_basis: AUDITOR_DECLARED
+    quantity_identity: 'number of datasets, # Train, # Validation, # Test, # Num, # Bin, # Cat, Task type, Batch size'
+  - link_id: L10
+    claim: C8
+    target_kind: FLOAT
+    target_ref: default-datasets
+    link_basis: AUDITOR_DECLARED
+    quantity_identity: 'number of datasets, # Train, # Validation, # Test, # Num, # Bin, # Cat, Task type, Batch size'
+  - link_id: L11
+    claim: C8
+    target_kind: PROSE
+    target_ref:
+      path: tables/app-rtdl-datasets.tex
+      column: '# Train'
+      row: Adult
+    link_basis: AUDITOR_DECLARED
+    quantity_identity: 'number of datasets, # Train, # Validation, # Test, # Num, # Bin, # Cat, Task type, Batch size'
+  - link_id: L12
+    claim: C9
+    target_kind: FLOAT
+    target_ref: tab-large
+    link_basis: AUDITOR_DECLARED
+    quantity_identity: 'MAE on the two large datasets'
+  - link_id: L13
+    claim: C9
+    target_kind: PROSE
+    target_ref:
+      path: main.tex
+      column: XGBoost
+      row: Maps Routing
+    link_basis: AUDITOR_DECLARED
+    quantity_identity: 'MAE on the two large datasets'

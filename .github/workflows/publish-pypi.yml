@@ -1,0 +1,54 @@
+name: publish-pypi
+
+# Trusted publishing only: this workflow carries no PyPI credential and no secret. It exchanges the
+# GitHub-issued OIDC id-token for a short-lived upload token at upload time, so the only server-side
+# configuration is the pending publisher on the PyPI project page, which must name this repository,
+# this filename (publish-pypi.yml) and this environment name (pypi). See release/RC_AUDIT.md.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: Why this run was started by hand
+        required: true
+        default: manual
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: publish-pypi
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    environment: pypi
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Build from the tagged commit, not from a moving branch.
+          ref: ${{ github.event.release.tag_name }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build wheel and sdist
+        run: |
+          python -m pip install --upgrade pip build twine
+          python -m build
+
+      - name: Record the artifacts that are about to be uploaded
+        run: |
+          ls -l dist
+          sha256sum dist/*
+
+      - name: Check the metadata renders
+        run: twine check dist/*
+
+      - name: Publish to PyPI with the OIDC token
+        uses: pypa/gh-action-pypi-publish@release/v1

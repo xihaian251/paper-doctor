@@ -1,0 +1,646 @@
+{
+ "scan": {
+  "project_id": "tabm",
+  "root": "F:\\MLResearch\\upstream\\tabm",
+  "adapter": "generic",
+  "code_repository": null,
+  "families": {
+   "total": 0,
+   "by_kind": {}
+  },
+  "runs": {
+   "total": 0,
+   "evaluation_runs": 0,
+   "by_status": {},
+   "runs": 0,
+   "runs_with_metrics": 0,
+   "runs_with_config": 0,
+   "runs_with_seed_value": 0,
+   "runs_included_in_aggregation": 0,
+   "runs_excluded_from_aggregation": 0
+  },
+  "artifacts": {
+   "total": 60189,
+   "by_type": {
+    "UNKNOWN": 21224,
+    "TABLE": 2,
+    "CONFIG": 38946,
+    "SCRIPT": 15,
+    "ENVIRONMENT": 2
+   }
+  },
+  "aggregations": {
+   "total": 0,
+   "with_reported_value": 0
+  },
+  "provenance_coverage": {
+   "seed": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "tracker_run_id": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "repetition_index": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "code_commit": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "code_dirty": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "dataset": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "dataset_version": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "method": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "task": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "resolved_config": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "config_source": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "entrypoint": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "command": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "start_time": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "end_time": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "termination_cause": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "compute_budget": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "runtime_seconds": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "history_rows": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "included_in_aggregation": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "exclusion_category": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "exclusion_reason": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "exclusion_evidence": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "metric_direction": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": "evidence grade of metric.direction per metric record"
+   },
+   "metric_value": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": "a final metric value was recovered from an artifact"
+   }
+  },
+  "notes": []
+ },
+ "audit": {
+  "project_id": "tabm",
+  "root": "F:\\MLResearch\\upstream\\tabm",
+  "adapter": "generic",
+  "identity": [],
+  "seeds": [],
+  "metrics": [],
+  "membership": [],
+  "recomputation": [],
+  "coverage": {
+   "seed": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "tracker_run_id": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "repetition_index": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "code_commit": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "code_dirty": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "dataset": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "dataset_version": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "method": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "task": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "resolved_config": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "config_source": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "entrypoint": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "command": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "start_time": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "end_time": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "termination_cause": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "compute_budget": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "runtime_seconds": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "history_rows": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "included_in_aggregation": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "exclusion_category": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "exclusion_reason": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "exclusion_evidence": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "metric_direction": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": "evidence grade of metric.direction per metric record"
+   },
+   "metric_value": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": "a final metric value was recovered from an artifact"
+   }
+  },
+  "findings": []
+ },
+ "rules": [],
+ "rule_summary": {
+  "counts": {
+   "ED001": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED002": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED003": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED004": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED005": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED006": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED007": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED008": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED009": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED010": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   }
+  },
+  "note": "counts only: v0.1 computes no overall verdict, risk score or confidence number"
+ },
+ "project": {
+  "root": "F:\\MLResearch\\upstream\\tabm",
+  "project_id": "tabm",
+  "adapter": "generic",
+  "code_repository": {
+   "value": null,
+   "status": "UNKNOWN",
+   "source": null,
+   "confidence_note": "no run artifact names a code repository"
+  },
+  "families": [],
+  "runs": [],
+  "aggregations": [],
+  "declared_environments": [],
+  "notes": [],
+  "artifact_count": 60189
+ }
+}

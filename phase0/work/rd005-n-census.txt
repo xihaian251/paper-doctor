@@ -1,0 +1,6 @@
+RD005 count 59
+n histogram {4: 5, 5: 2, 7: 1, 8: 2, 10: 44, 30: 2, None: 3}
+declared_form {'k_sem(k=3.0,ddof=0,n=10)': 44, 'k_sem(k=3.0,ddof=0,n=5)': 2, 'k_sem(k=3.0,ddof=0,n=7)': 1, 'k_sem(k=3.0,ddof=0,n=8)': 2, 'k_sem(k=3.0,ddof=0,n=30)': 2, None: 3, 'k_sem(k=3.0,ddof=0,n=4)': 5}
+distinct spread_label count 2
+  label: '3σ confidence intervals based on the standard error of its mean using ten different seeds' × 56
+  label: None × 3

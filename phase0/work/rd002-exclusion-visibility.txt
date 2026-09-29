@@ -1,0 +1,67 @@
+RD002 findings 46 with n_exclusions>0 7
+measurement keys: ['exclusion_criterion_recomputable', 'member_rule_grade', 'member_rule_kind', 'n_exclusions', 'n_exclusions_listed', 'n_exclusions_unbound_to_members', 'n_exclusions_unlisted', 'n_included', 'n_members', 'n_members_anonymous', 'n_members_without_value']
+{
+ "evidence": [
+  {
+   "artifact_id": "",
+   "key": "",
+   "line": "",
+   "note": "member rule",
+   "path": "repo/evaluations/fetch_exp3.py:96-104"
+  },
+  {
+   "artifact_id": "",
+   "key": "run_*.csv.bad",
+   "line": "",
+   "note": "bad seeds are kept on disk under a .bad suffix",
+   "path": "extracted/evaluations/results/Planar4_EVAL/sepyfux_planar_4"
+  },
+  {
+   "artifact_id": "",
+   "key": "run_*.csv.bad",
+   "line": "",
+   "note": "bad seeds are kept on disk under a .bad suffix",
+   "path": "extracted/evaluations/results/Planar4_EVAL/sepyfux_planar_4"
+  },
+  {
+   "artifact_id": "",
+   "key": "run_*.csv.bad",
+   "line": "",
+   "note": "bad seeds are kept on disk under a .bad suffix",
+   "path": "extracted/evaluations/results/Planar4_EVAL/sepyfux_planar_4"
+  },
+  {
+   "artifact_id": "",
+   "key": "run_*.csv.bad",
+   "line": "",
+   "note": "bad seeds are kept on disk under a .bad suffix",
+   "path": "extracted/evaluations/results/Planar4_EVAL/sepyfux_planar_4"
+  },
+  {
+   "artifact_id": "",
+   "key": "run_*.csv.bad",
+   "line": "",
+   "note": "bad seeds are kept on disk under a .bad suffix",
+   "path": "extracted/evaluations/results/Planar4_EVAL/sepyfux_planar_4"
+  }
+ ],
+ "measurements": {
+  "exclusion_criterion_recomputable": false,
+  "member_rule_grade": "DIRECT",
+  "member_rule_kind": "by_pattern",
+  "n_exclusions": 5,
+  "n_exclusions_listed": 5,
+  "n_exclusions_unbound_to_members": 0,
+  "n_exclusions_unlisted": 0,
+  "n_included": 5,
+  "n_members": 10,
+  "n_members_anonymous": 10,
+  "n_members_without_value": 0
+ },
+ "question": "is the aggregation membership enumerable, and are exclusions bindable?",
+ "reason": "10 member(s) cannot be bound to an external run id; an exclusion criterion is not recomputable",
+ "rule_id": "RD002",
+ "rule_name": "Aggregation Membership Derivability",
+ "status": "INCONCLUSIVE",
+ "target": "aggregation:agg:PlanarRobot/sepyfux/-elbo"
+}

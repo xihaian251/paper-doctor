@@ -1,0 +1,70 @@
+schema_version: 1
+_registry:
+  paper:
+    path: paper.tex
+    sha256: b81a75885e5d62b073d6bf3c9ea1b6b4a7ff336fdd0400bc79c72228c5fa07de
+    size: 439
+  rd_findings:
+    path: findings.json
+    sha256: 37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+    size: 3
+    rd_version: 0.1.0
+_claims:
+  - claim_id: C1
+    text: Our model reaches $0.91$ accuracy, reported in \autoref{tab:results}.
+    locator:
+      path: paper.tex
+      line: 4
+      text: Our model reaches $0.91$ accuracy, reported in \autoref{tab:results}.
+    form: NUMERIC_ATTRIBUTION
+    links: [L1, L2]
+  - claim_id: C2
+    text: Baseline B reaches $0.92$ accuracy in \autoref{tab:results}.
+    locator:
+      path: paper.tex
+      line: 6
+      text: Baseline B reaches $0.92$ accuracy in \autoref{tab:results}.
+    form: NUMERIC_ATTRIBUTION
+    links: [L3, L4]
+  - claim_id: C3
+    text: We evaluate the two models across $4$ held-out splits.
+    locator:
+      path: paper.tex
+      line: 8
+      text: We evaluate the two models across $4$ held-out splits.
+    form: SCOPE
+    links: []
+_floats:
+  - float_id: tab-results
+    label: 'tab:results'
+    quantity_declaration: accuracy
+    precision_declaration: 'round: 2'
+_links:
+  - link_id: L1
+    claim: C1
+    target_kind: FLOAT
+    target_ref: tab-results
+    link_basis: AUTHOR_REF_IN_SENTENCE
+  - link_id: L2
+    claim: C1
+    target_kind: PROSE
+    target_ref:
+      path: paper.tex
+      column: Accuracy
+      row: A
+    link_basis: AUTHOR_REF_IN_SENTENCE
+    quantity_identity: accuracy
+  - link_id: L3
+    claim: C2
+    target_kind: FLOAT
+    target_ref: tab-results
+    link_basis: AUTHOR_REF_IN_SENTENCE
+  - link_id: L4
+    claim: C2
+    target_kind: PROSE
+    target_ref:
+      path: paper.tex
+      column: Accuracy
+      row: B
+    link_basis: AUTHOR_REF_IN_SENTENCE
+    quantity_identity: accuracy

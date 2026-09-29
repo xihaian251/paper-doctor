@@ -1,0 +1,56 @@
+schema_version: 1
+_registry:
+  paper:
+    path: paper.tex
+    root: .
+    sha256: ccd624c6ae74bddc3f770ba1dd6432b76f4052f2ef7f87cefe7ede48e36d96a0
+    size: 722
+  rd_findings:
+    path: findings.json
+    sha256: 37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+    size: 3
+    rd_version: 0.1.0
+_claims:
+  - claim_id: C1
+    text: As \autoref{tab:settings} shows, Ours outperforms Base on every reported metric under the tuned configuration.
+    locator:
+      path: paper.tex
+      line: 23
+      text: As \autoref{tab:settings} shows, Ours outperforms Base on every reported metric under the tuned configuration.
+    form: COMPARATIVE
+    predicate: outperforms
+    subjects: [Ours, Base]
+    quantifier: all
+    qualifiers:
+      - kind: comparison_basis
+        statement: per_column
+      - kind: comparison_block
+        statement: block=b2
+    links: [L1]
+  - claim_id: C2
+    text: Ours reaches $0.44$ in \autoref{tab:settings}, and the mean over the untuned configuration is $0.41$.
+    locator:
+      path: paper.tex
+      line: 26
+      text: Ours reaches $0.44$ in \autoref{tab:settings}, and the mean over the untuned configuration is $0.41$.
+    form: NUMERIC_ATTRIBUTION
+    qualifiers:
+      - kind: comparison_block
+        statement: block=b2
+    links: [L2]
+_floats:
+  - float_id: tab-settings
+    label: tab:settings
+    quantity_declaration: Acc, RMSE
+_links:
+  - link_id: L1
+    claim: C1
+    target_kind: FLOAT
+    target_ref: tab-settings
+    link_basis: AUTHOR_REF_IN_SENTENCE
+  - link_id: L2
+    claim: C2
+    target_kind: FLOAT
+    target_ref: tab-settings
+    link_basis: AUTHOR_REF_IN_SENTENCE
+    quantity_identity: Acc, RMSE

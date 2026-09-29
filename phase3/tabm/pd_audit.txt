@@ -1,0 +1,102 @@
+# paper-doctor audit paper-doctor.yml
+PD001   PASS            C1
+        claim:  form=SCOPE  locator=main.tex:878  links=[L1]
+        reason: declared link(s) with basis AUTHOR_REF_IN_SENTENCE resolve to evidence on file (default-datasets)
+PD001   PASS            C2
+        claim:  form=SCOPE  locator=main.tex:884  links=[L2]
+        reason: declared link(s) with basis AUTHOR_REF_IN_SENTENCE resolve to evidence on file (tabred-datasets)
+PD001   INCONCLUSIVE    C3
+        claim:  form=SCOPE  locator=main.tex:874  links=[]
+        reason: the claim carries no declared support link; untraceable is not false
+PD001   PASS            C4
+        claim:  form=SCOPE  locator=main.tex:1046  links=[L3]
+        reason: declared link(s) with basis AUTHOR_REF_IN_SENTENCE resolve to evidence on file (default-datasets)
+PD001   PASS            C5
+        claim:  form=REFERENCE_ATTRIBUTION  locator=main.tex:180  links=[L4]
+        reason: declared link(s) with basis AUTHOR_REF_IN_SENTENCE resolve to evidence on file (tab-datasets)
+PD001   PASS            C6
+        claim:  form=NUMERIC_ATTRIBUTION  locator=tables/app-rtdl-datasets.tex:8  links=[L5, L7]
+        reason: declared link(s) with basis AUDITOR_DECLARED resolve to evidence on file (default-datasets, tables/app-rtdl-datasets.tex [column=# Train,row=Adult])
+PD001   PASS            C7
+        claim:  form=SCOPE  locator=main.tex:981  links=[L6]
+        reason: declared link(s) with basis AUDITOR_DECLARED resolve to evidence on file (RD002:aggregation:agg:adult-seed-mean)
+PD001   PASS            C8
+        claim:  form=NUMERIC_ATTRIBUTION  locator=tables/app-rtdl-datasets.tex:8  links=[L10, L11]
+        reason: declared link(s) with basis AUDITOR_DECLARED resolve to evidence on file (default-datasets, tables/app-rtdl-datasets.tex [column=# Train,row=Adult])
+PD001   PASS            C9
+        claim:  form=NUMERIC_ATTRIBUTION  locator=main.tex:528  links=[L12, L13]
+        reason: declared link(s) with basis AUDITOR_DECLARED resolve to evidence on file (main.tex [column=XGBoost,row=Maps Routing], tab-large)
+PD002   NOT_APPLICABLE  C1
+        claim:  form=SCOPE  locator=main.tex:878  links=[L1]
+        reason: the claim states no count (unit=aggregation); nothing to compare
+PD002   NOT_APPLICABLE  C2
+        claim:  form=SCOPE  locator=main.tex:884  links=[L2]
+        reason: the claim states no count (unit=aggregation); nothing to compare
+PD002   NOT_APPLICABLE  C3
+        claim:  form=SCOPE  locator=main.tex:874  links=[]
+        reason: the claim states no count (unit=aggregation); nothing to compare
+PD002   NOT_APPLICABLE  C4
+        claim:  form=SCOPE  locator=main.tex:1046  links=[L3]
+        reason: the claim states no count (unit=aggregation); nothing to compare
+PD002   INCONCLUSIVE    C7
+        claim:  form=SCOPE  locator=main.tex:981  links=[L6]
+        reason: the counts agree (unit=aggregation, 1 targets) but the universe is PARTIAL: an unlisted universe cannot be PASSed
+PD003   PASS            C6
+        claim:  form=NUMERIC_ATTRIBUTION  locator=tables/app-rtdl-datasets.tex:8  links=[L5, L7]
+        reason: the prose value and the printed cell at (column=# Train, row=Adult, block=b1 [midrule at tables/app-rtdl-datasets.tex:4], unit=reported_cell) of table:4 are the same string
+PD003   FAIL            C8
+        claim:  form=NUMERIC_ATTRIBUTION  locator=tables/app-rtdl-datasets.tex:8  links=[L10, L11]
+        reason: the claim states 16281 but the printed cell at (column=# Train, row=Adult, block=b1 [midrule at tables/app-rtdl-datasets.tex:4], unit=reported_cell) of table:4 states 26048; both declare 'number of datasets, # Train, # Validation, # Test, # Num, # Bin, # Cat, Task type, Batch size' and the declared precision is round:0.0
+PD003   INCONCLUSIVE    C9
+        claim:  form=NUMERIC_ATTRIBUTION  locator=main.tex:528  links=[L12, L13]
+        reason: the declared cell address (column='XGBoost', row='Maps Routing', unit=reported_cell) is not addressable in table:2: 'Maps Routing' is printed by 2 rows of b1; the source states no structure that separates them, so the declared address has more than one reading
+PD004   NOT_RUN         rule:PD004
+        reason: no target was supplied for this rule: claims, links is populated, but nothing in it carries the key PD004 reads
+PD005   NOT_APPLICABLE  C4
+        claim:  form=SCOPE  locator=main.tex:1046  links=[L3]
+        reason: upstream reports 1 RD002 findings and no exclusions on any of them
+PD006   PASS            C1
+        claim:  form=SCOPE  locator=main.tex:878  links=[L1]
+        reason: the reference resolves and 10 is printed inside the referenced float
+PD006   FAIL            C2
+        claim:  form=SCOPE  locator=main.tex:884  links=[L2]
+        reason: the reference resolves to table:5, which does not print 8; it is printed in table:4, table:7, table:9, table:11, table:14, table:15, table:16, table:17
+PD006   INCONCLUSIVE    C4
+        claim:  form=SCOPE  locator=main.tex:1046  links=[L3]
+        reason: label(s) do not resolve to any float in the source: A:sec:impl-metrics, fig:d-k-ablation
+PD006   INCONCLUSIVE    C5
+        claim:  form=REFERENCE_ATTRIBUTION  locator=main.tex:180  links=[L4]
+        reason: label(s) do not resolve to any float in the source: A:sec:datasets
+PD007   NOT_APPLICABLE  C1
+        claim:  form=SCOPE  locator=main.tex:878  links=[L1]
+        reason: the claim declares no same_as pairing, so there is no cross-section relation to check
+PD007   NOT_APPLICABLE  C2
+        claim:  form=SCOPE  locator=main.tex:884  links=[L2]
+        reason: the claim declares no same_as pairing, so there is no cross-section relation to check
+PD007   NOT_APPLICABLE  C3
+        claim:  form=SCOPE  locator=main.tex:874  links=[]
+        reason: the claim declares no same_as pairing, so there is no cross-section relation to check
+PD007   NOT_APPLICABLE  C4
+        claim:  form=SCOPE  locator=main.tex:1046  links=[L3]
+        reason: the claim declares no same_as pairing, so there is no cross-section relation to check
+PD007   NOT_APPLICABLE  C5
+        claim:  form=REFERENCE_ATTRIBUTION  locator=main.tex:180  links=[L4]
+        reason: the claim declares no same_as pairing, so there is no cross-section relation to check
+PD007   NOT_APPLICABLE  C6
+        claim:  form=NUMERIC_ATTRIBUTION  locator=tables/app-rtdl-datasets.tex:8  links=[L5, L7]
+        reason: the claim declares no same_as pairing, so there is no cross-section relation to check
+PD007   NOT_APPLICABLE  C7
+        claim:  form=SCOPE  locator=main.tex:981  links=[L6]
+        reason: the claim declares no same_as pairing, so there is no cross-section relation to check
+PD007   NOT_APPLICABLE  C8
+        claim:  form=NUMERIC_ATTRIBUTION  locator=tables/app-rtdl-datasets.tex:8  links=[L10, L11]
+        reason: the claim declares no same_as pairing, so there is no cross-section relation to check
+PD007   NOT_APPLICABLE  C9
+        claim:  form=NUMERIC_ATTRIBUTION  locator=main.tex:528  links=[L12, L13]
+        reason: the claim declares no same_as pairing, so there is no cross-section relation to check
+
+PASS: 10
+FAIL: 2
+INCONCLUSIVE: 5
+NOT_APPLICABLE: 14
+NOT_RUN: 1

@@ -1,0 +1,1345 @@
+{
+ "scan": {
+  "project_id": "paper",
+  "root": "F:\\MLResearch\\paper-doctor\\phase3\\.ed-workdir\\tabm-ed\\paper",
+  "adapter": "captured",
+  "code_repository": "F:/MLResearch/upstream/tabm",
+  "families": {
+   "total": 1,
+   "by_kind": {
+    "unknown": 1
+   }
+  },
+  "runs": {
+   "total": 1,
+   "evaluation_runs": 0,
+   "by_status": {
+    "UNKNOWN": 1
+   },
+   "runs": 1,
+   "runs_with_metrics": 0,
+   "runs_with_config": 0,
+   "runs_with_seed_value": 1,
+   "runs_included_in_aggregation": 0,
+   "runs_excluded_from_aggregation": 0
+  },
+  "artifacts": {
+   "total": 60175,
+   "by_type": {
+    "TABLE": 1,
+    "ENVIRONMENT": 1,
+    "CONFIG": 38946,
+    "UNKNOWN": 21215,
+    "SCRIPT": 12
+   }
+  },
+  "aggregations": {
+   "total": 0,
+   "with_reported_value": 0
+  },
+  "provenance_coverage": {
+   "seed": {
+    "total": 1,
+    "confirmed": 1,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 1,
+    "note": null
+   },
+   "tracker_run_id": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "repetition_index": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "code_commit": {
+    "total": 1,
+    "confirmed": 1,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 1,
+    "note": null
+   },
+   "code_dirty": {
+    "total": 1,
+    "confirmed": 1,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 1,
+    "note": null
+   },
+   "dataset": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "dataset_version": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "method": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "task": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "resolved_config": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "config_source": {
+    "total": 1,
+    "confirmed": 1,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 1,
+    "note": null
+   },
+   "entrypoint": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "command": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "start_time": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "end_time": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "termination_cause": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "compute_budget": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "runtime_seconds": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "history_rows": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "included_in_aggregation": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "exclusion_category": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "exclusion_reason": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "exclusion_evidence": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "metric_direction": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": "evidence grade of metric.direction per metric record"
+   },
+   "metric_value": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": "a final metric value was recovered from an artifact"
+   }
+  },
+  "notes": [
+   "scope: one bundle directory holds one lock and one run record, so this adapter discovers exactly one family of one run; it does not search the tree for further bundles",
+   "the bundle carries no method, task or dataset name, so run identity (ED001) cannot be compared and stays UNKNOWN rather than being read off the directory",
+   "metrics are absent by design: v1 Phase 2 captures stdout and stderr as logs and reads no value out of them"
+  ]
+ },
+ "audit": {
+  "project_id": "paper",
+  "root": "F:\\MLResearch\\paper-doctor\\phase3\\.ed-workdir\\tabm-ed\\paper",
+  "adapter": "captured",
+  "identity": [
+   {
+    "family_id": "exp-cade5bdf7f3f4c4a9964dd0154598210",
+    "status": "UNKNOWN",
+    "n_runs": 1,
+    "distinct_methods": 0,
+    "distinct_tasks": 0,
+    "distinct_config_hashes": 0,
+    "note": "neither method nor resolved config is evidenced, so identity cannot be compared"
+   }
+  ],
+  "seeds": [
+   {
+    "family_id": "exp-cade5bdf7f3f4c4a9964dd0154598210",
+    "status": "CONSISTENT",
+    "n_runs": 1,
+    "runs_with_seed_evidence": 1,
+    "runs_with_unknown_seed": 0,
+    "runs_with_conflicting_seed": 0,
+    "distinct_seeds": 1,
+    "duplicated_seeds": [],
+    "declared_repetitions": null,
+    "note": "one distinct evidenced seed per run"
+   }
+  ],
+  "metrics": [
+   {
+    "family_id": "exp-cade5bdf7f3f4c4a9964dd0154598210",
+    "primary_metric": null,
+    "metric_names": [],
+    "runs_with_metrics": 0,
+    "direction_confirmed": 0,
+    "direction_supported": 0,
+    "direction_inferred": 0,
+    "direction_unknown": 0,
+    "runs_missing_primary_value": 0,
+    "note": null
+   }
+  ],
+  "membership": [
+   {
+    "family_id": "exp-cade5bdf7f3f4c4a9964dd0154598210",
+    "n_runs": 1,
+    "included": 0,
+    "excluded": 0,
+    "unknown_membership": 1,
+    "absent_slots": 0,
+    "excluded_without_evidence": 0,
+    "reason_status": "NONE",
+    "rule_status": "UNKNOWN",
+    "note": "declared repetitions None vs 1 slots (0 included, 0 excluded)"
+   }
+  ],
+  "recomputation": [],
+  "coverage": {
+   "seed": {
+    "total": 1,
+    "confirmed": 1,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 1,
+    "note": null
+   },
+   "tracker_run_id": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "repetition_index": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "code_commit": {
+    "total": 1,
+    "confirmed": 1,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 1,
+    "note": null
+   },
+   "code_dirty": {
+    "total": 1,
+    "confirmed": 1,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 1,
+    "note": null
+   },
+   "dataset": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "dataset_version": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "method": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "task": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "resolved_config": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "config_source": {
+    "total": 1,
+    "confirmed": 1,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 1,
+    "note": null
+   },
+   "entrypoint": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "command": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "start_time": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "end_time": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "termination_cause": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "compute_budget": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "runtime_seconds": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "history_rows": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "included_in_aggregation": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "exclusion_category": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "exclusion_reason": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "exclusion_evidence": {
+    "total": 1,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 1,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": null
+   },
+   "metric_direction": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": "evidence grade of metric.direction per metric record"
+   },
+   "metric_value": {
+    "total": 0,
+    "confirmed": 0,
+    "supported": 0,
+    "inferred": 0,
+    "unknown": 0,
+    "conflicting": 0,
+    "with_value": 0,
+    "note": "a final metric value was recovered from an artifact"
+   }
+  },
+  "findings": [
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'termination_cause' is UNKNOWN for every discovered run",
+    "severity": "HIGH",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "METRIC_PROVENANCE",
+    "title": "no metric values recovered for this family",
+    "severity": "MEDIUM",
+    "entity_type": "family",
+    "entity_id": "exp-cade5bdf7f3f4c4a9964dd0154598210",
+    "evidence": [
+     "runs: 1",
+     "metrics: none"
+    ],
+    "recommendation": "check whether the artifact format is understood or the histories are empty"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'command' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'compute_budget' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'dataset' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'dataset_version' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'end_time' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'entrypoint' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'exclusion_category' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'exclusion_evidence' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'exclusion_reason' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'history_rows' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'included_in_aggregation' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'method' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'repetition_index' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'resolved_config' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'runtime_seconds' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'start_time' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'task' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   },
+   {
+    "category": "PROVENANCE_GAP",
+    "title": "'tracker_run_id' is UNKNOWN for every discovered run",
+    "severity": "MEDIUM",
+    "entity_type": "project",
+    "entity_id": "paper",
+    "evidence": [
+     "0 / 1 runs carry evidence for this field",
+     ""
+    ],
+    "recommendation": "record this field at run time; post-hoc reconstruction can only ever label it UNKNOWN"
+   }
+  ]
+ },
+ "rules": [
+  {
+   "rule_id": "ED001",
+   "title": "Run Identity Consistency",
+   "entity_type": "family",
+   "entity_id": "exp-cade5bdf7f3f4c4a9964dd0154598210",
+   "status": "NOT_APPLICABLE",
+   "severity": "INFO",
+   "summary": "a family with fewer than two runs has no identity to compare",
+   "evidence": [],
+   "measurements": {
+    "n_runs": 1
+   },
+   "limitations": [],
+   "recommendation": "nothing to record; this check needs a repeated family"
+  },
+  {
+   "rule_id": "ED002",
+   "title": "Seed Provenance Integrity",
+   "entity_type": "family",
+   "entity_id": "exp-cade5bdf7f3f4c4a9964dd0154598210",
+   "status": "PASS",
+   "severity": "INFO",
+   "summary": "every run's seed is recoverable from a run artifact and all 1 are distinct",
+   "evidence": [
+    "exp-cade5bdf7f3f4c4a9964dd0154598210#experiment.run.json: seed=3 (CONFIRMED) at experiment.lock.json [randomness.seed]",
+    "seeds shown for 1 of 1 runs"
+   ],
+   "measurements": {
+    "n_runs": 1,
+    "runs_with_seed_evidence": 1,
+    "runs_with_unknown_seed": 0,
+    "runs_with_conflicting_seed": 0,
+    "distinct_seeds": 1,
+    "duplicated_seeds": 0,
+    "declared_repetitions": null
+   },
+   "limitations": [
+    "the declared repetition count is not evidenced by an artifact (a captured bundle holds one execution and declares no repetition count)",
+    "a seed recorded in documentation is not evidence; only the values written into run artifacts were counted here"
+   ],
+   "recommendation": null
+  },
+  {
+   "rule_id": "ED003",
+   "title": "Historical Code Provenance",
+   "entity_type": "run",
+   "entity_id": "exp-cade5bdf7f3f4c4a9964dd0154598210#experiment.run.json",
+   "status": "PASS",
+   "severity": "INFO",
+   "summary": "the run's own artifact records revision 28e47ae301c92ec37787dde1ce923a0793f405b4",
+   "evidence": [
+    "code_commit: 28e47ae301c92ec37787dde1ce923a0793f405b4 (CONFIRMED) at experiment.lock.json [code.commit]",
+    "code_dirty: False (CONFIRMED)"
+   ],
+   "measurements": {
+    "commit_status": "CONFIRMED",
+    "has_revision": true,
+    "dirty_status": "CONFIRMED",
+    "source_kind": "CONFIG"
+   },
+   "limitations": [],
+   "recommendation": null
+  },
+  {
+   "rule_id": "ED004",
+   "title": "Resolved Configuration Provenance",
+   "entity_type": "run",
+   "entity_id": "exp-cade5bdf7f3f4c4a9964dd0154598210#experiment.run.json",
+   "status": "INCONCLUSIVE",
+   "severity": "MEDIUM",
+   "summary": "no effective configuration was recovered for this run",
+   "evidence": [
+    "resolved_config: UNKNOWN (experiment.lock.json: the lock records config file paths and their content hashes, never the merged values the process trained under)",
+    "config_source: exp/tabm/adult/0-evaluation/3.toml (CONFIRMED)"
+   ],
+   "measurements": {
+    "config_status": "UNKNOWN",
+    "keys_recovered": 0,
+    "source_attached_to_run": false,
+    "unrecorded_effective_parameters": 0
+   },
+   "limitations": [
+    "a configuration file that exists in the repository says what could be run, not what was run"
+   ],
+   "recommendation": "dump the merged, post-override configuration into the run directory"
+  },
+  {
+   "rule_id": "ED009",
+   "title": "Termination Provenance",
+   "entity_type": "run",
+   "entity_id": "exp-cade5bdf7f3f4c4a9964dd0154598210#experiment.run.json",
+   "status": "INCONCLUSIVE",
+   "severity": "MEDIUM",
+   "summary": "no artifact records why this run ended",
+   "evidence": [
+    "termination_cause: - (UNKNOWN)",
+    "run status: UNKNOWN"
+   ],
+   "measurements": {
+    "termination_status": "UNKNOWN",
+    "cause": null,
+    "run_status": "UNKNOWN",
+    "budget_status": "UNKNOWN"
+   },
+   "limitations": [
+    "UNKNOWN here means no artifact states why the run ended; it does not mean the run failed, was stopped early or was abandoned"
+   ],
+   "recommendation": "write the exit condition (cap reached, deadline, crash, manual stop) into the run's own log at the moment it happens"
+  },
+  {
+   "rule_id": "ED010",
+   "title": "Runtime Environment Provenance",
+   "entity_type": "run",
+   "entity_id": "exp-cade5bdf7f3f4c4a9964dd0154598210#experiment.run.json",
+   "status": "INCONCLUSIVE",
+   "severity": "MEDIUM",
+   "summary": "no artifact records the environment this run executed in",
+   "evidence": [
+    "environment: - (UNKNOWN) at -",
+    "repository-level declarations present: environment.yaml"
+   ],
+   "measurements": {
+    "environment_status": "UNKNOWN",
+    "source_attached_to_run": false,
+    "declared_environment_files": 1,
+    "compute_budget_status": "UNKNOWN",
+    "environment_relationship": "ONLY_DECLARED",
+    "runtime_evidence_recorded": false
+   },
+   "limitations": [
+    "a dependency file in the repository describes intended versions; it cannot show which versions a historical run actually loaded",
+    "UNKNOWN here means the run recorded nothing about its environment, not that the environment was wrong or unreproducible",
+    "a declared environment is never promoted into runtime evidence, and no agreement is inferred from versions that merely happen to be absent"
+   ],
+   "recommendation": "have the runner print interpreter, library, accelerator and device identity into the log it writes for that run"
+  }
+ ],
+ "rule_summary": {
+  "counts": {
+   "ED001": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 1,
+    "NOT_RUN": 0
+   },
+   "ED002": {
+    "PASS": 1,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED003": {
+    "PASS": 1,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED004": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 1,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED005": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED006": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED007": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED008": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 0,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED009": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 1,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   },
+   "ED010": {
+    "PASS": 0,
+    "FAIL": 0,
+    "INCONCLUSIVE": 1,
+    "NOT_APPLICABLE": 0,
+    "NOT_RUN": 0
+   }
+  },
+  "note": "counts only: v0.1 computes no overall verdict, risk score or confidence number"
+ },
+ "project": {
+  "root": "F:\\MLResearch\\paper-doctor\\phase3\\.ed-workdir\\tabm-ed\\paper",
+  "project_id": "paper",
+  "adapter": "captured",
+  "code_repository": {
+   "value": "F:/MLResearch/upstream/tabm",
+   "status": "CONFIRMED",
+   "source": {
+    "path": "experiment.lock.json",
+    "key": "code.repository",
+    "line": null,
+    "artifact_id": null,
+    "note": "git remote get-url origin"
+   },
+   "confidence_note": "named by 1 of 1 runs"
+  },
+  "families": [
+   {
+    "family_id": "exp-cade5bdf7f3f4c4a9964dd0154598210",
+    "name": "exp-cade5bdf7f3f4c4a9964dd0154598210",
+    "kind": "unknown",
+    "result_dir": ".",
+    "method": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "task": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "run_ids": [
+     "exp-cade5bdf7f3f4c4a9964dd0154598210#experiment.run.json"
+    ],
+    "declared_repetitions": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": "a captured bundle holds one execution and declares no repetition count"
+    },
+    "membership_rule": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": "nothing in the bundle states which aggregation this run joined"
+    },
+    "primary_metric": null,
+    "secondary_metrics": []
+   }
+  ],
+  "runs": [
+   {
+    "run_id": "exp-cade5bdf7f3f4c4a9964dd0154598210#experiment.run.json",
+    "family_id": "exp-cade5bdf7f3f4c4a9964dd0154598210",
+    "tracker_run_id": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "result_slot_index": null,
+    "repetition_index": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "parent_run_id": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "method": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "task": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "dataset": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": "experiment.lock.json: dataset.paths names files where declared; it is not a dataset identity and was not read as one"
+    },
+    "dataset_version": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": "no bundle artifact names a dataset version"
+    },
+    "seed": {
+     "value": 3,
+     "status": "CONFIRMED",
+     "source": {
+      "path": "experiment.lock.json",
+      "key": "randomness.seed",
+      "line": null,
+      "artifact_id": null,
+      "note": "declared via --seed"
+     },
+     "confidence_note": null
+    },
+    "seed_derivation": {
+     "value": "cli --seed",
+     "status": "CONFIRMED",
+     "source": {
+      "path": "experiment.lock.json",
+      "key": "randomness.seed_source",
+      "line": null,
+      "artifact_id": null,
+      "note": "declaration channel"
+     },
+     "confidence_note": null
+    },
+    "code_repository": {
+     "value": "F:/MLResearch/upstream/tabm",
+     "status": "CONFIRMED",
+     "source": {
+      "path": "experiment.lock.json",
+      "key": "code.repository",
+      "line": null,
+      "artifact_id": null,
+      "note": "git remote get-url origin"
+     },
+     "confidence_note": null
+    },
+    "code_commit": {
+     "value": "28e47ae301c92ec37787dde1ce923a0793f405b4",
+     "status": "CONFIRMED",
+     "source": {
+      "path": "experiment.lock.json",
+      "key": "code.commit",
+      "line": null,
+      "artifact_id": null,
+      "note": "git rev-parse HEAD"
+     },
+     "confidence_note": null
+    },
+    "code_dirty": {
+     "value": false,
+     "status": "CONFIRMED",
+     "source": {
+      "path": "experiment.lock.json",
+      "key": "code.dirty",
+      "line": null,
+      "artifact_id": null,
+      "note": "git status --porcelain"
+     },
+     "confidence_note": null
+    },
+    "config_source": {
+     "value": "exp/tabm/adult/0-evaluation/3.toml",
+     "status": "CONFIRMED",
+     "source": {
+      "path": "experiment.lock.json",
+      "key": "configuration.config_files",
+      "line": null,
+      "artifact_id": null,
+      "note": "rendered from a list; declared via --config"
+     },
+     "confidence_note": null
+    },
+    "resolved_config": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": "experiment.lock.json: the lock records config file paths and their content hashes, never the merged values the process trained under"
+    },
+    "unrecorded_effective_parameters": [],
+    "entrypoint": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "command": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "start_time": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "end_time": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "status": "UNKNOWN",
+    "termination_cause": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "environment": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "runtime_environment": null,
+    "compute_budget": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "history_rows": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "runtime_seconds": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "artifacts": [
+     {
+      "path": "experiment.lock.json",
+      "artifact_type": "CONFIG",
+      "artifact_role": "CONFIG",
+      "size": 16861,
+      "mtime": 1790663615.965,
+      "sha256": null
+     }
+    ],
+    "metrics": [],
+    "included_in_aggregation": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "exclusion_category": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "exclusion_reason": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    },
+    "exclusion_evidence": {
+     "value": null,
+     "status": "UNKNOWN",
+     "source": null,
+     "confidence_note": null
+    }
+   }
+  ],
+  "aggregations": [],
+  "declared_environments": [],
+  "notes": [
+   "scope: one bundle directory holds one lock and one run record, so this adapter discovers exactly one family of one run; it does not search the tree for further bundles",
+   "the bundle carries no method, task or dataset name, so run identity (ED001) cannot be compared and stays UNKNOWN rather than being read off the directory",
+   "metrics are absent by design: v1 Phase 2 captures stdout and stderr as logs and reads no value out of them"
+  ],
+  "artifact_count": 60175
+ }
+}

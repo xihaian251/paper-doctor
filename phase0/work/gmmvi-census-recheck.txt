@@ -1,0 +1,11 @@
+GMMVI Bundle section census (frozen RD v0.1.0 loader, read-only):
+  reported_results   59
+  aggregations       46
+  members            500
+  artifacts          128
+  transformations    3
+  candidate_sets     100
+  selection_events   98
+  comparison_sets    5
+  exclusions (per-Aggregation, NOT a Bundle section): 34 objects on 7 aggregations
+  Bundle sections total: 8

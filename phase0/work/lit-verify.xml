@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Wr7poaohOO3SnX6HVYWJDrWEtzk</id>
+  <title>arXiv Query: search_query=&amp;id_list=2604.08501,2502.10003,2408.14317,2506.21745,2504.01848,2004.14610,1803.05357&amp;start=0&amp;max_results=10</title>
+  <updated>2026-09-28T17:15:50Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2604.08501,2502.10003,2408.14317,2506.21745,2504.01848,2004.14610,1803.05357" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>7</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2504.01848v3</id>
+    <title>PaperBench: Evaluating AI's Ability to Replicate AI Research</title>
+    <updated>2025-04-07T12:15:49Z</updated>
+    <link href="https://arxiv.org/abs/2504.01848v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2504.01848v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce PaperBench, a benchmark evaluating the ability of AI agents to replicate state-of-the-art AI research. Agents must replicate 20 ICML 2024 Spotlight and Oral papers from scratch, including understanding paper contributions, developing a codebase, and successfully executing experiments. For objective evaluation, we develop rubrics that hierarchically decompose each replication task into smaller sub-tasks with clear grading criteria. In total, PaperBench contains 8,316 individually gradable tasks. Rubrics are co-developed with the author(s) of each ICML paper for accuracy and realism. To enable scalable evaluation, we also develop an LLM-based judge to automatically grade replication attempts against rubrics, and assess our judge's performance by creating a separate benchmark for judges. We evaluate several frontier models on PaperBench, finding that the best-performing tested agent, Claude 3.5 Sonnet (New) with open-source scaffolding, achieves an average replication score of 21.0%. Finally, we recruit top ML PhDs to attempt a subset of PaperBench, finding that models do not yet outperform the human baseline. We open-source our code (https://github.com/openai/preparedness) to facilitate future research in understanding the AI engineering capabilities of AI agents.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-04-02T15:55:24Z</published>
+    <arxiv:comment>30 pages, 14 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Giulio Starace</name>
+    </author>
+    <author>
+      <name>Oliver Jaffe</name>
+    </author>
+    <author>
+      <name>Dane Sherburn</name>
+    </author>
+    <author>
+      <name>James Aung</name>
+    </author>
+    <author>
+      <name>Jun Shern Chan</name>
+    </author>
+    <author>
+      <name>Leon Maksin</name>
+    </author>
+    <author>
+      <name>Rachel Dias</name>
+    </author>
+    <author>
+      <name>Evan Mays</name>
+    </author>
+    <author>
+      <name>Benjamin Kinsella</name>
+    </author>
+    <author>
+      <name>Wyatt Thompson</name>
+    </author>
+    <author>
+      <name>Johannes Heidecke</name>
+    </author>
+    <author>
+      <name>Amelia Glaese</name>
+    </author>
+    <author>
+      <name>Tejal Patwardhan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1803.05357v2</id>
+    <title>Interplay between epidermal stem cell dynamics and dermal deformations</title>
+    <updated>2018-06-18T08:41:56Z</updated>
+    <link href="https://arxiv.org/abs/1803.05357v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1803.05357v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We introduce a particle-based model of self-replicating cells on a deformable substrate composed of the dermis and the basement membrane and investigate the relationship between dermal deformations and stem cell pattering on it. We show that our model reproduces the formation of dermal papillae, protuberances directing from the dermis to the epidermis, and the preferential stem cell distributions on the tips of the dermal papillae, which the basic buckling mechanism fails to explain. We argue that cell-type-dependent adhesion strength of the cells to the basement membrane is crucial factors of these patterns.</summary>
+    <category term="q-bio.TO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="nlin.AO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-bio.CB" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-03-08T07:50:29Z</published>
+    <arxiv:comment>10 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="q-bio.TO"/>
+    <arxiv:journal_ref>npj Computational Materials 4, 45 (2018)</arxiv:journal_ref>
+    <author>
+      <name>Yasuaki Kobayashi</name>
+    </author>
+    <author>
+      <name>Yusuke Yasugahira</name>
+    </author>
+    <author>
+      <name>Hiroyuki Kitahata</name>
+    </author>
+    <author>
+      <name>Mika Watanabe</name>
+    </author>
+    <author>
+      <name>Ken Natsuga</name>
+    </author>
+    <author>
+      <name>Masaharu Nagayama</name>
+    </author>
+    <arxiv:doi>10.1038/s41524-018-0101-z</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1038/s41524-018-0101-z" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.21745v1</id>
+    <title>(Fact) Check Your Bias</title>
+    <updated>2025-06-26T20:03:58Z</updated>
+    <link href="https://arxiv.org/abs/2506.21745v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.21745v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Automatic fact verification systems increasingly rely on large language models (LLMs). We investigate how parametric knowledge biases in these models affect fact-checking outcomes of the HerO system (baseline for FEVER-25). We examine how the system is affected by: (1) potential bias in Llama 3.1's parametric knowledge and (2) intentionally injected bias. When prompted directly to perform fact-verification, Llama 3.1 labels nearly half the claims as "Not Enough Evidence". Using only its parametric knowledge it is able to reach a verdict on the remaining half of the claims. In the second experiment, we prompt the model to generate supporting, refuting, or neutral fact-checking documents. These prompts significantly influence retrieval outcomes, with approximately 50\% of retrieved evidence being unique to each perspective. Notably, the model sometimes refuses to generate supporting documents for claims it believes to be false, creating an inherent negative bias. Despite differences in retrieved evidence, final verdict predictions show stability across prompting strategies. The code is available at: https://github.com/eibakke/FEVER-8-Shared-Task</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-26T20:03:58Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Eivind Morris Bakke</name>
+    </author>
+    <author>
+      <name>Nora Winger Heggelund</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.08501v2</id>
+    <title>sciwrite-lint: Verification Infrastructure for the Age of Science Vibe-Writing</title>
+    <updated>2026-05-24T17:12:44Z</updated>
+    <link href="https://arxiv.org/abs/2604.08501v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.08501v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Scientific papers make claims about prior work backed by citations. Verifying those citations at scale (that each cited paper exists, says what the citation claims, and is itself reliable) is structurally beyond what human review can deliver: a typical paper has dozens of citations, and a careful reviewer reads at most a handful end-to-end. AI-assisted writing makes this gap even more urgent: LLMs hallucinate references and may fill in plausible details from titles or abstracts of papers they never read, worse for the smaller local-weights models that privacy-aware researchers must use.
+  sciwrite-lint applies the linting paradigm from software engineering to citation verification: it runs entirely on the researcher's machine (free public databases, a single consumer GPU, and open-weights models), is fast enough to re-lint between revisions so authors catch problems at the source while drafting, and serves journals and reviewers as an automated first pass. The pipeline checks reference existence, metadata accuracy, retraction status, and claim support, traverses one level into cited papers' bibliographies, and produces per-reference reliability scores. We evaluate on 30 unseen papers (arXiv and bioRxiv) with error injection and LLM-adjudicated false-positive analysis.
+  The same linting workflow extends to internal consistency: numbers in text vs. tables, abstract vs. body, figure captions vs. content, statistical results vs. their verbal interpretation, plus structural cross-references (dangling cites, orphan references). As a separate experimental contribution we also propose SciLint Score: citation-chain integrity combined with a contribution component operationalizing five philosophy-of-science frameworks (Popper, Lakatos, Kitcher, Laudan, Mayo).</summary>
+    <category term="cs.DL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-09T17:46:44Z</published>
+    <arxiv:comment>Code: https://github.com/authentic-research-partners/sciwrite-lint</arxiv:comment>
+    <arxiv:primary_category term="cs.DL"/>
+    <author>
+      <name>Sergey V Samsonau</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2004.14610v1</id>
+    <title>Topological Semimetal Nanostructures: From Properties to Topotronics</title>
+    <updated>2020-04-30T07:21:08Z</updated>
+    <link href="https://arxiv.org/abs/2004.14610v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2004.14610v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Characterized by bulk Dirac or Weyl cones and surface Fermi-arc states, topological semimetals have sparked enormous research interest in recent years. The nanostructures, with large surface-to-volume ratio and easy field-effect gating, provide ideal platforms to detect and manipulate the topological quantum states. Exotic physical properties originating from these topological states endow topological semimetals attractive for future topological electronics (topotronics). For example, the linear energy dispersion relation is promising for broadband infrared photodetectors, the spin-momentum locking nature of topological surface states is valuable for spintronics, and the topological superconductivity is highly desirable for fault-tolerant qubits. For real-life applications, topological semimetals in the form of nanostructures are necessary in terms of convenient fabrication and integration. Here, we review the recent progresses in topological semimetal nanostructures and start with the quantum transport properties. Then topological semimetal-based electronic devices are introduced. Finally, we discuss several important aspects that should receive great effort in the future, including controllable synthesis, manipulation of quantum states, topological field effect transistors, spintronic applications, and topological quantum computation.</summary>
+    <category term="cond-mat.mes-hall" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cond-mat.mtrl-sci" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-04-30T07:21:08Z</published>
+    <arxiv:comment>Review Article</arxiv:comment>
+    <arxiv:primary_category term="cond-mat.mes-hall"/>
+    <arxiv:journal_ref>ACS Nano 14, 3755 (2020)</arxiv:journal_ref>
+    <author>
+      <name>An-Qi Wang</name>
+    </author>
+    <author>
+      <name>Xing-Guo Ye</name>
+    </author>
+    <author>
+      <name>Da-Peng Yu</name>
+    </author>
+    <author>
+      <name>Zhi-Min Liao</name>
+    </author>
+    <arxiv:doi>10.1021/acsnano.9b07990</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1021/acsnano.9b07990" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2408.14317v2</id>
+    <title>Claim Verification in the Age of Large Language Models: A Survey</title>
+    <updated>2025-02-11T14:51:08Z</updated>
+    <link href="https://arxiv.org/abs/2408.14317v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2408.14317v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The large and ever-increasing amount of data available on the Internet coupled with the laborious task of manual claim and fact verification has sparked the interest in the development of automated claim verification systems. Several deep learning and transformer-based models have been proposed for this task over the years. With the introduction of Large Language Models (LLMs) and their superior performance in several NLP tasks, we have seen a surge of LLM-based approaches to claim verification along with the use of novel methods such as Retrieval Augmented Generation (RAG). In this survey, we present a comprehensive account of recent claim verification frameworks using LLMs. We describe the different components of the claim verification pipeline used in these frameworks in detail including common approaches to retrieval, prompting, and fine-tuning. Finally, we describe publicly available English datasets created for this task.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-08-26T14:45:03Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Alphaeus Dmonte</name>
+    </author>
+    <author>
+      <name>Roland Oruche</name>
+    </author>
+    <author>
+      <name>Marcos Zampieri</name>
+    </author>
+    <author>
+      <name>Prasad Calyam</name>
+    </author>
+    <author>
+      <name>Isabelle Augenstein</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.10003v1</id>
+    <title>SciClaimHunt: A Large Dataset for Evidence-based Scientific Claim Verification</title>
+    <updated>2025-02-14T08:34:26Z</updated>
+    <link href="https://arxiv.org/abs/2502.10003v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.10003v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Verifying scientific claims presents a significantly greater challenge than verifying political or news-related claims. Unlike the relatively broad audience for political claims, the users of scientific claim verification systems can vary widely, ranging from researchers testing specific hypotheses to everyday users seeking information on a medication. Additionally, the evidence for scientific claims is often highly complex, involving technical terminology and intricate domain-specific concepts that require specialized models for accurate verification. Despite considerable interest from the research community, there is a noticeable lack of large-scale scientific claim verification datasets to benchmark and train effective models. To bridge this gap, we introduce two large-scale datasets, SciClaimHunt and SciClaimHunt_Num, derived from scientific research papers. We propose several baseline models tailored for scientific claim verification to assess the effectiveness of these datasets. Additionally, we evaluate models trained on SciClaimHunt and SciClaimHunt_Num against existing scientific claim verification datasets to gauge their quality and reliability. Furthermore, we conduct human evaluations of the claims in proposed datasets and perform error analysis to assess the effectiveness of the proposed baseline models. Our findings indicate that SciClaimHunt and SciClaimHunt_Num serve as highly reliable resources for training models in scientific claim verification.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-14T08:34:26Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Sujit Kumar</name>
+    </author>
+    <author>
+      <name>Anshul Sharma</name>
+    </author>
+    <author>
+      <name>Siddharth Hemant Khincha</name>
+    </author>
+    <author>
+      <name>Gargi Shroff</name>
+    </author>
+    <author>
+      <name>Sanasam Ranbir Singh</name>
+    </author>
+    <author>
+      <name>Rahul Mishra</name>
+    </author>
+  </entry>
+</feed>

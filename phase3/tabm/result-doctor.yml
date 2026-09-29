@@ -1,0 +1,120 @@
+# Paper Doctor Phase 3 §8: Result Doctor over TabM's own shipped artifacts.
+#
+# Nothing here is Paper Doctor's code and nothing here changes Result Doctor's rules: it is the
+# ordinary manifest a first-time user writes over a public repository. Every path is inside the
+# pinned checkout at ../../../upstream/tabm/paper (commit 28e47ae301c92ec37787dde1ce923a0793f405b4),
+# and every fact enters through one of Result Doctor's three doors -- observed in a quoted file,
+# declared by name, or unknown.
+schema_version: 1
+project: tabm
+root: ../../../upstream/tabm/paper
+
+artifacts:
+  - path: exp/tabm/adult/0-evaluation/3/report.json
+    producer:
+      declared: {value: "bin/model.main", by: "the report names the function that wrote it"}
+      supported_by: {path: exp/tabm/adult/0-evaluation/3/report.json, key: /function, text: "bin.model.main"}
+  - path: exp/tabm/adult/0-ensemble-5/0/report.json
+    producer:
+      declared: {value: "bin.ensemble.main", by: "the report names bin.ensemble.main and the seeds its members came from"}
+      supported_by: {path: exp/tabm/adult/0-ensemble-5/0/report.json, key: /function, text: "bin.ensemble.main"}
+  - path: exp/tabm/adult/0-tuning/report.json
+    producer:
+      declared: {value: "bin.tune.main", by: "the report names the function that wrote it; it keeps only the winning config"}
+      supported_by: {path: exp/tabm/adult/0-tuning/report.json, key: /function, text: "bin.tune.main"}
+
+evidence:
+  - id: best-val-step
+    declared:
+      by: "bin/model.py assigns report['best_step'] from the training loop's early-stopping state"
+      statement: "the test metrics in a run report are the metrics of best_step, selected by validation score"
+    supported_by: {path: bin/model.py, line: 649, text: "report['best_step'] = step"}
+  - id: prediction-space-ensemble
+    declared:
+      by: "bin/ensemble.py averages the members' predictions and scores the average"
+      statement: "an ensemble report's test score is computed on averaged predictions, not on the members' test scores"
+    supported_by: {path: exp/tabm/adult/0-ensemble-5/0/report.json, key: /single_model_function, text: "bin.model.main"}
+
+aggregations:
+  - id: adult-seed-mean
+    center: mean
+    spread: {kind: std, ddof: 1}
+    dispersion_statement: "the paper's tables print mean +/- standard deviation over random seeds; the shipped reports hold one score per seed and no dispersion"
+    member_rule:
+      kind: enumerated
+      declared: {value: "the 15 evaluation runs under exp/tabm/adult/0-evaluation", by: "the directory ships 0.toml through 14.toml with a report each"}
+    members:
+      - {name: seed-0, path: exp/tabm/adult/0-evaluation/0/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-1, path: exp/tabm/adult/0-evaluation/1/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-2, path: exp/tabm/adult/0-evaluation/2/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-3, path: exp/tabm/adult/0-evaluation/3/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-4, path: exp/tabm/adult/0-evaluation/4/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-5, path: exp/tabm/adult/0-evaluation/5/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-6, path: exp/tabm/adult/0-evaluation/6/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-7, path: exp/tabm/adult/0-evaluation/7/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-8, path: exp/tabm/adult/0-evaluation/8/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-9, path: exp/tabm/adult/0-evaluation/9/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-10, path: exp/tabm/adult/0-evaluation/10/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-11, path: exp/tabm/adult/0-evaluation/11/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-12, path: exp/tabm/adult/0-evaluation/12/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-13, path: exp/tabm/adult/0-evaluation/13/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+      - {name: seed-14, path: exp/tabm/adult/0-evaluation/14/report.json, key: /metrics/test/score, identity: {observed: {key: /config/seed}}}
+
+candidate_sets:
+  - id: adult-tuning-trials
+    kind: hyperparameter
+    universe: partial
+    statement: "100 Optuna trials were run; the repository ships the tuning report with only the winning config"
+    members: [exp/tabm/adult/0-tuning/report.json]
+    declared_size: {value: 100, statement: "optimization trials", note: "the tuning config asks for 100 trials", supported_by: {path: exp/tabm/adult/0-tuning.toml, line: 3, text: "n_trials = 100"}}
+    surviving_size: {value: 1, statement: "trial records", note: "report['best'] is the only trial kept; n_completed_trials = 100 is recorded next to it"}
+  - id: adult-epochs
+    kind: checkpoint
+    universe: unknown
+    statement: "the checkpoints of one training run; n_epochs is -1 and patience is 16, so the epoch count is not bounded by the config"
+
+selection_events:
+  - id: adult-tuned-config
+    kind: hyperparameter
+    over: adult-tuning-trials
+    chosen: {observed: {path: exp/tabm/adult/0-tuning/report.json, key: /best/config}}
+    criterion:
+      metric: {observed: {path: bin/tune.py, line: 185, text: "report['metrics']['val']['score']"}}
+      direction: {declared: {value: maximize, by: "the Optuna study is created with direction='maximize'"}, supported_by: {path: bin/tune.py, line: 146, text: "direction='maximize'"}}
+      split: {declared: {value: validation, by: "the objective returns the val part of the run report"}}
+      scope: {declared: {value: "one search per model and dataset", by: author}}
+      tie_break: {unknown: "no tie rule is recorded in bin/tune.py"}
+      timing: {observed: {path: bin/tune.py, line: 188, text: "study.best_trial"}}
+  - id: adult-run-checkpoint
+    kind: checkpoint
+    over: adult-epochs
+    chosen: {observed: {path: exp/tabm/adult/0-evaluation/3/report.json, key: /best_step}}
+    criterion:
+      metric: {declared: {value: "validation score", by: "the early-stopping state is fed the validation score"}}
+      direction: {declared: {value: max, by: "the early-stopping state is created with mode='max' on the validation score"}, supported_by: {path: bin/model.py, line: 455, text: "mode='max'"}}
+      split: {declared: {value: validation, by: author}}
+      scope: {declared: {value: per run, by: author}}
+      tie_break: {unknown: "the comparison lives in delu.tools.EarlyStopping, outside this repository"}
+      timing: {observed: {path: bin/model.py, line: 649, text: "report['best_step'] = step"}}
+
+reported_results:
+  - label: tabm/adult-seed3/test-score
+    printed_in: {artifact: exp/tabm/adult/0-evaluation/3/report.json, table: "metrics.test", row: score, column: "", quoted_text: "0.858731036177139"}
+    quantity: metrics.test.score/tabm-adult-seed3
+    value: {observed: {path: exp/tabm/adult/0-evaluation/3/report.json, key: /metrics/test/score}}
+    metric_name: {observed: {path: exp/tabm/adult/0-evaluation/3/report.json, key: /metrics/test/accuracy, text: "accuracy"}}
+    aggregate: {none: true, reason: "one run reports this number; nothing is aggregated over it"}
+    selection: [adult-tuned-config, adult-run-checkpoint]
+
+  - label: tabm/adult-ensemble5-0/test-score
+    printed_in: {artifact: exp/tabm/adult/0-ensemble-5/0/report.json, table: "metrics.test", row: score, column: "", quoted_text: "0.8583625084454272"}
+    quantity: metrics.test.score/tabm-adult-ensemble5-0
+    value: {observed: {path: exp/tabm/adult/0-ensemble-5/0/report.json, key: /metrics/test/score}}
+    aggregate: {none: true, reason: "the score is computed on averaged predictions of the five seeds the report names, not from their reported test scores"}
+    steps: []
+    selection: [adult-tuned-config]
+
+# The 15-seed mean is audited as the aggregation `adult-seed-mean` above. It is deliberately NOT
+# written as a reported result: a reported result requires a printed cell, and the paper prints the
+# per-dataset accuracies in unlabelled longtables that its own source gives no reference name for,
+# so no printed cell of the mean is addressable. Claiming a printed value here would be invented.

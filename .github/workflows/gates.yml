@@ -1,0 +1,64 @@
+name: gates
+
+# The same four gates `release/RC_AUDIT.md` reports locally, plus the frozen TabM acceptance digest.
+# The corpus fetch is a step rather than a skip: the acceptance tests read real paper bytes, and a
+# silently missing acceptance input is exactly what a release gate must not allow (README, "Testing the
+# tool"). Windows is in the matrix on purpose - every byte-pinned digest in this repository was first
+# measured on Windows, and LF/CRLF drift is a known failure mode of a checkout.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  gates:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install the package and its dev extras
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Fetch and verify the pinned paper corpora
+        shell: bash
+        run: python scripts/fetch_acceptance_inputs.py
+
+      - name: Ruff
+        shell: bash
+        run: |
+          ruff check .
+          ruff format --check .
+
+      - name: Mypy
+        shell: bash
+        run: mypy src
+
+      - name: Test suite
+        shell: bash
+        run: python -m pytest -q
+
+      - name: Frozen TabM acceptance digest
+        shell: bash
+        run: |
+          paper-doctor audit phase3/tabm --json audit.json >/dev/null
+          actual="$(sha256sum audit.json | cut -d' ' -f1)"
+          expected="08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0"
+          if [ "$actual" != "$expected" ]; then
+            echo "acceptance digest drift: $actual" >&2
+            exit 1
+          fi
+          echo "TabM acceptance reproduces $expected"

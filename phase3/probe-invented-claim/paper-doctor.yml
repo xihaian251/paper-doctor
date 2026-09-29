@@ -1,0 +1,40 @@
+schema_version: 1
+_registry:
+  paper:
+    path: main.tex
+    root: F:/MLResearch/upstream/tabm-arxiv/src
+    sha256: 15663553d04fcbb8b3341df5c0d269c7703d4ba279be557fcd77ea4765ab0a62
+    size: 88033
+  rd_findings:
+    path: findings.json
+    sha256: 37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570
+    size: 3
+    rd_version: 0.1.0
+_claims:
+  - claim_id: P2
+    text: 'Adult & $26\,048$ & $6\,513$ & $16\,281$ & $6$ & $1$ & $8$ & Binclass & 256 \\'
+    locator:
+      path: tables/app-rtdl-datasets.tex
+      line: 8
+      text: 'Adult & $26\,048$ & $6\,513$ & $16\,281$ & $6$ & $1$ & $8$ & Binclass & 256 \\'
+    form: NUMERIC_ATTRIBUTION
+    links: [L1, L2]
+_floats:
+  - float_id: default-datasets
+    label: 'A:tab:default-datasets'
+    quantity_declaration: '# Train'
+_links:
+  - link_id: L1
+    claim: P2
+    target_kind: FLOAT
+    target_ref: default-datasets
+    link_basis: AUDITOR_DECLARED
+    quantity_identity: '# Train'
+  - link_id: L2
+    claim: P2
+    target_kind: PROSE
+    target_ref:
+      path: tables/app-rtdl-datasets.tex
+      column: '# Train'
+      row: Adult
+    link_basis: AUDITOR_DECLARED

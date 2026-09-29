@@ -1,0 +1,493 @@
+{
+  "acceptance_target": {
+    "code_repository": {
+      "commit": "28e47ae301c92ec37787dde1ce923a0793f405b4",
+      "paper_subdirectory": "paper",
+      "read_only_checkout": "F:/MLResearch/upstream/tabm",
+      "url": "https://github.com/yandex-research/tabm"
+    },
+    "paper_source": {
+      "arxiv_id": "2410.24210",
+      "corpus_override": "PAPER_DOCTOR_TABM_CORPUS",
+      "declared_entry_point_sha256": "15663553d04fcbb8b3341df5c0d269c7703d4ba279be557fcd77ea4765ab0a62",
+      "declared_entry_point_size": 88033,
+      "entry_point": "main.tex",
+      "entry_point_sha256": "15663553d04fcbb8b3341df5c0d269c7703d4ba279be557fcd77ea4765ab0a62",
+      "entry_point_size": 88033,
+      "read_only_checkout": "../acceptance-inputs/tabm-arxiv/src",
+      "rebuild": "python scripts/fetch_acceptance_inputs.py tabm",
+      "tarball_sha256": "cdcea2ddbe710fa6e9c19b0e611e0c82dd513491aa6ac680368ed5bc3127db8c"
+    },
+    "title": "TabM: Advancing Tabular Deep Learning with Parameter-Efficient Ensembling",
+    "venue": "ICLR 2025"
+  },
+  "chains": [
+    {
+      "artifact_hashes": {
+        "adult test.csv": "23c3baa9db371c20612ec9696aaa95ce6d512d4171669beb97037e430e72a9bd",
+        "adult train.csv": "ceb601e84db1fa01a57ae1e501e7137566297c1bc7e29b5b3605fe562d36ada1",
+        "dd report.json": "c1456a7bf602d4c3b4cda5f316a1fdb9e04ed15b7149ec2eb393046428c82f5f",
+        "ed experiment.lock.json": "fb27c5eeada88d7a9d471e09464d7c60e444ea7743c66cd0433bdbc883e51cf8",
+        "ed report.json": "2de48cc368f13fc3fbd0e9582adc659f712382067d45b142740a6e14ae35e170",
+        "paper main.tex": "15663553d04fcbb8b3341df5c0d269c7703d4ba279be557fcd77ea4765ab0a62",
+        "pd findings.json": "08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0",
+        "rd findings.json": "c56b62623b39ed9a4c311f8bcc6be6de457c1a0f8a4d34d3da99a4b71c7d2774"
+      },
+      "chain_id": "chain-1-adult-four-layers",
+      "dataset_id": "ds_05c7465f",
+      "dd_ref": {
+        "config_hash": "cfg_091fd33c9ce94a35",
+        "dataset_id": "ds_05c7465f",
+        "eval_safety": "FORMAL_EVAL_INVALID",
+        "fingerprint": "phase3/tabm/dd/fingerprint.json",
+        "fingerprint_sha256": "1f0dd1a5785fafde2627c9e47de94ebf436bbed551e11ac1200ad0804c63c9df",
+        "manifest_hash": "9bf9cea8ee536e96483be1e5a0efef44",
+        "report": "phase3/tabm/dd/report/report.json",
+        "report_sha256": "c1456a7bf602d4c3b4cda5f316a1fdb9e04ed15b7149ec2eb393046428c82f5f",
+        "split_sizes": {
+          "test": 16281,
+          "train": 32561
+        },
+        "tool_version": "0.1.2"
+      },
+      "ed_evidence_refs": [
+        "exp-cade5bdf7f3f4c4a9964dd0154598210#experiment.run.json: seed=3 (CONFIRMED) at experiment.lock.json [randomness.seed]",
+        "seeds shown for 1 of 1 runs",
+        "code_commit: 28e47ae301c92ec37787dde1ce923a0793f405b4 (CONFIRMED) at experiment.lock.json [code.commit]",
+        "code_dirty: False (CONFIRMED)",
+        "resolved_config: UNKNOWN (experiment.lock.json: the lock records config file paths and their content hashes, never the merged values the process trained under)",
+        "config_source: exp/tabm/adult/0-evaluation/3.toml (CONFIRMED)",
+        "termination_cause: - (UNKNOWN)",
+        "run status: UNKNOWN",
+        "environment: - (UNKNOWN) at -",
+        "repository-level declarations present: environment.yaml"
+      ],
+      "ed_rule_statuses": {
+        "ED001": "NOT_APPLICABLE",
+        "ED002": "PASS",
+        "ED003": "PASS",
+        "ED004": "INCONCLUSIVE",
+        "ED009": "INCONCLUSIVE",
+        "ED010": "INCONCLUSIVE"
+      },
+      "experiment_run_id": "exp-cade5bdf7f3f4c4a9964dd0154598210#experiment.run.json",
+      "joins": [
+        {
+          "basis": "declared in the manifest; no cross-layer similarity is computed",
+          "from": "C6/C8 -> FLOAT default-datasets (table:4) + PROSE cell [column='# Train', row='Adult']",
+          "to": "reported_result tabm/adult-seed3/test-score"
+        },
+        {
+          "basis": "AUTHOR_DECLARED member enumeration in result-doctor.yml",
+          "from": "C7 -> RD_TARGET [RD002, 'aggregation:agg:adult-seed-mean']",
+          "to": "the 15 enumerated members of that aggregation, of which seed-3 is one"
+        },
+        {
+          "basis": "the run artifact exp/tabm/adult/0-evaluation/3/report.json is the member's declared source and the captured bundle is the audit of that same run directory",
+          "from": "aggregation member seed-3 -> experiment run",
+          "to": "exp-cade5bdf7f3f4c4a9964dd0154598210#experiment.run.json"
+        },
+        {
+          "basis": "the run config declares data.path = 'data/adult' (not shipped); the auditor declared the official local copy as the dataset for both ED and DD, and the two agree on its digests",
+          "from": "experiment run -> dataset",
+          "to": "ds_05c7465f at F:\\DatasetDoctorWork\\realworld\\adult\\prepared"
+        }
+      ],
+      "paper_claims": [
+        {
+          "claim_form": "NUMERIC_ATTRIBUTION",
+          "link_bases": [
+            "AUDITOR_DECLARED"
+          ],
+          "link_ids": [
+            "L5",
+            "L7"
+          ],
+          "paper_claim_id": "C6",
+          "paper_locator": {
+            "line": 8,
+            "path": "tables/app-rtdl-datasets.tex",
+            "text": "$26\\,048$"
+          },
+          "pd_finding_ids": [
+            "PD001@C6",
+            "PD003@C6",
+            "PD007@C6"
+          ],
+          "pd_statuses": {
+            "PD001": "PASS",
+            "PD003": "PASS",
+            "PD007": "NOT_APPLICABLE"
+          }
+        },
+        {
+          "claim_form": "SCOPE",
+          "link_bases": [
+            "AUDITOR_DECLARED"
+          ],
+          "link_ids": [
+            "L6"
+          ],
+          "paper_claim_id": "C7",
+          "paper_locator": {
+            "line": 981,
+            "path": "main.tex",
+            "text": "By default, the mean test score and its standard deviation are obtained by training a given model with tuned hyperparameters from scratch on a given dataset under 15 different random seeds."
+          },
+          "pd_finding_ids": [
+            "PD001@C7",
+            "PD002@C7",
+            "PD007@C7"
+          ],
+          "pd_statuses": {
+            "PD001": "PASS",
+            "PD002": "INCONCLUSIVE",
+            "PD007": "NOT_APPLICABLE"
+          }
+        },
+        {
+          "claim_form": "NUMERIC_ATTRIBUTION",
+          "link_bases": [
+            "AUDITOR_DECLARED"
+          ],
+          "link_ids": [
+            "L10",
+            "L11"
+          ],
+          "paper_claim_id": "C8",
+          "paper_locator": {
+            "line": 8,
+            "path": "tables/app-rtdl-datasets.tex",
+            "text": "$16\\,281$"
+          },
+          "pd_finding_ids": [
+            "PD001@C8",
+            "PD003@C8",
+            "PD007@C8"
+          ],
+          "pd_statuses": {
+            "PD001": "PASS",
+            "PD003": "FAIL",
+            "PD007": "NOT_APPLICABLE"
+          }
+        }
+      ],
+      "rd_finding_ids": [
+        "RD001@tabm/adult-seed3/test-score",
+        "RD002@aggregation:agg:adult-seed-mean",
+        "RD005@tabm/adult-seed3/test-score"
+      ],
+      "rd_target_statuses": {
+        "aggregation:agg:adult-seed-mean": {
+          "RD002": "PASS"
+        },
+        "tabm/adult-seed3/test-score": {
+          "RD001": "NOT_APPLICABLE",
+          "RD005": "NOT_APPLICABLE"
+        }
+      },
+      "reported_result_id": "tabm/adult-seed3/test-score",
+      "source_commit_shas": {
+        "ed_captured_commit": "28e47ae301c92ec37787dde1ce923a0793f405b4",
+        "tabm_code_repository": "28e47ae301c92ec37787dde1ce923a0793f405b4"
+      },
+      "statement": "the paper's printed Adult split size, the seed aggregation behind the Adult accuracy, the shipped run that is one member of it, and the official dataset copy that fed it"
+    },
+    {
+      "chain_id": "chain-2-dataset-composition-counts",
+      "dataset_id": null,
+      "experiment_run_id": null,
+      "paper_claims": [
+        {
+          "claim_form": "SCOPE",
+          "link_bases": [
+            "AUTHOR_REF_IN_SENTENCE"
+          ],
+          "link_ids": [
+            "L1"
+          ],
+          "paper_claim_id": "C1",
+          "paper_locator": {
+            "line": 878,
+            "path": "main.tex",
+            "text": "$10$ datasets from other sources. Their properties are provided in \\autoref{A:tab:default-datasets}."
+          },
+          "pd_finding_ids": [
+            "PD001@C1",
+            "PD002@C1",
+            "PD006@C1",
+            "PD007@C1"
+          ],
+          "pd_statuses": {
+            "PD001": "PASS",
+            "PD002": "NOT_APPLICABLE",
+            "PD006": "PASS",
+            "PD007": "NOT_APPLICABLE"
+          }
+        },
+        {
+          "claim_form": "SCOPE",
+          "link_bases": [
+            "AUTHOR_REF_IN_SENTENCE"
+          ],
+          "link_ids": [
+            "L2"
+          ],
+          "paper_claim_id": "C2",
+          "paper_locator": {
+            "line": 884,
+            "path": "main.tex",
+            "text": "$8$ datasets from the TabReD benchmark \\citep{rubachev2024tabred}. Their properties are provided in \\autoref{A:tab:tabred-datasets}."
+          },
+          "pd_finding_ids": [
+            "PD001@C2",
+            "PD002@C2",
+            "PD006@C2",
+            "PD007@C2"
+          ],
+          "pd_statuses": {
+            "PD001": "PASS",
+            "PD002": "NOT_APPLICABLE",
+            "PD006": "FAIL",
+            "PD007": "NOT_APPLICABLE"
+          }
+        },
+        {
+          "claim_form": "SCOPE",
+          "link_bases": [],
+          "link_ids": [],
+          "paper_claim_id": "C3",
+          "paper_locator": {
+            "line": 874,
+            "path": "main.tex",
+            "text": "$28$ datasets from \\cite{grinsztajn2022why}."
+          },
+          "pd_finding_ids": [
+            "PD001@C3",
+            "PD002@C3",
+            "PD007@C3"
+          ],
+          "pd_statuses": {
+            "PD001": "INCONCLUSIVE",
+            "PD002": "NOT_APPLICABLE",
+            "PD007": "NOT_APPLICABLE"
+          }
+        },
+        {
+          "claim_form": "SCOPE",
+          "link_bases": [
+            "AUTHOR_REF_IN_SENTENCE"
+          ],
+          "link_ids": [
+            "L3"
+          ],
+          "paper_claim_id": "C4",
+          "paper_locator": {
+            "line": 1046,
+            "path": "main.tex",
+            "text": "\\autoref{fig:d-k-ablation} shows the mean percentage improvements (see \\autoref{A:sec:impl-metrics}) over MLP across $17$ datasets: all datasets except for Covertype from \\autoref{A:tab:default-datasets}, and all datasets from TabReD \\citep{rubachev2024tabred}."
+          },
+          "pd_finding_ids": [
+            "PD001@C4",
+            "PD002@C4",
+            "PD005@C4",
+            "PD006@C4",
+            "PD007@C4"
+          ],
+          "pd_statuses": {
+            "PD001": "PASS",
+            "PD002": "NOT_APPLICABLE",
+            "PD005": "NOT_APPLICABLE",
+            "PD006": "INCONCLUSIVE",
+            "PD007": "NOT_APPLICABLE"
+          }
+        },
+        {
+          "claim_form": "REFERENCE_ATTRIBUTION",
+          "link_bases": [
+            "AUTHOR_REF_IN_SENTENCE"
+          ],
+          "link_ids": [
+            "L4"
+          ],
+          "paper_claim_id": "C5",
+          "paper_locator": {
+            "line": 180,
+            "path": "main.tex",
+            "text": "The main properties of our benchmark are summarized in \\autoref{tab:datasets}, and more details are provided in \\autoref{A:sec:datasets}."
+          },
+          "pd_finding_ids": [
+            "PD001@C5",
+            "PD006@C5",
+            "PD007@C5"
+          ],
+          "pd_statuses": {
+            "PD001": "PASS",
+            "PD006": "INCONCLUSIVE",
+            "PD007": "NOT_APPLICABLE"
+          }
+        }
+      ],
+      "rd_finding_ids": [],
+      "reason_lower_layers_are_absent": "these claims are about the paper's own tables; no reported result, run or dataset reference is what they assert, so the chain ends at the PD layer and is marked so rather than being padded",
+      "reported_result_id": null,
+      "statement": "three counts the paper states about its own dataset composition, and one derived count it never prints"
+    },
+    {
+      "chain_id": "chain-3-block-addressed-cell",
+      "dataset_id": null,
+      "experiment_run_id": null,
+      "paper_claims": [
+        {
+          "claim_form": "NUMERIC_ATTRIBUTION",
+          "link_bases": [
+            "AUDITOR_DECLARED"
+          ],
+          "link_ids": [
+            "L12",
+            "L13"
+          ],
+          "paper_claim_id": "C9",
+          "paper_locator": {
+            "line": 528,
+            "path": "main.tex",
+            "text": "$0.1601$"
+          },
+          "pd_finding_ids": [
+            "PD001@C9",
+            "PD003@C9",
+            "PD007@C9"
+          ],
+          "pd_statuses": {
+            "PD001": "PASS",
+            "PD003": "INCONCLUSIVE",
+            "PD007": "NOT_APPLICABLE"
+          }
+        }
+      ],
+      "rd_finding_ids": [],
+      "reason_lower_layers_are_absent": "the declared cell address has two readings, so PD stops at INCONCLUSIVE and never reaches a value that could be joined downstream",
+      "reported_result_id": null,
+      "statement": "a value in a transposed table whose row label is carried by a vertical merge"
+    }
+  ],
+  "kind": "paper-doctor/phase3-end-to-end-chain",
+  "layer_invocations": {
+    "DD": {
+      "adapters_written_for_tabm": 0,
+      "command": "dataset-doctor audit F:/DatasetDoctorWork/realworld/adult/prepared",
+      "dataset_id": "ds_05c7465f",
+      "dd_code_modified": false,
+      "report_sha256": "c1456a7bf602d4c3b4cda5f316a1fdb9e04ed15b7149ec2eb393046428c82f5f",
+      "tool_version": "0.1.2"
+    },
+    "ED": {
+      "adapter_used": "captured (declared surface only)",
+      "command": "experiment-doctor init phase3/.ed-workdir/tabm-ed/paper --command 'python bin/model.py exp/tabm/adult/0-evaluation/3.toml --force' --seed 3 --config exp/tabm/adult/0-evaluation/3.toml --dataset <official adult copies> && experiment-doctor audit <same> --adapter captured -o phase3/tabm/ed-captured",
+      "ed_code_modified": false,
+      "generic_discovery_reports": [
+        "phase3/tabm/ed-generic-adult-runs/report.json",
+        "phase3/tabm/ed-generic-whole-repo/report.json"
+      ],
+      "limitation": "the captured adapter records no metric by design, and no execution was performed, so the metric of record stays in the RD layer",
+      "n_runs_discovered_by_generic": 0,
+      "report_sha256": "2de48cc368f13fc3fbd0e9582adc659f712382067d45b142740a6e14ae35e170",
+      "run_id": "exp-cade5bdf7f3f4c4a9964dd0154598210#experiment.run.json",
+      "tool_version": "1.0.0",
+      "workspace_reconstruction": "git clone https://github.com/yandex-research/tabm <scratch> && git -C <scratch> checkout 28e47ae301c92ec37787dde1ce923a0793f405b4; the working clone was deleted after capture and only its three emitted artifacts are kept here"
+    },
+    "PD": {
+      "adapters_written_for_tabm": 0,
+      "by_status": {
+        "FAIL": 2,
+        "INCONCLUSIVE": 5,
+        "NOT_APPLICABLE": 14,
+        "NOT_RUN": 1,
+        "PASS": 10
+      },
+      "command": "paper-doctor audit phase3/tabm --json phase3/tabm/pd_findings.json",
+      "findings_sha256": "08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0",
+      "manifest": "phase3/tabm/paper-doctor.yml",
+      "n_findings": 32
+    },
+    "RD": {
+      "artifact_sha256": "c56b62623b39ed9a4c311f8bcc6be6de457c1a0f8a4d34d3da99a4b71c7d2774",
+      "artifact_size": 12392,
+      "by_rule": {
+        "RD001": 2,
+        "RD002": 1,
+        "RD003": 2,
+        "RD004": 2,
+        "RD005": 2,
+        "RD006": 2,
+        "RD007": 1,
+        "RD008": 2
+      },
+      "by_status": {
+        "INCONCLUSIVE": 6,
+        "NOT_APPLICABLE": 6,
+        "NOT_RUN": 1,
+        "PASS": 1
+      },
+      "command": "result-doctor audit phase3/tabm/result-doctor.yml --json > phase3/tabm/findings.json",
+      "n_findings": 14,
+      "rd_code_modified": false,
+      "rd_rules_added": 0,
+      "rd_version": "0.1.0",
+      "reported_result_ids": [
+        "tabm/adult-ensemble5-0/test-score",
+        "tabm/adult-seed3/test-score"
+      ],
+      "sha_and_size_verified_before_parse": true
+    }
+  },
+  "ledger_version": 1,
+  "pd_finding_id_convention": "<rule_id>@<claim_id>",
+  "rd_finding_id_convention": "<rule_id>@<RD target string>",
+  "searched_not_observed": [
+    "a TabM table that both names its float in a sentence and prints a metric value that the shipped artifacts reconstruct: none found in main.tex or tables/",
+    "a run-side artifact inside exp/ that records the environment a published run executed under: none (only paper/environment.yaml, which states a requirement, not a fact)"
+  ],
+  "unknowns": [
+    {
+      "because": "the seed universe is declared PARTIAL: an unlisted universe cannot be PASSed",
+      "state": "INCONCLUSIVE",
+      "where": "C7 / PD002"
+    },
+    {
+      "because": "the paper prints per-dataset accuracies in longtables whose source gives no reference name for the printed cell, so no claim can address the mean; the value 0.8575 was not turned into a claim",
+      "state": "NOT REACHABLE",
+      "where": "chain-1 / PD003 over the Adult accuracy"
+    },
+    {
+      "because": "the repository ships no run-side bundle for the published runs: no effective configuration, no termination cause and no runtime environment are recorded in any artifact",
+      "state": "INCONCLUSIVE",
+      "where": "chain-1 / ED004, ED009, ED010"
+    },
+    {
+      "because": "ED computes the working-tree state before it writes experiment.lock.json, so `dirty = False` was true of the cloned tree at capture time and the lock itself is now its one untracked file; the python version and package list ED recorded are this machine's (3.13.1, Windows-11), not the run's, and ED says so itself -- ED010 is INCONCLUSIVE because no artifact records the environment the published run executed under",
+      "state": "THEY DESCRIBE THE CAPTURE, NOT THE PUBLISHED RUN",
+      "where": "chain-1 / ED code.dirty and ED environment fields"
+    },
+    {
+      "because": "DD measures the official files as train 32561 / test 16281, while the paper's # Train column prints 26048 and # Validation prints 6513; 26048 + 6513 = 32561, i.e. the printed number is a hold-out of the official train file. PD does not compare across those layers and issues no verdict on it",
+      "state": "AUDITOR OBSERVATION, NOT A PD VERDICT",
+      "where": "chain-1 / DD split sizes vs the printed # Train"
+    },
+    {
+      "because": "the referenced float does not print the counted number, and two of the labels in C4 resolve to no float in the source at all",
+      "state": "PD006 FAIL / INCONCLUSIVE",
+      "where": "chain-2 / C2 and C4"
+    },
+    {
+      "because": "the merged leading cell makes the declared row address have two readings and the source states nothing that separates them",
+      "state": "INCONCLUSIVE",
+      "where": "chain-3 / C9"
+    },
+    {
+      "because": "no claim in this workspace declares a comparative relation over a block-addressed cell, so the rule has no key to read",
+      "state": "NOT_RUN",
+      "where": "PD004"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+target='aggregation:agg:PlanarRobot/sepyfux/-elbo' status=INCONCLUSIVE n_excl=5 listed=5 n_members=10
+   reason: 10 member(s) cannot be bound to an external run id; an exclusion criterion is not recomputable
+target='aggregation:agg:PlanarRobot/sepyrux/-elbo' status=INCONCLUSIVE n_excl=3 listed=3 n_members=10
+   reason: 10 member(s) cannot be bound to an external run id; an exclusion criterion is not recomputable
+target='aggregation:agg:PlanarRobot/zamtrux/-elbo' status=INCONCLUSIVE n_excl=2 listed=2 n_members=10
+   reason: 10 member(s) cannot be bound to an external run id; an exclusion criterion is not recomputable
+target='aggregation:agg:TALOS/sepyfux/-elbo' status=INCONCLUSIVE n_excl=6 listed=6 n_members=10
+   reason: 10 member(s) cannot be bound to an external run id; an exclusion criterion is not recomputable
+target='aggregation:agg:TALOS/sepyfux/entropy' status=INCONCLUSIVE n_excl=6 listed=6 n_members=10
+   reason: 10 member(s) cannot be bound to an external run id; an exclusion criterion is not recomputable
+target='aggregation:agg:TALOS/sepyrux/-elbo' status=INCONCLUSIVE n_excl=6 listed=6 n_members=10
+   reason: 10 member(s) cannot be bound to an external run id; an exclusion criterion is not recomputable
+target='aggregation:agg:TALOS/sepyrux/entropy' status=INCONCLUSIVE n_excl=6 listed=6 n_members=10
+   reason: 10 member(s) cannot be bound to an external run id; an exclusion criterion is not recomputable
