@@ -174,7 +174,18 @@ What I verified independently afterwards, at 15:5x:
 **Attribution: UNKNOWN.** No agent or process that I directed modified that file; my own background
 measurements were read-only by instruction and the run-2 agent states it touched nothing. The
 modification and the revert both came from outside my control, and there was no git history at that
-moment (`git init` is a later §21 step) to identify it. This is reported rather than explained away.
+moment (`git init` is a later §21 step) to identify it. This is reported rather than explained away, and
+nothing here attributes it.
+
+**A second in-place mutation, this one attributed.** Later in the same session a vendored third-party
+fixture (`tests/fixtures/rtdl_pilot_README.md`) was found rewritten between two of my own commands:
+13,162 bytes / `50f7994f…` became 13,149 bytes / `799726d9…`, with single quotes turned into double quotes
+and a wrapped Python comprehension joined onto one line. Unlike the manifest event this one is explained and
+reproduced: `ruff format .` formats Python fenced blocks inside Markdown in this toolchain version, so the
+project's own gate command was rewriting evidence documents. Re-running it reproduced the byte loss exactly.
+The fix and the two tests that hold it are recorded as defect P1-9 in `release/RC_AUDIT.md` §7, and the
+privacy gate's digest-conditional skip is what surfaced it (§4c there). The material difference between the
+two events is knowledge, not severity: one has a mechanism, the other does not.
 
 Why it matters for the product, and it is the run's own point: the digest pins verify the *bytes the
 manifest declares*, so they catch a drifted corpus, but they cannot catch a drifted **manifest** — a
@@ -185,8 +196,11 @@ than a warning about the file having changed. That is D6, and it is a real limit
 
 Not claimed on the strength of the edits alone:
 
-- Four gates green after every documentation and CLI change: **288 passed**, `ruff check` clean,
-  `ruff format --check` clean (42 files), `mypy src` clean.
+- Four gates green after every documentation and CLI change: **288 passed** through the onboarding window
+  (292 at the release boundary, the four extra being the clean-checkout and vendoring firewalls of
+  `release/RC_AUDIT.md` §9), `ruff check` clean, `ruff format --check` clean, `mypy src` clean. The format
+  gate's file count is *not* stable across this session — it read 42 files here and 32 at the release
+  boundary — because the command was counting Markdown until Markdown was excluded (P1-9).
 - Every P1 fix above names the test that pins it; each was also mutation-checked by breaking the
   condition and watching that test die, then restoring the file byte-for-byte.
 - The privacy gate added in this block (`tests/test_phase3_firewalls.py`, §20) was mutation-checked

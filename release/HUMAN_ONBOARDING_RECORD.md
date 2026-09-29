@@ -31,19 +31,21 @@ stages build artifacts). Contents at 2026-09-29, from `KIT_MANIFEST.txt`:
 
 | path | sha256 | why it is in the kit |
 | --- | --- | --- |
-| `README.md` | `5076d967a68c1c636e42772ec0e2a5f97fe90ab71b77b3fe6306d1b5ab3bed4d` | the only documentation the tester is given |
+| `README.md` | `689b7a19f3614f66a97f00f5b8d427a8243dce2e64cf665e305a8cf4d7e6a076` | the only documentation the tester is given |
 | `TASK_FOR_TESTER.md` | `d46d765aa46144d8a26b5fdb601f8713dfc1c3bcced0e884707b619a324b3c88` | four neutral instructions; names no prerequisite and no answer |
 | `RECORDING_SHEET.md` | `47294aeeb067ff47a6dbf749100978d7a3ff04a842fe3bac3576dfc82d858627` | the observation template; `UNKNOWN` explicitly allowed |
 | `phase3/tabm/paper-doctor.yml` | `7e809014f0fa5019622fcec5280cec2f1d4f0e243f7cd3b156b7ebae3e009377` | the prepared acceptance workspace, byte-identical to the frozen one |
 | `phase3/tabm/findings.json` | `c56b62623b39ed9a4c311f8bcc6be6de457c1a0f8a4d34d3da99a4b71c7d2774` | the workspace's declared Result Doctor input |
 | `scripts/fetch_acceptance_inputs.py` | `25344877d3d8786cb7480f84143355d2e2ec1eb3b8e1890c645f8a6382a52da3` | so the workspace's paper root can be materialised; the tester is not told to run it |
-| `dist/paper_doctor-0.1.0-py3-none-any.whl` | `b03d72766ee3788833b74b58f18b6198d6885c4329b34a03b0338f0efeb5a676` | install route that needs no PyPI |
-| `dist/paper_doctor-0.1.0.tar.gz` | `71539fa903f59c23cd97500581c9329712766419f3f4d5d5c0775ecc7fccfbee` | same, from source |
+| `dist/paper_doctor-0.1.0-py3-none-any.whl` | `192e3e17d7e405738632a5b222ca4610a35e0c55aae5a995fb91eccdab9a1887` | install route that needs no PyPI |
+| `dist/paper_doctor-0.1.0.tar.gz` | `bfd3a87f7c7b20f73277bfb3bbd7223c208b3c9e2cfa208e45829d9cbcd0e30a` | same, from source |
 
-Both staged artifacts were rebuilt at 16:14 on 2026-09-29 after the last README edit, and the kit was
-regenerated from them (`298,788 bytes`, purity clean). Earlier kit generations carried
-`5c36af8a…` / `d249621a…`; those digests appear nowhere in this record's table so nobody verifies against
-a superseded artifact.
+Both staged artifacts were rebuilt at 16:42 on 2026-09-29, after the RTDL anchors were made
+self-contained and the README's sdist numbers re-measured against the new artifact, and the kit was
+regenerated from them (`305,805 bytes`, purity clean). Two earlier generations are therefore stale:
+`5c36af8a…` / `d249621a…` and `b03d7276…` / `71539fa9…`. Neither appears in the table above, so nobody can
+verify against a superseded artifact. Recording the superseded digests at all is deliberate — a tester who
+downloaded an earlier kit can now tell that their copy is not this one.
 
 Deliberately absent, enforced by the builder's purity check (which refuses and exits `2`): the project's
 own `pd_audit.txt`, `pd_findings.json`, `end_to_end_chain.json`, every phase report/brief/preflight, and
@@ -53,12 +55,20 @@ Kit layout is load-bearing rather than cosmetic: the workspace declares
 `root: ../acceptance-inputs/tabm-arxiv/src`, and the fetch script resolves its target from its own
 location, so the fetch lands exactly where the declaration points. The manifest is never edited.
 
-**Kit integrity check performed (an agent, not the human test).** Inside the kit, with only the wheel
-installed and the corpus placed by the fetch script's own path logic (reported `SKIPPED ... already
-carries the frozen main.tex`, which proves the location coincides), `paper-doctor audit phase3/tabm
---json dryrun.json` exited 0 and produced
-`08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0` - the frozen acceptance digest. This
-shows the kit is self-sufficient. It does **not** show a human can use it.
+**Kit integrity check performed (an agent, not the human test).** Re-run on the current kit generation in
+the minutes before 16:57 on 2026-09-29: a fresh virtualenv, `pip install dist/paper_doctor-0.1.0-py3-none-any.whl`
+from inside the kit, the kit's own `scripts/fetch_acceptance_inputs.py` run from the kit root (it reported
+`DOWNLOADED gmmvi / rtdl / tabm` and placed the TabM source exactly where the workspace manifest declares
+`root`), then `paper-doctor audit phase3/tabm --json dryrun2.json` → exit 0 and
+`08836ccfe17f3e2dc0750b30a2a3ae5e5022a53787cf93c2f085af932dff9aa0`, 17,511 bytes - the frozen acceptance
+digest. An earlier generation of this check ran against a kit whose corpus directory was already populated
+and therefore reported `SKIPPED ... already carries the frozen main.tex`; both outcomes are correct behaviour
+and the second one proves the location coincides. This shows the kit is self-sufficient. It does **not** show
+a human can use it.
+
+The scratch products of that check (`phase0/sources/`, `phase3/acceptance-inputs/`, `dryrun2.json`) were
+removed again; the kit as handed over is the eight files of `KIT_MANIFEST.txt`, and the builder's purity
+check is what guarantees nothing else was staged into it.
 
 ## 4. Observed facts
 

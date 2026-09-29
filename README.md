@@ -413,7 +413,7 @@ Run the suite from a **git checkout**, not from an unpacked sdist. The acceptanc
 `phase0/`-`phase3/` working directories - frozen manifests, expected-anchor tables, the ledger - and
 those are project records, not part of a Python artifact. From an unpacked sdist the package tests all
 pass and the acceptance files report `FileNotFoundError` for the workspace they audit; measured on
-0.1.0: 196 passed, 22 failed, 70 errors, every failure naming a missing `phase*/` path. The suite does
+0.1.0: 199 passed, 23 failed, 70 errors, every failure naming a missing `phase*/` path. The suite does
 not skip them, because a silently missing acceptance input is exactly what a release gate must not
 allow. What an artifact *does* prove is that the tool works: install it and run
 `paper-doctor audit examples/quickstart`, and from a checkout

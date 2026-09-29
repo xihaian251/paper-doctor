@@ -19,6 +19,7 @@ expects. This file scopes itself to `src/` for exactly that reason.
 from __future__ import annotations
 
 import ast
+import hashlib
 import io
 import re
 import tokenize
@@ -260,6 +261,16 @@ _SECRET_SHAPE = re.compile(
 )
 
 
+#: Third-party bytes that ship as pinned test inputs, and the digest they were vendored at. The privacy
+#: scan skips a file here ONLY while its digest still matches, so the skip cannot be widened into an
+#: exemption: replace or edit one line and the file is scanned again and its contents are reported.
+#: Vendored upstream prose carries example paths that are nobody's machine, ours included; a fixture is
+#: not a leak, and a fixture that could be edited without failing is.
+VENDOR_BYTES = {
+    "tests/fixtures/rtdl_pilot_README.md": "50f7994f73937093c01412164e07142d198c000fcb69a01041c7404552ca0215",
+}
+
+
 def _shipped_text() -> Iterator[tuple[str, str]]:
     """Yield (relative posix path, text) for every file that goes into an artifact."""
     paths = list(SHIP_FILES)
@@ -267,10 +278,23 @@ def _shipped_text() -> Iterator[tuple[str, str]]:
         paths += [p for p in sorted((REPO / name).rglob("*")) if p.is_file()]
     for path in paths:
         try:
-            text = path.read_text(encoding="utf-8")
-        except (UnicodeDecodeError, OSError):
+            data = path.read_bytes()
+        except OSError:
             continue
-        yield path.relative_to(REPO).as_posix(), text
+        relpath = path.relative_to(REPO).as_posix()
+        if _pinned_vendored(relpath, data):
+            continue
+        try:
+            text = data.decode("utf-8")
+        except UnicodeDecodeError:
+            continue
+        yield relpath, text
+
+
+def _pinned_vendored(relpath: str, data: bytes) -> bool:
+    """True only while an allowlisted third-party file is still byte-identical to what was pinned."""
+    want = VENDOR_BYTES.get(relpath)
+    return want is not None and hashlib.sha256(data).hexdigest() == want
 
 
 def _lines_matching(pattern: re.Pattern[str]) -> list[str]:
@@ -315,3 +339,23 @@ def test_the_privacy_patterns_themselves_detect_a_leak() -> None:
     assert not _LOCAL_PATH.search("sha256 37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570")
     assert not _LOCAL_PATH.search("pip install -e .[dev]")
     assert not _SECRET_SHAPE.search("sha256: 37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570")
+
+
+def test_vendored_third_party_bytes_are_still_what_they_were_pinned_as() -> None:
+    """The privacy scan's only skip is a digest match, so the skip has to be checked in its turn."""
+    assert VENDOR_BYTES, "the allowlist is empty while a vendored file exists, or vice versa"
+    for relpath, want in VENDOR_BYTES.items():
+        path = REPO / relpath
+        assert path.is_file(), f"allowlisted file is gone: {relpath}"
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == want, relpath
+
+
+def test_the_vendored_skip_is_narrow_and_widens_to_nothing_else() -> None:
+    """Exactly two facts, both falsifiable: a pinned file is skipped, an unpinned one is scanned."""
+    pinned = list(VENDOR_BYTES)
+    assert _pinned_vendored(pinned[0], (REPO / pinned[0]).read_bytes())
+    assert not _pinned_vendored(pinned[0], b"one edited line of somebody else's prose")
+    assert not _pinned_vendored("tests/support.py", (REPO / "tests" / "support.py").read_bytes())
+    scanned = {rel for rel, _ in _shipped_text()}
+    assert pinned[0] not in scanned
+    assert "tests/support.py" in scanned and "README.md" in scanned

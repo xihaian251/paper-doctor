@@ -8,12 +8,14 @@ the printed cell values quoted here were read off the corpus by hand (`data/tabl
 a finding.
 
 D1 and D8 are the epistemic-boundary cases: a sign disagreement and a +-1 difference must both
-stop at INCONCLUSIVE. `result-doctor/phase4/rtdl-revisiting-models/README.md` is a pilot
-transcript, not paper text, and is read only as the source of D1's and D2's sentences.
+stop at INCONCLUSIVE. The pilot transcript (`tests/fixtures/rtdl_pilot_README.md`, vendored byte-for-
+byte from Result Doctor's own RTDL pilot record, and nowhere else) is not paper text, and is read only
+as the source of D1's and D2's sentences.
 """
 
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 from typing import Any
@@ -26,13 +28,19 @@ from paper_doctor.rules import RULE_IDS
 from paper_doctor.status import RuleFinding, RuleStatus
 
 REPO = Path(__file__).resolve().parents[1]
-#: No single directory contains both the paper and the pilot README, so the audit root is the
-#: workspace and every declared path is written relative to it (see the report's two-root note).
-AUDIT_ROOT = REPO.parent
-PAPER = "paper-doctor/phase0/sources/2106.11959.tex/main.tex"
-README = "result-doctor/phase4/rtdl-revisiting-models/README.md"
-CELLS = "paper-doctor/phase0/sources/2106.11959.tex/data/"
+#: Everything this test reads lives inside this repository: the paper corpus is fetched by
+#: `scripts/fetch_acceptance_inputs.py` into `phase0/sources/`, and the pilot README is vendored as a
+#: byte-pinned fixture. A previous revision resolved both against `REPO.parent`, which read a sibling
+#: checkout and made the frozen RTDL anchors unrunnable in a fresh clone; see `release/RC_AUDIT.md` §9.
+AUDIT_ROOT = REPO
+PAPER = "phase0/sources/2106.11959.tex/main.tex"
+README = "tests/fixtures/rtdl_pilot_README.md"
+CELLS = "phase0/sources/2106.11959.tex/data/"
 ARTIFACT = Path(__file__).resolve().parent / "fixtures" / "rd_findings_rtdl_0.1.0.json"
+PILOT_README = REPO / README
+#: Vendored verbatim from Result Doctor's RTDL pilot record. Pinned so a silent edit to the evidence
+#: cannot pass: a digest mismatch means the fixture changed, not that the paper did.
+PILOT_README_SHA256 = "50f7994f73937093c01412164e07142d198c000fcb69a01041c7404552ca0215"
 
 D3_TEXT = "The metric values averaged over 15 random seeds are reported."
 D2_TEXT = "let's compute the test score averaged over all random seeds"
@@ -448,3 +456,19 @@ def test_upstream_pass_is_never_promoted_to_a_paper_level_verdict(findings: list
     assert not any(f.rule_id == "PD002" and f.status is RuleStatus.PASS and f.target == "D3-TABLE" for f in findings)
     targets = {f.target for f in findings}
     assert not targets & {"paper", "document", "overall", "score"}
+
+
+def test_the_pilot_transcript_is_the_bytes_the_anchors_were_read_from() -> None:
+    """D1's and D2's sentences are located by line number inside the pilot transcript, so the anchors
+    are only as frozen as that file is. The fixture ships in the sdist; this is what makes a silent
+    edit to it a failure rather than a different answer."""
+    assert hashlib.sha256(PILOT_README.read_bytes()).hexdigest() == PILOT_README_SHA256
+
+
+def test_every_input_this_test_reads_is_inside_the_repository() -> None:
+    """The frozen anchors must run in a fresh clone. Resolving them against `REPO.parent` made 17 of
+    them unrunnable outside this workspace, which is how this was caught."""
+    for rel in (PAPER, README, CELLS + "table_neural_networks.tex", CELLS + "table_datasets.tex"):
+        resolved = (AUDIT_ROOT / rel).resolve()
+        assert resolved.is_relative_to(REPO.resolve()), rel
+        assert resolved.is_file(), rel

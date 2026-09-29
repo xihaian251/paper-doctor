@@ -21,3 +21,16 @@ fails the suite instead of drifting:
 
 Regenerating either snapshot is a deliberate, recorded act: run the RD 0.1.0 CLI, copy the
 JSON, update this table. A test that imports `result_doctor` is a contract violation.
+
+## One vendored text fixture, and why it is here
+
+| file | sha256 | bytes | provenance |
+|---|---|---|---|
+| `rtdl_pilot_README.md` | `50f7994f73937093c01412164e07142d198c000fcb69a01041c7404552ca0215` | 13162 | The RTDL pilot transcript written by Result Doctor's own Phase 4 run, copied verbatim out of that project's phase-4 directory. It is not an RD artifact and not paper text; `tests/test_acceptance_rtdl.py` reads two sentences from it (D1's `california_housing   -0.499` line, D2's quantifier sentence), located by line number. |
+
+This file is vendored rather than fetched because it is not on any public host. Before Phase 3's
+release audit the test resolved it through a sibling checkout one directory above the repository, which
+is why 17 frozen RTDL anchors errored in a fresh clone; `test_every_input_this_test_reads_is_inside_the_repository`
+now forbids that, and `test_the_pilot_transcript_is_the_bytes_the_anchors_were_read_from` pins the bytes
+so a silent edit fails loudly. Vendoring it changes no anchor: the statuses asserted are the same
+because the sentences read are the same bytes.

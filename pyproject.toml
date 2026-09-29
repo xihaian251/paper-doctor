@@ -33,7 +33,12 @@ line-length = 120
 target-version = "py311"
 # The Phase 0 corpus checkouts and work artifacts under `phase0/` are evidence, not
 # source: they are read verbatim by the acceptance tests and must keep their line numbers.
-extend-exclude = ["tests/generic_fixtures", "phase0"]
+# Markdown is excluded repo-wide because Ruff >= 0.16 formats Python fenced code blocks
+# inside .md files: `ruff format .` rewrites quotes and joins wrapped comprehensions in
+# the prose. Here every .md is either a frozen upstream byte-for-byte fixture or a
+# measured transcript quoted as evidence, so the formatter must not touch any of them.
+# Measured, not assumed: one such run silently changed a vendored fixture's sha256.
+extend-exclude = ["tests/generic_fixtures", "phase0", "**/*.md"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP"]
